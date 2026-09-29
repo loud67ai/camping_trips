@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#293f43">
+<title>Territory Route 66 Receipt | Hinton | 2026 Winter Texas Trip</title>
+<style>
+:root{--ink:#20262b;--muted:#66727a;--paper:#fffdf8;--canvas:#edf0ef;--line:#d8dedc;--green:#293f43;--green-soft:#edf3ef;--paid:#35653a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--ink);font:15px/1.45 Arial,Helvetica,sans-serif}
+main{width:min(760px,calc(100% - 32px));margin:32px auto 48px}
+.toolbar{display:flex;justify-content:flex-end;margin-bottom:10px}
+.print-button{padding:8px 12px;border:1px solid var(--line);background:#fff;color:var(--green);font:700 .78rem Arial,sans-serif;cursor:pointer}
+.receipt{padding:32px 38px;background:var(--paper);border:1px solid var(--line)}
+.topline{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding-bottom:22px;border-bottom:2px solid var(--green)}
+.merchant-label,.field-label{margin:0 0 5px;color:var(--muted);font:700 .65rem Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.merchant-name{margin:0;font-size:1.2rem;font-weight:700;line-height:1.2}
+.merchant-address{margin:6px 0 0;color:var(--muted);font-size:.82rem;line-height:1.4}
+.receipt-heading{text-align:right;white-space:nowrap}
+h1{margin:0;font-size:1.55rem;line-height:1.1}
+.issued{margin:6px 0;color:var(--muted);font-size:.78rem}
+.paid-tag{display:inline-block;padding:3px 8px;background:var(--green-soft);color:var(--paid);font:700 .65rem Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase}
+.meta{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:20px 0 24px}
+.meta-value{margin:0;font-weight:700}
+.section-title{margin:0 0 8px;font:700 .7rem Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+table{width:100%;border-collapse:collapse;background:#fff}
+th{padding:8px 10px;border-bottom:1px solid var(--line);color:var(--muted);font:700 .63rem Arial,sans-serif;letter-spacing:.05em;text-align:left;text-transform:uppercase}
+td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top;font-size:.84rem}
+th:last-child,td:last-child{text-align:right;white-space:nowrap}
+.item-name{font-weight:700}.item-detail{display:block;margin-top:3px;color:var(--muted);font-size:.76rem}
+.totals{width:min(300px,100%);margin:18px 0 0 auto}
+.total-row{display:flex;justify-content:space-between;gap:16px;padding:6px 0;font-size:.84rem}
+.total-row.grand{margin-top:4px;padding:10px 0;border-top:1px solid var(--line);border-bottom:2px solid var(--green);font-size:1rem;font-weight:700}
+.total-row.paid,.total-row.balance{color:var(--paid);font-weight:700}
+.payment{margin-top:22px;padding-top:14px;border-top:1px solid var(--line)}
+.payment-value{margin:0;font-size:.8rem;font-weight:700}
+.source{margin:22px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:.76rem}
+a{color:#145d65;font-weight:700}
+@media(max-width:560px){main{width:calc(100% - 16px);margin:8px auto 24px}.receipt{padding:20px 16px}.topline{display:block}.receipt-heading{margin-top:18px;text-align:left}.meta{gap:12px}th,td{padding:9px 7px;font-size:.76rem}.item-detail{font-size:.7rem}}
+@media print{@page{size:auto;margin:14mm}body{background:#fff;font-size:10pt}main{width:100%;margin:0}.toolbar{display:none}.receipt{padding:0;border:0}.topline,.meta,table,.totals,.payment{break-inside:avoid}a{color:inherit;text-decoration:none}.source a::after{content:" (" attr(href) ")";font-weight:400;font-size:8pt}}
+</style>
+</head>
+<body>
+<main>
+<div class="toolbar"><button class="print-button" type="button" onclick="window.print()">Print receipt</button></div>
+<article class="receipt" aria-labelledby="receipt-heading">
+<header class="topline">
+<div>
+<p class="merchant-label">Merchant</p>
+<p class="merchant-name">Territory Route 66 RV Park and Campgrounds</p>
+<p class="merchant-address">14144 Old 66 Road, Historic Route 66<br>Hinton, OK 73047 · (405) 542-6566</p>
+</div>
+<div class="receipt-heading">
+<h1 id="receipt-heading">Receipt</h1>
+<p class="issued">Order placed Sep 28, 2026</p>
+<span class="paid-tag">Paid in full</span>
+</div>
+</header>
+<section class="meta" aria-label="Order details">
+<div><p class="field-label">Confirmation</p><p class="meta-value">R00000004756</p></div>
+<div><p class="field-label">Invoice</p><p class="meta-value">I00000014602</p></div>
+<div><p class="field-label">Guest</p><p class="meta-value">Aaron L L</p></div>
+<div><p class="field-label">Stay</p><p class="meta-value">Dec 25, 2026 · 1 night</p></div>
+</section>
+<h2 class="section-title">Reserved sites</h2>
+<table>
+<thead><tr><th scope="col">Site</th><th scope="col">Party</th><th scope="col">Charges</th><th scope="col">Total</th></tr></thead>
+<tbody>
+<tr><td><span class="item-name">Site 10</span><span class="item-detail">Standard Back-In FHU RV Site</span></td><td>2 adults<br>1 pet</td><td>$35.00 base<br>$2.00 fee</td><td>$37.00</td></tr>
+<tr><td><span class="item-name">Site 9</span><span class="item-detail">Standard Back-In FHU RV Site</span></td><td>2 adults<br>3 pets</td><td>$35.00 base<br>$2.00 fee</td><td>$37.00</td></tr>
+</tbody>
+</table>
+<section class="totals" aria-label="Payment totals">
+<div class="total-row"><span>Subtotal</span><span>$74.00</span></div>
+<div class="total-row grand"><span>Total</span><span>$74.00</span></div>
+<div class="total-row paid"><span>Card payment · ending 1007</span><span>−$74.00</span></div>
+<div class="total-row balance"><span>Outstanding balance</span><span>$0.00</span></div>
+</section>
+<section class="payment" aria-label="Payment details">
+<p class="field-label">Payment date</p>
+<p class="payment-value">Sep 28, 2026</p>
+</section>
+<p class="source"><a href="https://reservation.campspot.com/order-details/8dab260a-1e5a-4a85-a58e-de613921de75/false?_w=Y29uc3VtZXItODE3MjA5OTQ%3D" target="_blank" rel="noopener noreferrer">View original online receipt</a></p>
+</article>
+</main>
+</body>
+</html>
