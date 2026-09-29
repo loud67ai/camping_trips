@@ -18,17 +18,17 @@ Route-specific itinerary and decision details. Shared traveler, vehicle, camper,
 | Google Maps moving time | Approximately 46 hours from supplied daily estimates |
 | Tacoma fuel at 12 mpg | To calculate after miles are verified |
 | Bronco fuel at 12 mpg | To calculate after miles are verified |
-| Combined fuel cost | To calculate at the adjustable fuel price |
 | Number of driving days | 6 |
 | Number of camping nights | 8 |
 | Basecamps | Palo Duro Canyon / MERUS; Crystal Beach |
+| Reservation snapshot | Hinton: confirmed, Sites 10 and 9, Dec 25 (1 night); Hackberry at Palo Duro and Big Pines: unconfirmed; MERUS: confirmed, Site 311 East Rise Camp, Dec 28 (1 night, 4 guests); Dauphin Island: confirmed, Dec 31-Jan 2 (2 nights) |
 | Work deadline | Work resumes January 4, 2027 |
 
 ## Day-by-Day Itinerary
 
 | Day / date | Start | Destination / campground | Sunset | Dark | Mileage | Google time | Time with stops | Stops | Breakfast | Lunch | Dinner |
 |---|---|---|---|---|---:|---:|---:|---|---|---|---|
-| Fri Dec 25, 2026 | Evansville, IN / Windmill Marathon & Bakery | Territory Route 66 RV Park & Campgrounds, Hinton, OK | 5:24 PM | 5:54 PM | 670 | 9 hr 51 min | 11 hr 30 min | Gas / restroom / lunch | Home / snacks | Picnic in car | Cherokee Restaurant |
+| Fri Dec 25, 2026 | Evansville, IN / Windmill Marathon & Bakery | Territory Route 66 RV Park & Campgrounds, Hinton, OK; Sites 10 and 9 | 5:24 PM | 5:54 PM | 670 | 9 hr 51 min | 11 hr 30 min | Gas / restroom / lunch | Home / snacks | Picnic in car | Cherokee Restaurant |
 | Sat Dec 26, 2026 | Hinton, OK / Territory Route 66 RV Park | Palo Duro Canyon, Canyon, TX | 5:38 PM | 6:08 PM | 280 | 4 hr 24 min | 8 hr 30 min | Fuel / restroom / dog breaks / one museum / photo ops | Campground or packed breakfast | Route 66 cafe near Shamrock, with Amarillo backup | Campground |
 | Sun Dec 27, 2026 | Canyon, TX / Palo Duro Canyon | Palo Duro Canyon | 5:39 PM | 6:09 PM | 0 | 0 | 0 | None | Campground | Campground | Campground |
 | Mon Dec 28, 2026 | Canyon, TX / Palo Duro Canyon | MERUS Adventure Park, Claude, TX | 5:40 PM | 6:10 PM | 54 | 1 hr 07 min | 10 hr | Break camp / move campers / picnic lunch / groceries | Campground | Picnic at MERUS | MERUS boondock camp |
@@ -38,7 +38,26 @@ Route-specific itinerary and decision details. Shared traveler, vehicle, camper,
 | Fri Jan 1, 2027 | Dauphin Island Campground | Dauphin Island | 5:05 PM | 5:35 PM | 0 | 0 | 0 | None | Campground | Restaurant | Campground |
 | Sat Jan 2, 2027 | Dauphin Island Campground | Evansville, IN / Home | 4:42 PM | 5:12 PM | 639 | 9 hr 38 min | 11 hr | Gas / restroom | Drive through? | Picnic in car | Home |
 
-## Daily Fuel and Cost Summary
+## Trip Costs
+
+Campground reservation charges are recorded where provided. The reservation status is summarized above; this section keeps dollar amounts separate from that summary.
+
+### Campground Costs
+
+| Campground | Reservation detail | Notes | Eric | Aaron | Total |
+|---|---|---|---:|---:|---:|
+| Territory Route 66 RV Park and Campgrounds, Hinton | Confirmed: Sites 10 and 9, Dec 25-26, 2026; 2 adults/1 pet on Site 10 and 2 adults/3 pets on Site 9; paid in full | Two sites at $35.00 each plus $2.00 fee per site; split evenly | $37.00 | $37.00 | $74.00 |
+| Hackberry Campground, Palo Duro Canyon | Unconfirmed | Campground cost not provided | — | — | — |
+| MERUS Adventure Park | Confirmed: Site 311, East Rise Camp; Dec 28, 2026, 1 night, 4 guests; paid Sep 28, 2026 | Site $45.06; two daily 4x4 passes $53.18; four adult entry passes $64.28; split evenly | $81.26 | $81.26 | $162.52 |
+| Big Pines Campground, Tyler State Park | Unconfirmed; site not recorded | Cost not provided | — | — | — |
+| Dauphin Island Campground, Dauphin Island, AL | Confirmed: Dec 31, 2026-Jan 2, 2027; 2 nights; paid in full, balance $0.00 | Split evenly | $81.12 | $81.12 | $162.24 |
+| **Total confirmed costs** |  |  | **$199.38** | **$199.38** | **$398.76** |
+
+### Palo Duro Pass Planning
+
+Passes must be purchased in advance and open one month before each visit date. See the [Texas State Parks Pass vs. Day Passes comparison](texas-state-parks-pass-comparison.html) for cost scenarios, annual benefits, eligibility rules, and official purchase/renewal links. The [Hackberry Campground info page](campground-info-palo-duro.html) retains the quick purchase reminder.
+
+### Daily Fuel Estimate
 
 Planning assumptions: 12 mpg for each vehicle and $3.60 per gallon. Tacoma and Bronco costs are shown separately; combined cost is both vehicles together.
 
@@ -60,9 +79,28 @@ Planning assumptions: 12 mpg for each vehicle and $3.60 per gallon. Tacoma and B
 ### Day 1: Hinton, Oklahoma
 
 - Drop both campers at Territory Route 66 RV Park & Campgrounds.
+- Use the [Territory Route 66 arrival guide](campground-info-territory-route-66.html) for directions and Site 9/10 arrival instructions.
 - Dinner at [Cherokee Restaurant](http://eatatcherokee.com/), 201 S Walbaum Rd, Calumet, OK 73014.
 - Cherokee's published hours: 6:00 AM-9:00 PM daily; verify Christmas Day hours.
 - [Territory Route 66 RV Park website](https://www.territoryroute66.com/)
+
+## Territory Route 66 RV Park: Arrival Guide
+
+**Reservation:** Two confirmed back-in full-hookup sites, Sites 10 and 9, for Dec 25-26, 2026. Site 10 is reserved for 2 adults and 1 pet; Site 9 is reserved for 2 adults and 3 pets. Check-in begins at 2:00 PM; checkout is 11:00 AM. **Christmas Day late arrival is okay:** the campground confirmed by email on Sep 28, 2026 that arriving late with the two reserved sites is not a problem. If the office is closed, use the after-hours arrival instructions below; call if help is needed.
+
+**Address:** 14144 Old 66 Road, Hinton, OK 73047. Phone: (405) 542-6566.
+
+**Recommended approach from I-40:** Take Exit 101 for Hinton. Go north about 0.2 mile, take the left fork toward Route 66, then continue west about 1.7 miles. The park is on the right/north side of Route 66. The campground warns that GPS may not be accurate; call if the route or entrance is unclear. Exit 95 is an alternate rural route; prefer Exit 101 unless the campground directs otherwise.
+
+**Sites 9 and 10:** These are back-in sites, not the one-way pull-through sites along Route 66. Enter the main park entrance and stop at the office during check-in hours for the site pamphlet and map. The back-in sites are in the rear row; use the map at the office to locate Sites 9 and 10. Do not use the special direct-entry directions for pull-through Sites 14-18. If the office is closed, the campground says to collect the arrival pamphlet from the clipboard beside the office door and use the posted site map. Call the campground if you need help parking or backing in.
+
+**Office, amenities, and arrival:** The message lists office/check-in windows as 8:00-9:00 AM and 2:00-6:00 PM; verify holiday hours before travel. The bathrooms, showers, and laundry are inside the office building; use the access instructions in the private confirmation email. Ice is sold at the office for $2.50 per bag. Wi-Fi details and door-access codes are intentionally not copied into this itinerary; retrieve them from the private confirmation or campground staff.
+
+**Campground rules:** Keep dogs leashed whenever outside the camper and pick up after them. The campground confirmed by email on Sep 28, 2026 that **gas fire pits are allowed**. Burn bans may still restrict open wood or charcoal fires; ask staff before using those. Any approved campground fire pit must be on gravel and completely extinguished before leaving it.
+
+**If lost or delayed:** Call (405) 542-6566; the campground says staff can help by phone or guide guests to the park. Do not rely on an improvised turnaround on narrow Route 66. For office access, Wi-Fi, and personalized payment or reservation details, use the private confirmation email rather than a public web page.
+
+**Cancellation policy in the campground message:** A cancellation at least 48 hours before check-in receives a 90% refund; 24-48 hours before check-in receives a 50% refund; cancellations within 24 hours of check-in or after check-in are non-refundable. Confirm the current policy directly with the campground before relying on it.
 
 ### Day 2: Route 66 to Palo Duro
 
@@ -105,6 +143,8 @@ Fuel planning uses 12 mpg, a 21.1-gallon Tacoma tank, and a 20.8-gallon Bronco t
 
 Google Maps shows approximately 280 miles and 4 hr 24 min of direct moving time. Plan on 8 hr 30 min for the sightseeing route, including short breaks, one museum, lunch, fuel, and campground setup. This leaves a useful margin before the 5:38 PM sunset, but the group should skip the museum or Cadillac Ranch if delays threaten arrival before dark.
 
+Camp at Hackberry Campground (reservation not confirmed in the trip records). Day passes must be purchased ahead and only become available one month before each visit date; review the [pass comparison and purchase timing](texas-state-parks-pass-comparison.html).
+
 | Approximate time | Plan | Fuel / vehicle note |
 |---|---|---|
 | 6:00-7:30 AM | Breakfast, pack, and break camp. | Eat at the campground or carry a packed breakfast; confirm checkout time. |
@@ -141,6 +181,8 @@ Day 3 is a no-driving basecamp day at Palo Duro Canyon. The main activity is the
 ## Detailed Day 4 Schedule
 
 Day 4 is a relocation day from Palo Duro Canyon to a boondocking basecamp at MERUS Adventure Park. The campers move with the group. Plan a short morning at Palo Duro, break camp, travel to MERUS, eat a picnic lunch, stop for groceries before reaching the new camp, and spend the evening setting up and settling in. Confirm MERUS boondocking authorization, site location, 4WD route requirements, fees, dog rules, water plan, and winter operating conditions before departure.
+
+- MERUS reservation and site notes: [MERUS campground information](campground-info-merus.html). Site 311 has no electricity; generator use must stop by 10:00 PM. Check the page for MERUS pass guidance before hiking or off-roading.
 
 | Approximate time | Plan | Notes |
 |---|---|---|
@@ -270,16 +312,18 @@ Day 9 is the return from Dauphin Island to Evansville: approximately 639 miles a
 
 ## Verification Checklist
 
-- [ ] Confirm Territory Route 66 reservation, hookups, and camper access
+- [x] Confirm Territory Route 66 reservation for Sites 10 and 9, Dec 25-26, 2026
+- [ ] Confirm Territory Route 66 hookups and camper access
 - [ ] Confirm Cherokee dinner timing and Christmas Day operation
 - [ ] Choose Clinton or Elk City museum after checking hours
 - [ ] Verify U-Drop Inn or alternate Route 66 cafe lunch availability
 - [ ] Verify Cadillac Ranch access and parking
-- [ ] Decide between Palo Duro State Park and MERUS Adventure Park for Basecamp 1
-- [ ] Verify MERUS 4WD trails, camping, dogs, fees, and winter operations
+- [ ] Confirm Palo Duro campground reservation and site
+- [ ] Confirm MERUS arrival instructions, 4WD trail access, dog rules, and winter operations
 - [ ] Verify Big Pines Campground at Tyler State Park
 - [ ] Confirm East Texas Oil Museum hours for Wednesday Dec 30
-- [ ] Verify Dauphin Island campground reservation and beach rules
+- [x] Confirm Dauphin Island campground reservation for Dec 31, 2026-Jan 2, 2027
+- [ ] Verify Dauphin Island beach rules, dog policy, and check-in details
 - [ ] Calculate exact fuel stops and costs for Tacoma and Bronco
 - [ ] Verify sunset/dark arrival margins and winter weather
 - [ ] Verify Lighthouse Trail access, distance, conditions, parking, and dog rules for Day 3
@@ -289,4 +333,4 @@ Day 9 is the return from Dauphin Island to Evansville: approximately 639 miles a
 
 ## Source
 
-Based on the supplied Route 1 schedule and current Route 1 planning notes. Estimates, attraction hours, camping legality, and reservations require confirmation.
+Based on the supplied Route 1 schedule, current Route 1 planning notes, and the MERUS invoice in [Merus.pdf](Merus.pdf), reviewed September 28, 2026. Estimates, attraction hours, camping legality, and unconfirmed reservations require verification.
