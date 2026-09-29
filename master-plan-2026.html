@@ -23,17 +23,35 @@
 </style>
 <style>
 .merus-trails-entry{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;padding:14px 17px;border-left:4px solid var(--gold);background:#edf3ef}.merus-trails-entry p{margin:0;color:var(--muted);font:14px/1.4 Arial,sans-serif}.merus-trails-entry a{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;background:var(--green);color:#fff;text-decoration:none;border-radius:3px;font:700 .78rem Arial,sans-serif}.merus-trails-entry a:hover{background:#3b5658}@media(max-width:720px){.merus-trails-entry{align-items:flex-start}.merus-trails-entry a{width:100%;justify-content:center}}
+.day-one-entry{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding:12px 16px;border-left:4px solid var(--gold);background:#edf3ef}.day-one-entry p{margin:0;color:var(--muted);font:14px/1.4 Arial,sans-serif}.day-one-entry a{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;background:var(--green);color:#fff;text-decoration:none;border-radius:3px;font:700 .78rem Arial,sans-serif}@media(max-width:720px){.day-one-entry a{width:100%;justify-content:center}}
+.day-three-switch{display:flex;gap:0;width:max-content;max-width:100%;margin:14px 0;border:1px solid var(--line);border-radius:4px;overflow:hidden}.day-three-switch button{min-width:110px;padding:10px 14px;border:0;background:var(--paper);color:var(--ink);font:700 .82rem Arial,sans-serif;cursor:pointer}.day-three-switch button+button{border-left:1px solid var(--line)}.day-three-switch button[aria-pressed="true"]{background:#293f43;color:#fff}.day-three-switch button:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}.day-three-option[hidden]{display:none}.day-three-option .note{margin-top:12px}
+@media(max-width:720px){.trip-summary,.trip-summary>*{min-width:0;max-width:100%}.trip-summary #trip-timeline{width:100%;min-width:0;max-width:100%;overflow-x:auto}}
+@media(max-width:720px){#trip-timeline.timeline.grouped-view{display:grid;grid-template-columns:minmax(0,1fr);width:100%;min-width:0;max-width:100%;overflow-x:hidden}#trip-timeline.timeline.grouped-view .timeline-group{display:block;width:100%;min-width:0;max-width:100%;margin:8px 0;padding:28px 10px 10px}#trip-timeline.timeline.grouped-view .timeline-night{display:grid;grid-template-columns:42px minmax(0,1fr);align-items:start;width:100%;min-width:0;max-width:100%;flex:0 0 100%;padding:8px 0;text-align:left}#trip-timeline.timeline.grouped-view .timeline-night::before,#trip-timeline.timeline.grouped-view .timeline-dot{display:none}#trip-timeline.timeline.grouped-view .timeline-night strong{grid-column:1;grid-row:1;text-align:center}#trip-timeline.timeline.grouped-view .timeline-night .night-info{grid-column:2;grid-row:1 / span 2;min-width:0;width:auto;overflow-wrap:anywhere}#trip-timeline.timeline.grouped-view .timeline-night small{grid-column:2;min-width:0;white-space:normal}}
+@media(max-width:720px){
+	.trip-costs .cost-breakdown,.trip-costs>.scroll{overflow:visible}
+	.trip-costs .cost-breakdown>table,.trip-costs>.scroll>table{display:block;width:100%;min-width:0;background:transparent}
+	.trip-costs .cost-breakdown>table thead,.trip-costs>.scroll:not(.cost-breakdown)>table>tbody>tr:first-child{display:none}
+	.trip-costs .cost-breakdown>table tbody,.trip-costs>.scroll>table tbody{display:grid;gap:10px}
+	.trip-costs .cost-breakdown>table tr,.trip-costs>.scroll>table tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:hidden;border:1px solid var(--line);border-radius:4px;background:#fff}
+	.trip-costs .cost-breakdown>table td,.trip-costs .cost-breakdown>table th,.trip-costs>.scroll>table td,.trip-costs>.scroll>table th{display:block;min-width:0;padding:8px 10px;border:0;overflow-wrap:anywhere;font:14px/1.4 Arial,sans-serif;text-transform:none;color:var(--ink);background:none}
+	.trip-costs .cost-breakdown>table td::before,.trip-costs .cost-breakdown>table th[data-label]::before,.trip-costs>.scroll>table td::before,.trip-costs>.scroll>table th[data-label]::before{content:attr(data-label);display:block;margin-bottom:2px;color:var(--muted);font:700 11px/1.3 Arial,sans-serif;text-transform:uppercase}
+	.trip-costs .cost-breakdown>table tr>:first-child,.trip-costs>.scroll>table tr>:first-child{grid-column:1/-1;padding:10px 12px;background:#edf3ef;font-weight:700}
+	.trip-costs .cost-breakdown>table tr>:first-child::before{display:none}
+	.trip-costs>.scroll:not(.cost-breakdown)>table tr>td:first-child::before{content:'Day';display:inline;margin-right:5px;font:inherit;color:inherit;text-transform:none}
+	.trip-costs .cost-breakdown>table tr>td:nth-child(2),.trip-costs .cost-breakdown>table tr>td:nth-child(3){grid-column:1/-1}
+	.trip-costs .cost-breakdown>table tr>:last-child,.trip-costs>.scroll>table tr>:last-child{grid-column:1/-1;border-top:1px solid var(--line);background:#fff4df;font-weight:700}
+	.trip-costs .cost-breakdown>table tr>:nth-child(4),.trip-costs .cost-breakdown>table tr>:nth-child(5){border-top:1px solid var(--line)}
+}
 </style>
 </head>
 <body>
 <main>
 <header><p class="eyebrow">2026 Winter Texas Trip</p><h1>The Winter Loop</h1><p class="lede">A nine-day route from Evansville through Oklahoma, Palo Duro Canyon, MERUS Adventure Park, East Texas and Dauphin Island before returning home, with stops along Route 66, at Southfork Ranch and at the East Texas Oil Museum.</p></header>
-
 <section class="trip-inputs"><h2>Trip Inputs</h2><div class="grid"><div class="card"><h3>Travelers and dogs</h3><p>Family A: Aaron and Lisa with one large dog.</p><p>Family B: Eric and Victoria with two German Shepherds.</p></div><div class="card"><h3>Shared start</h3><p>Home: 8650 Manchester Court, Evansville, Indiana 47725.</p><p>Meet: Windmill Bakery on Highway 41 at 5:30 AM. Depart approximately 5:45 AM.</p></div><div class="card"><h3>Vehicles</h3><p>Family A: 2025 Toyota Tacoma TRD Off-Road 4x4 Double Cab, 5-ft bed.</p><p>Family B: 2023 Ford Bronco Outer Banks with Sasquatch package, V6, 4WD.</p></div><div class="card"><h3>Campers and fuel</h3><p>2023 TAG Boondock XL and custom-built TAG-like teardrop, both under 14 ft.</p><p>Planning fuel economy: 12 mpg per vehicle. Tacoma tank: 21.1 gal. Bronco: 20.8 gal assumed for 4-door.</p></div></div><p class="note">Both campers use the same campground at each overnight stop when possible. Electric-only, electric-and-water, full-hookup, and primitive sites are possible; no dump station is needed.</p></section>
 
 <section><h2>Day 1: Friday, December 25</h2><p><strong>Evansville, Indiana to Hinton, Oklahoma</strong></p><div class="scroll"><table><tr><th>Time</th><th>Schedule</th><th>Fuel / notes</th></tr><tr><td>5:00 AM</td><td>Final packing, dog supplies, hitch checks, lights, tires, and trailer connections.</td><td>Start both vehicles full.</td></tr><tr><td>5:30 AM</td><td>Meet at Windmill Bakery.</td><td>Confirm both rigs are ready.</td></tr><tr><td>5:45 AM</td><td>Depart Evansville.</td><td>Google estimate: 670 miles / 9 hr 51 min moving time.</td></tr><tr><td>8:20-8:45 AM</td><td>Fuel, restroom, dog break, and snacks near the 180-200 mile corridor.</td><td>Likely Mt. Vernon/Marion, Illinois area.</td></tr><tr><td>11:00-11:30 AM</td><td>Fuel, restroom, dog break, and early lunch near the 350-400 mile corridor.</td><td>Likely St. Louis/Pacific, Missouri area.</td></tr><tr><td>1:45-2:15 PM</td><td>Fuel, meal, and stretch near the 540-600 mile corridor.</td><td>Likely Springfield/Joplin, Missouri area; top off before Oklahoma.</td></tr><tr><td>5:00-5:24 PM</td><td>Arrive, drop campers, and set up.</td><td>Sunset 5:24 PM; dark 5:54 PM.</td></tr><tr><td>Evening</td><td>Dinner at Cherokee Restaurant, 201 S Walbaum Rd, Calumet, OK.</td><td>Published hours: 6:00 AM-9:00 PM daily; verify Christmas hours.</td></tr></table></div><p><a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/8650+Manchester+Ct,+Evansville,+IN+47725/Territory+Route+66+RV+Park,+Hinton,+OK">Day 1 Google Maps route</a></p></section>
 
-<section><h2>Day 2: Saturday, December 26</h2><p><strong>Hinton to Palo Duro Canyon with Route 66 stops</strong></p><p class="note">Plan for 8 hr 30 min with stops and setup. The direct estimate is 280 miles / 4 hr 24 min. The sightseeing sequence has also been estimated at 246 miles / 3 hr 53 min before stops; use 280 miles for conservative fuel planning until the final route is checked. Skip the museum or Cadillac Ranch if delays threaten arrival before the 5:38 PM sunset.</p><div class="scroll"><table><tr><th>Time</th><th>Schedule</th><th>Fuel / notes</th></tr><tr><td>6:00-7:30 AM</td><td>Breakfast, pack, and break camp.</td><td>Eat at the campground or carry a packed breakfast; confirm checkout time.</td></tr><tr><td>8:00 AM</td><td>Depart Hinton westbound.</td><td>Start both vehicles fueled; keep dogs secured and supplied.</td></tr><tr><td>8:30-8:50 AM</td><td>Lucille's Service Station, Hydro.</td><td>Short photo and dog/stretch break; verify access.</td></tr><tr><td>9:15-10:15 AM</td><td>Clinton Route 66 Museum.</td><td>Default museum choice; confirm Saturday holiday hours. Substitute Elk City only if timing permits.</td></tr><tr><td>11:45 AM-12:30 PM</td><td>Route 66 cafe lunch near Shamrock, preferably U-Drop Inn if open.</td><td>Use an Amarillo restaurant or picnic lunch as backup.</td></tr><tr><td>12:30-1:00 PM</td><td>Fuel, restroom, and dog break near Shamrock or toward Amarillo.</td><td>Choose a trailer-accessible station; do not wait for empty tanks.</td></tr><tr><td>2:00-2:30 PM</td><td>Cadillac Ranch west of Amarillo.</td><td>Photo stop; verify parking and access.</td></tr><tr><td>3:45-4:30 PM</td><td>Arrive at Palo Duro Canyon State Park and set up Basecamp 1.</td><td>Target setup before sunset at 5:38 PM; skip Cadillac Ranch if delayed.</td></tr></table></div><p><a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/Territory+Route+66+RV+Park,+Hinton,+OK/Lucille's+Service+Station,+Hydro,+OK/Route+66+Museum,+Clinton,+OK/U-Drop+Inn,+Shamrock,+TX/Cadillac+Ranch,+Amarillo,+TX/Palo+Duro+Canyon+State+Park,+Canyon,+TX">Day 2 sightseeing route</a></p></section>
+<section><h2>Day 2: Saturday, December 26</h2><p><strong>Hinton to Hackberry Campground, Palo Duro Canyon, via Route 66</strong></p><p class="note">Leave Territory RV Park around 8:00 AM with full tanks. Visit Lucille's, the Clinton museum, and Shamrock; refuel at Love's #229 before Amarillo, then shop in Canyon before entering Palo Duro. Cadillac Ranch is optional: skip it to protect daylight for setup. The seven mapped legs total about 252 miles / 4 hr 12 min driving before stops; allow through about 5:00 PM for arrival, with limited setup light before the listed 5:38 PM sunset. Use 280 miles as a conservative fuel budget and confirm museum hours, grocery access, and the Hackberry reservation.</p><div class="scroll"><table><tr><th>Time</th><th>Schedule</th><th>Fuel / notes</th></tr><tr><td>6:00-7:30 AM</td><td>Breakfast, pack, and break camp at Territory RV Park.</td><td>Confirm checkout time; have both vehicles fueled from Day 1.</td></tr><tr><td>8:00 AM</td><td>Depart Hinton westbound.</td><td>Keep dogs secured and supplied for the morning.</td></tr><tr><td>8:15-8:50 AM</td><td>Lucille's Service Station, Hydro.</td><td>Short historic photo and dog/stretch break; not a fuel stop.</td></tr><tr><td>9:15-10:15 AM</td><td>Oklahoma Route 66 Museum, Clinton.</td><td>Confirm Dec 26 hours and camper parking; use an exterior stop if closed.</td></tr><tr><td>11:30 AM-12:30 PM</td><td>U-Drop Inn photo stop and lunch near Shamrock.</td><td>Verify a cafe or bring a packed lunch; do not rely on the historic building serving food.</td></tr><tr><td>1:30-2:00 PM</td><td>Fuel, restroom, and dog break at Love's #229, I-40 Exit 96.</td><td>About 182 miles from Hinton via planned stops; use Love's #253 in Erick earlier if gauges require it.</td></tr><tr><td>2:35-3:05 PM</td><td>Optional Cadillac Ranch photo stop west of Amarillo.</td><td>Skip if running late or trailer parking is unsuitable.</td></tr><tr><td>3:30-4:15 PM</td><td>Groceries at United Supermarkets, 201 N 23rd St, Canyon.</td><td>Buy dinner, water, and Day 3 hiking supplies; confirm holiday hours and trailer parking.</td></tr><tr><td>4:45-5:00 PM</td><td>Arrive at Hackberry Campground in Palo Duro Canyon and begin setup.</td><td>Allow for the park entrance and canyon road; sunset listed at 5:38 PM. Confirm reservation and entry requirements.</td></tr></table></div><p><a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/Territory+Route+66+RV+Park,+Hinton,+OK/Lucille's+Service+Station,+Hydro,+OK/Route+66+Museum,+Clinton,+OK/U-Drop+Inn,+Shamrock,+TX/Cadillac+Ranch,+Amarillo,+TX/Palo+Duro+Canyon+State+Park,+Canyon,+TX">Day 2 sightseeing route</a></p></section>
 
 <section><h2>Day 3: Sunday, December 27</h2><p><strong>Palo Duro basecamp, Lighthouse Trail, and camp day</strong></p><p class="note">No towing or travel is planned. Verify Lighthouse Trail access, conditions, water requirements, and dog rules before leaving camp.</p><div class="scroll"><table><tr><th>Time</th><th>Schedule</th><th>Notes</th></tr><tr><td>7:00-7:45 AM</td><td>Breakfast at camp and prepare for the hike.</td><td>Pack water for every person and dog, snacks, sun protection, first-aid supplies, and waste bags.</td></tr><tr><td>7:45-8:15 AM</td><td>Drive to the Lighthouse Trailhead.</td><td>Confirm parking and current trail conditions; keep campers secured.</td></tr><tr><td>8:15-11:30 AM</td><td>Hike the Lighthouse Trail and return to the trailhead.</td><td>Use a relaxed pace with photo and water breaks; turn around early for heat, weather, dog, or group concerns.</td></tr><tr><td>11:30 AM-12:00 PM</td><td>Return to camp and cool down.</td><td>Refresh water, clean up hiking gear, and check dogs for paw or heat problems.</td></tr><tr><td>12:00-1:00 PM</td><td>Lunch at the campsite.</td><td>Prepare a simple hot lunch or camp meal; keep food secured.</td></tr><tr><td>1:00-3:30 PM</td><td>Hang out at camp and rest.</td><td>Reading, conversation, naps, cards, and a low-key camper reset.</td></tr><tr><td>3:30-4:30 PM</td><td>Optional short campground walk and camp setup.</td><td>Refill water, organize gear, and prepare dinner before daylight fades.</td></tr><tr><td>4:30-6:00 PM</td><td>Dinner preparation and dinner at camp.</td><td>Keep the meal simple; use a sheltered cooking area if windy or cold.</td></tr><tr><td>6:00-8:30 PM</td><td>Evening at camp.</td><td>Conversation, cards, quiet music, and stargazing if conditions are clear.</td></tr><tr><td>8:30-9:00 PM</td><td>Final dog walk, cleanup, and quiet hours.</td><td>Secure food and gear; prepare clothing and water for Day 4.</td></tr></table></div></section>
 <section><h2>Day 4: Monday, December 28</h2><p><strong>Move camp from Palo Duro to MERUS boondocking</strong></p><p class="note">The campers move to MERUS for the overnight basecamp. Plan approximately 54 miles one way: break camp at Palo Duro, shop for groceries in Canyon on the way, establish the MERUS site, have a picnic lunch, overland, and finish with dinner at the new camp.</p><div class="scroll"><table><tr><th>Time</th><th>Schedule</th><th>Notes</th></tr><tr><td>7:00-8:30 AM</td><td>Breakfast and a final relaxed morning at Palo Duro camp.</td><td>Pack the picnic, secure dogs, confirm the boondocking water and power plan, and check recovery gear.</td></tr><tr><td>8:30-10:00 AM</td><td>Break camp and hitch the trailers.</td><td>Complete water, power, leveling, and gear checks before leaving Palo Duro.</td></tr><tr><td>10:00-11:15 AM</td><td>Drive the campers toward MERUS and stop for groceries in Canyon.</td><td>Buy dinner, breakfast, drinks, dog supplies, water, and ice before reaching the boondocking site.</td></tr><tr><td>11:15 AM-12:30 PM</td><td>Continue to MERUS, position the campers, and establish the boondocking site.</td><td>Travel as a convoy; level, secure, and confirm the site is suitable.</td></tr><tr><td>12:30-1:15 PM</td><td>Picnic lunch at MERUS.</td><td>Eat from the packed cooler; keep food and dogs managed around the vehicles.</td></tr><tr><td>1:15-2:45 PM</td><td>Overlanding at MERUS.</td><td>Use approved routes only; keep the outing within daylight and vehicle limits.</td></tr><tr><td>2:45-4:45 PM</td><td>Finish overlanding and return to the MERUS camp.</td><td>Keep the campers at the new basecamp; groceries were purchased on the way in.</td></tr><tr><td>4:45-6:30 PM</td><td>Finish camp setup and prepare dinner.</td><td>Check battery, solar, water, heat, leveling, and food storage before dark.</td></tr><tr><td>6:30-8:30 PM</td><td>Dinner and evening at the MERUS boondock camp.</td><td>Relax, review the next day's long-drive plan, and observe site quiet hours.</td></tr></table></div></section>
@@ -81,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		return heading && heading.textContent === 'Daily Fuel and Cost Summary';
 	});
 	if (fuelSection) {
+		fuelSection.classList.add('trip-costs');
 		fuelSection.querySelector('h2').textContent = 'Trip Costs';
 		var dailyFuelScroll = fuelSection.querySelector('.scroll');
 		var campgroundCosts = document.createElement('div');
@@ -124,6 +143,17 @@ document.addEventListener('DOMContentLoaded', function () {
 		fuelControls.innerHTML = '<div class="fuel-control"><label for="tacoma-mpg">Tacoma MPG <output id="tacoma-mpg-value">12</output></label><input id="tacoma-mpg" type="range" min="6" max="20" step="1" value="12"></div><div class="fuel-control"><label for="bronco-mpg">Bronco MPG <output id="bronco-mpg-value">12</output></label><input id="bronco-mpg" type="range" min="6" max="20" step="1" value="12"></div>';
 		fuelSection.querySelector('h2').after(fuelControls);
 		var fuelTable = fuelSection.querySelector('.scroll:not(.cost-breakdown) table');
+		[campgroundCosts.querySelector('table'), fuelTable].forEach(function (table) {
+			var headingRow = table.rows[0];
+			var labels = Array.from(headingRow.cells).map(function (cell) { return cell.textContent.trim(); });
+			Array.from(table.rows).slice(1).forEach(function (row) {
+				var column = 0;
+				Array.from(row.cells).forEach(function (cell) {
+					if (column && !(cell.tagName === 'TH' && cell.colSpan > 1)) cell.dataset.label = labels[column];
+					column += cell.colSpan;
+				});
+			});
+		});
 		var fuelRows = Array.from(fuelTable.querySelectorAll('tr')).filter(function (row) { return row.querySelectorAll('td').length === 9; });
 		var totalRow = fuelTable.querySelector('tr:last-child');
 		var tacomaSlider = fuelControls.querySelector('#tacoma-mpg');
@@ -137,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 		fuelInputCard = fuelInputCard ? fuelInputCard.parentElement.querySelector('.card:last-of-type p:last-child') : null;
 		function formatGallons(value) { return value.toFixed(2); }
-		function formatCost(value) { return '$' + value.toFixed(2); }
+		function formatCost(value) { return '$' + value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
 		function updateFuelTable() {
 			var tacomaMpg = Number(tacomaSlider.value);
 			var broncoMpg = Number(broncoSlider.value);
@@ -300,6 +330,285 @@ document.addEventListener('DOMContentLoaded', function () {
 		link.textContent = 'Overlanding at MERUS';
 		row.cells[1].replaceChildren(link, document.createTextNode('.'));
 	});
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	var sharedStartHeading = Array.from(document.querySelectorAll('.trip-inputs h3')).find(function (heading) {
+		return heading.textContent.trim() === 'Shared start';
+	});
+	if (sharedStartHeading) {
+		var sharedStartCard = sharedStartHeading.closest('.card');
+		var sharedStartDetails = sharedStartCard && sharedStartCard.querySelectorAll('p');
+		if (sharedStartDetails && sharedStartDetails.length > 1) {
+			sharedStartDetails[1].textContent = 'Meet at Windmill Marathon & Bakery at 3:30 AM. Depart at 3:45 AM CST.';
+		}
+	}
+
+	var dayOne = Array.from(document.querySelectorAll('details.day-detail')).find(function (detail) {
+		var heading = detail.querySelector('summary h2');
+		return heading && heading.textContent.indexOf('Day 1:') === 0;
+	});
+	if (dayOne) {
+		var dayOneTable = dayOne.querySelector('table');
+		if (dayOneTable) {
+			dayOneTable.innerHTML = '<thead><tr><th>Time (CST)</th><th>Schedule</th><th>Fuel / notes</th></tr></thead><tbody>' +
+				'<tr><td>3:00-3:30 AM</td><td>Final packing, dog care, hitch, lights, and tire checks.</td><td>Start both vehicles full; check fuel range and weather.</td></tr>' +
+				'<tr><td>3:30 AM</td><td>Meet at Windmill Marathon &amp; Bakery.</td><td>Confirm both tow vehicles and campers are ready; verify early access to the meeting location.</td></tr>' +
+				'<tr><td>3:45 AM</td><td>Depart Evansville for Sikeston.</td><td>Google Maps estimate: 170 miles / 3 hr 07 min via I-57 South.</td></tr>' +
+				'<tr><td>6:52-7:17 AM</td><td>Fuel, restroom, and dog break at Love&#39;s Travel Stop #356, 1401 S Main St, Sikeston, MO.</td><td>25-minute stop; cumulative route distance 170 miles.</td></tr>' +
+				'<tr><td>7:17-10:56 AM</td><td>Drive to Love&#39;s Travel Stop, 400 MO-125, Strafford, MO.</td><td>232 miles / about 3 hr 39 min.</td></tr>' +
+				'<tr><td>10:56-11:21 AM</td><td>Fuel, restroom, and dog break at Love&#39;s in Strafford.</td><td>25-minute stop; cumulative route distance 402 miles.</td></tr>' +
+				'<tr><td>11:21 AM-1:21 PM</td><td>Drive to Love&#39;s Travel Stop #403, 437071 E 310 Rd, Big Cabin, OK.</td><td>136 miles / about 2 hr via I-44 West.</td></tr>' +
+				'<tr><td>1:21-1:46 PM</td><td>Fuel, restroom, and dog break at Love&#39;s #403.</td><td>25-minute stop; cumulative route distance 538 miles.</td></tr>' +
+				'<tr><td>1:46-4:51 PM</td><td>Drive to Territory Route 66 RV Park, Hinton, OK.</td><td>212 miles / about 3 hr 05 min; arrive before the 5:24 PM sunset.</td></tr>' +
+				'<tr><td>4:51-5:24 PM</td><td>Park, set up, and complete arrival checks.</td><td>Allow setup before sunset; 33-minute daylight margin at planned arrival.</td></tr>' +
+				'<tr><td>Evening</td><td>Dinner at Cherokee Restaurant, 201 S Walbaum Rd, Calumet, OK.</td><td>Verify Christmas Day hours before departure.</td></tr>' +
+				'</tbody>';
+			var dayOneNote = document.createElement('p');
+			dayOneNote.className = 'note day-one-route-note';
+			dayOneNote.textContent = 'Plan uses travel-center stops about every 200 miles: 170, 232, 136, and 212-mile legs. Total: 750 miles, about 11 hr 51 min driving plus three 25-minute stops (about 13 hr 06 min elapsed). Google Maps estimates checked Sep 29, 2026; live traffic and route choices can change.';
+			var priorDayOneNote = dayOne.querySelector('.day-one-route-note');
+			if (priorDayOneNote) priorDayOneNote.remove();
+			dayOneTable.before(dayOneNote);
+		}
+		var routeLink = Array.from(dayOne.querySelectorAll('a')).find(function (link) { return link.textContent.indexOf('Day 1 Google Maps route') >= 0; });
+		if (routeLink) {
+			routeLink.href = 'https://www.google.com/maps/dir/?api=1&origin=The+Windmill+Marathon+%26+Bakery%2C+6801+US-41%2C+Evansville%2C+IN+47711&destination=Territory+Route+66+RV+Park%2C+14144+Old+66+Rd%2C+Hinton%2C+OK&waypoints=Love%27s+Travel+Stop%2C+1401+S+Main+St%2C+Sikeston%2C+MO+63801%7CLove%27s+Travel+Stop%2C+400+MO-125%2C+Strafford%2C+MO%7CLove%27s+Travel+Stop%2C+437071+E+310+Rd%2C+Big+Cabin%2C+OK+74332&travelmode=driving';
+			routeLink.textContent = 'Day 1 Google Maps route with all travel-center stops';
+		}
+	}
+
+	var fuelSection = Array.from(document.querySelectorAll('main > section')).find(function (section) {
+		var heading = section.querySelector('h2');
+		return heading && heading.textContent === 'Daily Fuel and Cost Summary';
+	});
+	if (fuelSection) {
+		var fuelTable = fuelSection.querySelector('table');
+		var dayOneFuelRow = fuelTable && Array.from(fuelTable.querySelectorAll('tr')).find(function (row) {
+			return row.cells.length === 9 && row.cells[0].textContent.trim() === '1';
+		});
+		if (dayOneFuelRow) {
+			dayOneFuelRow.cells[1].textContent = '750';
+			dayOneFuelRow.cells[2].textContent = '11 hr 51 min';
+			dayOneFuelRow.cells[3].textContent = '13 hr 06 min';
+			var totalRow = fuelTable.querySelector('tr:last-child');
+			if (totalRow && totalRow.cells.length === 9) {
+				totalRow.cells[1].textContent = '2,703';
+				totalRow.cells[2].textContent = '42 hr 49 min';
+				totalRow.cells[3].textContent = '61 hr 36 min';
+			}
+			var tacomaSlider = document.querySelector('#tacoma-mpg');
+			if (tacomaSlider) tacomaSlider.dispatchEvent(new Event('input', { bubbles: true }));
+		}
+	}
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	var sharedStartHeading = Array.from(document.querySelectorAll('.trip-inputs h3')).find(function (heading) {
+		return heading.textContent.trim() === 'Shared start';
+	});
+	var sharedStartCard = sharedStartHeading && sharedStartHeading.closest('.card');
+	var sharedStartParagraphs = sharedStartCard && sharedStartCard.querySelectorAll('p');
+	if (sharedStartParagraphs && sharedStartParagraphs.length > 1) {
+		sharedStartParagraphs[1].textContent = 'Meet at Windmill Marathon & Bakery at 3:30 AM. Depart at 3:45 AM CST.';
+	}
+
+	var dayOne = Array.from(document.querySelectorAll('details.day-detail')).find(function (detail) {
+		var heading = detail.querySelector('summary h2');
+		return heading && heading.textContent.indexOf('Day 1:') === 0;
+	});
+	if (dayOne) {
+		var dayOneTable = dayOne.querySelector('table');
+		if (dayOneTable) {
+			dayOneTable.innerHTML = '<thead><tr><th>Time (CST)</th><th>Schedule</th><th>Fuel / notes</th></tr></thead><tbody>' +
+				'<tr><td>3:00-3:30 AM</td><td>Final packing, dog care, hitch, lights, and tire checks.</td><td>Start both vehicles full; check fuel range and weather.</td></tr>' +
+				'<tr><td>3:30 AM</td><td>Meet at Windmill Marathon &amp; Bakery.</td><td>Confirm both rigs are ready and verify early access to the meeting location.</td></tr>' +
+				'<tr><td>3:45 AM</td><td>Depart Evansville for Sikeston.</td><td>Google Maps estimate: 170 miles / 3 hr 07 min via I-57 South.</td></tr>' +
+				'<tr><td>6:52-7:17 AM</td><td>Fuel, restroom, and dog break at Love&#39;s Travel Stop #356, 1401 S Main St, Sikeston, MO.</td><td>25-minute stop; cumulative route distance 170 miles.</td></tr>' +
+				'<tr><td>7:17-10:56 AM</td><td>Drive to Love&#39;s Travel Stop, 400 MO-125, Strafford, MO.</td><td>232 miles / about 3 hr 39 min.</td></tr>' +
+				'<tr><td>10:56-11:21 AM</td><td>Fuel, restroom, and dog break at Love&#39;s in Strafford.</td><td>25-minute stop; cumulative route distance 402 miles.</td></tr>' +
+				'<tr><td>11:21 AM-1:21 PM</td><td>Drive to Love&#39;s Travel Stop #403, 437071 E 310 Rd, Big Cabin, OK.</td><td>136 miles / about 2 hr via I-44 West.</td></tr>' +
+				'<tr><td>1:21-1:46 PM</td><td>Fuel, restroom, and dog break at Love&#39;s #403.</td><td>25-minute stop; cumulative route distance 538 miles.</td></tr>' +
+				'<tr><td>1:46-4:51 PM</td><td>Drive to Territory Route 66 RV Park, Hinton, OK.</td><td>212 miles / about 3 hr 05 min; arrive before the 5:24 PM sunset.</td></tr>' +
+				'<tr><td>4:51-5:24 PM</td><td>Park, set up, and complete arrival checks.</td><td>Allow setup before sunset; planned arrival is 33 minutes before sunset.</td></tr>' +
+				'<tr><td>Evening</td><td>Dinner at Cherokee Restaurant, 201 S Walbaum Rd, Calumet, OK.</td><td>Verify Christmas Day hours before departure.</td></tr>' +
+				'</tbody>';
+			var dayOneNote = document.createElement('p');
+			dayOneNote.className = 'note day-one-route-note';
+			dayOneNote.textContent = 'Four travel-center legs: 170, 232, 136, and 212 miles. Total 750 miles and about 11 hr 51 min driving, plus three 25-minute stops (about 13 hr 06 min elapsed). Google Maps estimates checked Sep 29, 2026; live traffic and route choices can change.';
+			var priorDayOneNote = dayOne.querySelector('.day-one-route-note');
+			if (priorDayOneNote) priorDayOneNote.remove();
+			dayOneTable.before(dayOneNote);
+		}
+		var dayOneRouteLink = Array.from(dayOne.querySelectorAll('a')).find(function (link) {
+			return link.textContent.indexOf('Day 1 Google Maps route') >= 0;
+		});
+		if (dayOneRouteLink) {
+			dayOneRouteLink.href = 'https://www.google.com/maps/dir/?api=1&origin=The+Windmill+Marathon+%26+Bakery%2C+6801+US-41%2C+Evansville%2C+IN+47711&destination=Territory+Route+66+RV+Park%2C+14144+Old+66+Rd%2C+Hinton%2C+OK&waypoints=Love%27s+Travel+Stop%2C+1401+S+Main+St%2C+Sikeston%2C+MO+63801%7CLove%27s+Travel+Stop%2C+400+MO-125%2C+Strafford%2C+MO%7CLove%27s+Travel+Stop%2C+437071+E+310+Rd%2C+Big+Cabin%2C+OK+74332&travelmode=driving';
+			dayOneRouteLink.textContent = 'Day 1 Google Maps route with all travel-center stops';
+			if (!dayOne.querySelector('a[href="driving-plan-day01.html"]')) {
+				dayOneRouteLink.insertAdjacentHTML('afterend', ' · <a href="driving-plan-day01.html">Open detailed Day 1 drive plan</a>');
+			}
+		}
+		var dayOneTopOff = document.createElement('p');
+		dayOneTopOff.className = 'note';
+		dayOneTopOff.innerHTML = 'After dropping the campers at Territory Route 66 RV Park, top off both vehicles at <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&amp;query=Love%27s+Travel+Stop%2C+4400+N+Broadway+St%2C+Hinton%2C+OK+73047">Love&#39;s Travel Stop, 4400 N Broadway St, Hinton, OK 73047</a>. Day 2 assumes full tanks; confirm holiday access and return to camp.';
+		dayOne.append(dayOneTopOff);
+	}
+	var dayTwo = Array.from(document.querySelectorAll('details.day-detail')).find(function (detail) {
+		var heading = detail.querySelector('summary h2');
+		return heading && heading.textContent.indexOf('Day 2:') === 0;
+	});
+	if (dayTwo) {
+		var dayTwoRoute = Array.from(dayTwo.querySelectorAll('a')).find(function (link) {
+			return link.textContent.trim() === 'Day 2 sightseeing route';
+		});
+		if (dayTwoRoute) {
+			dayTwoRoute.href = 'https://www.google.com/maps/dir/?api=1&origin=Territory+Route+66+RV+Park%2C+Hinton%2C+OK&destination=Love%27s+Travel+Stop+%23229%2C+9701+I-40%2C+Claude%2C+TX&waypoints=Lucille%27s+Service+Station%2C+Hydro%2C+OK%7COklahoma+Route+66+Museum%2C+Clinton%2C+OK%7CU-Drop+Inn%2C+Shamrock%2C+TX&travelmode=driving';
+			dayTwoRoute.textContent = 'Day 2 Route 66 stops to fuel';
+		}
+		var dayTwoLink = document.createElement('p');
+		dayTwoLink.innerHTML = '<a href="driving-plan-day02.html">Open detailed Day 2 drive plan with fuel and grocery stops</a>';
+		dayTwo.append(dayTwoLink);
+	}
+	var dayThree = Array.from(document.querySelectorAll('details.day-detail')).find(function (detail) {
+		var heading = detail.querySelector('summary h2');
+		return heading && heading.textContent.indexOf('Day 3:') === 0;
+	});
+	if (dayThree) {
+		var optionA = document.createElement('div');
+		optionA.id = 'day-three-option-a';
+		optionA.className = 'day-three-option';
+		var optionB = document.createElement('div');
+		optionB.id = 'day-three-option-b';
+		optionB.className = 'day-three-option';
+		optionB.hidden = true;
+		optionB.innerHTML = '<p><strong>Hike, MERUS overlanding, and dinner back at Hackberry</strong></p>' +
+			'<p class="note">Leave the campers at Hackberry. After the Lighthouse hike and a quick lunch, allow about 75 minutes each way for the 51-mile drive to MERUS. Spend three hours there, 1:30-4:30 PM including check-in and overlanding; allow 15 minutes to exit by 4:45 PM, before sunset (about 5:42 PM near Amarillo). Returning to camp after dark is planned. Confirm separate Dec 27 MERUS passes and park access; the reservation is for Dec 28.</p>' +
+			'<div class="scroll"><table><thead><tr><th>Time</th><th>Schedule</th><th>Notes</th></tr></thead><tbody>' +
+			'<tr><td>7:00-7:45 AM</td><td>Breakfast at Hackberry and prepare for the hike.</td><td>Pack hiking water and snacks, lunch, dog supplies, and overlanding gear.</td></tr>' +
+			'<tr><td>7:45-8:15 AM</td><td>Drive to Lighthouse Trailhead.</td><td>Leave campers secured; confirm trail conditions and dog rules.</td></tr>' +
+			'<tr><td>8:15-11:30 AM</td><td>Hike the Lighthouse Trail.</td><td>Turn around early if conditions or the group require it; protect the MERUS departure time.</td></tr>' +
+			'<tr><td>11:30 AM-12:15 PM</td><td>Return to Hackberry, eat lunch, and prepare vehicles.</td><td>Allow 30 minutes for the park road and 15 minutes for a packed lunch and dog care.</td></tr>' +
+			'<tr><td>12:15-1:30 PM</td><td>Drive to MERUS Adventure Park without the campers.</td><td>About 51 miles / 1 hour mapped; allow 75 minutes for park roads and check fuel before leaving.</td></tr>' +
+			'<tr><td>1:30-4:30 PM</td><td>Three hours at MERUS: check-in, trail briefing, and overlanding.</td><td>Confirm Dec 27 vehicle/adult passes, 4WD access, dogs, and approved routes. Finish riding by 4:30 PM.</td></tr>' +
+			'<tr><td>4:30-4:45 PM</td><td>Exit MERUS before sunset.</td><td>Allow 15 minutes to leave the park; sunset is estimated around 5:42 PM.</td></tr>' +
+			'<tr><td>4:45-6:00 PM</td><td>Drive back to Hackberry Campground.</td><td>Allow 75 minutes; the return may be after dusk. Confirm canyon road and gate access.</td></tr>' +
+			'<tr><td>6:00-7:00 PM</td><td>Dinner back at camp.</td><td>Keep dinner simple and prepare for the Day 4 move to MERUS.</td></tr>' +
+			'</tbody></table></div><p><a href="driving-plan-day03-b.html">Open detailed Day 3 Option B route plan</a> · <a href="merus-trails.html">MERUS trail options</a></p>';
+		var routeParagraph = Array.from(dayThree.children).find(function (child) { return child.tagName === 'P' && child.querySelector('strong'); });
+		var dayThreeNote = dayThree.querySelector('.note');
+		var dayThreeTable = dayThree.querySelector('.scroll');
+		if (routeParagraph) optionA.append(routeParagraph);
+		if (dayThreeNote) {
+			dayThreeNote.textContent = 'No towing or intercity travel is planned; only the short drive to the trailhead and back. Verify Lighthouse Trail access, conditions, water requirements, and dog rules before leaving camp.';
+			optionA.append(dayThreeNote);
+		}
+		if (dayThreeTable) optionA.append(dayThreeTable);
+		optionA.insertAdjacentHTML('beforeend', '<p><a href="driving-plan-day03-a.html">Open detailed Day 3 Option A route plan</a></p>');
+		var switcher = document.createElement('div');
+		switcher.className = 'day-three-switch';
+		switcher.setAttribute('role', 'group');
+		switcher.setAttribute('aria-label', 'Day 3 plan');
+		switcher.innerHTML = '<button type="button" aria-controls="day-three-option-a" aria-pressed="true">Option A</button><button type="button" aria-controls="day-three-option-b" aria-pressed="false">Option B</button>';
+		dayThree.append(switcher, optionA, optionB);
+		switcher.addEventListener('click', function (event) {
+			var button = event.target.closest('button[aria-controls]');
+			if (!button) return;
+			var showB = button.getAttribute('aria-controls') === optionB.id;
+			optionA.hidden = showB;
+			optionB.hidden = !showB;
+			switcher.querySelectorAll('button').forEach(function (choice) {
+				choice.setAttribute('aria-pressed', String(choice === button));
+			});
+			var summaryRoute = dayThree.querySelector('summary > p strong');
+			if (summaryRoute) summaryRoute.textContent = showB ? 'Lighthouse Trail, MERUS day trip, dinner at Hackberry' : 'Palo Duro basecamp, Lighthouse Trail, and camp day';
+		});
+	}
+	var dayFour = Array.from(document.querySelectorAll('details.day-detail')).find(function (detail) {
+		var heading = detail.querySelector('summary h2');
+		return heading && heading.textContent.indexOf('Day 4:') === 0;
+	});
+	if (dayFour) {
+		var dayFourNote = dayFour.querySelector('.note');
+		if (dayFourNote) dayFourNote.textContent = 'Tow both campers from Hackberry to MERUS Site 311. Fuel both vehicles and buy groceries at United Express / United Supermarkets in Canyon, then continue to MERUS for campsite setup, picnic lunch, daylight overlanding, and dinner at camp. The two mapped road legs total about 60 miles / 1 hr 15 min before stops; allow extra time for towing, shopping, and park access.';
+		var dayFourTable = dayFour.querySelector('table');
+		if (dayFourTable) dayFourTable.innerHTML = '<thead><tr><th>Time</th><th>Schedule</th><th>Notes</th></tr></thead><tbody>' +
+			'<tr><td>7:00-8:00 AM</td><td>Breakfast and a final morning at Hackberry.</td><td>Pack the picnic, secure dogs, check the boondocking water and power plan, and inspect recovery gear.</td></tr>' +
+			'<tr><td>8:00-9:30 AM</td><td>Break camp and hitch both trailers.</td><td>Complete water, power, leveling, tire, light, and hitch checks before leaving Palo Duro.</td></tr>' +
+			'<tr><td>9:30-10:05 AM</td><td>Drive from Hackberry to Canyon.</td><td>About 17 miles / 28 minutes mapped; allow 35 minutes with campers.</td></tr>' +
+			'<tr><td>10:05-11:00 AM</td><td>Fuel at United Express and shop at United Supermarkets, 201 N 23rd St, Canyon.</td><td>Confirm trailer access and hours; buy dinner, breakfast, drinks, dog supplies, water, and ice.</td></tr>' +
+			'<tr><td>11:00 AM-12:00 PM</td><td>Drive the campers from Canyon to MERUS.</td><td>About 43 miles / 47 minutes mapped; allow an hour and follow MERUS entrance instructions.</td></tr>' +
+			'<tr><td>12:00-12:45 PM</td><td>Check in and position both campers at Site 311.</td><td>Confirm the 4WD approach, trailer fit, purchased passes, and site access; do not follow GPS shortcuts.</td></tr>' +
+			'<tr><td>12:45-1:30 PM</td><td>Picnic lunch at the MERUS campsite.</td><td>Eat from the packed cooler; manage food and dogs around the vehicles.</td></tr>' +
+			'<tr><td>1:30-4:00 PM</td><td>Overlanding at MERUS.</td><td>Use approved routes and daylight; <a href="merus-trails.html">compare trail options</a>.</td></tr>' +
+			'<tr><td>4:00-4:45 PM</td><td>Return to the MERUS campsite and finish setup.</td><td>Finish the off-road outing before dark; check water, heat, battery, and food storage.</td></tr>' +
+			'<tr><td>6:30-8:30 PM</td><td>Dinner and evening at MERUS Site 311.</td><td>Prepare for the Day 5 drive; generator quiet hours begin at 10:00 PM.</td></tr>' +
+			'</tbody>';
+		dayFour.insertAdjacentHTML('beforeend', '<p><a href="driving-plan-day04.html">Open detailed Day 4 drive plan with gas and grocery stops</a></p>');
+	}
+	var dayFive = Array.from(document.querySelectorAll('details.day-detail')).find(function (detail) {
+		var heading = detail.querySelector('summary h2');
+		return heading && heading.textContent.indexOf('Day 5:') === 0;
+	});
+	if (dayFive) {
+		var dayFiveNote = dayFive.querySelector('.note');
+		if (dayFiveNote) dayFiveNote.textContent = 'Tow both campers from MERUS to Big Pines, about 450 miles via Claude, Wichita Falls, and Terrell. Fuel at the first opportunity in Claude after overlanding, combine the next fuel stop with lunch in Wichita Falls, and top off at TA Terrell. Southfork Ranch is optional only if well ahead. With towing and stops, arrival may be around or after the 5:25 PM sunset; confirm after-hours campground access.';
+		var dayFiveTable = dayFive.querySelector('table');
+		if (dayFiveTable) dayFiveTable.innerHTML = '<thead><tr><th>Time</th><th>Schedule</th><th>Fuel / notes</th></tr></thead><tbody>' +
+			'<tr><td>5:30-6:15 AM</td><td>Breakfast at MERUS Site 311.</td><td>Pack lunch and dog water; prepare for a long towing day.</td></tr>' +
+			'<tr><td>6:15-7:15 AM</td><td>Break down the boondock site and hitch both campers.</td><td>Check tires, hitch, lights, battery, water, and recovery gear before leaving.</td></tr>' +
+			'<tr><td>7:15-7:50 AM</td><td>Leave MERUS and drive to Claude.</td><td>Follow park exit instructions; about 17 miles to the first fuel stop.</td></tr>' +
+			'<tr><td>7:50-8:15 AM</td><td>Fuel both vehicles at Allsup&#39;s #2399, 225 W 1st St, Claude.</td><td>Top off after Day 4 overlanding; confirm trailer clearance and gasoline access.</td></tr>' +
+			'<tr><td>8:15-11:35 AM</td><td>Drive toward Wichita Falls.</td><td>About 198 miles; monitor the smaller Bronco tank and stop earlier if range is tight.</td></tr>' +
+			'<tr><td>11:35 AM-12:20 PM</td><td>Fuel, packed lunch, restroom, and dog break at Love&#39;s #269, Wichita Falls.</td><td>Allow about 45 minutes; inspect both rigs before the Dallas-area leg.</td></tr>' +
+			'<tr><td>12:20-3:55 PM</td><td>Drive toward TA Terrell; optional Southfork Ranch photo stop around 3:15 PM if well ahead.</td><td>Southfork adds about 17 miles, driving time, and a photo stop; bypass it to protect camp arrival.</td></tr>' +
+			'<tr><td>3:55-4:15 PM</td><td>Top off at TA Travel Center, 1700 Wilson Rd, Terrell.</td><td>Restroom and dog break before the final Tyler approach.</td></tr>' +
+			'<tr><td>4:15-5:30 PM</td><td>Drive to Big Pines Campground, Tyler State Park.</td><td>Allow about 63 miles; arrival may be after the listed 5:25 PM sunset.</td></tr>' +
+			'<tr><td>Evening</td><td>Set up camp, eat dinner, and prepare for Day 6.</td><td>Confirm after-hours entry and both campsites in advance; use Day 4 groceries.</td></tr>' +
+			'</tbody>';
+		dayFive.insertAdjacentHTML('beforeend', '<p><a href="driving-plan-day05.html">Open detailed Day 5 drive plan with gas and optional Southfork stop</a></p>');
+	}
+	var merusSnapshot = document.querySelector('.overlanding-snapshot');
+	if (merusSnapshot) merusSnapshot.innerHTML = '<strong>MERUS overlanding:</strong> Planned for Dec 28, 1:30-4:00 PM after fuel, groceries, campsite setup, and lunch. Compare approved routes in <a href="merus-trails.html">MERUS trail info</a>.';
+
+	var tripCosts = Array.from(document.querySelectorAll('main > section')).find(function (section) {
+		var heading = section.querySelector('h2');
+		return heading && heading.textContent.trim() === 'Trip Costs';
+	});
+	var fuelTable = tripCosts && Array.from(tripCosts.querySelectorAll('table')).find(function (table) {
+		return table.querySelector('tr th') && table.querySelector('tr th').textContent.trim() === 'Day';
+	});
+	if (fuelTable) {
+		var fuelRows = Array.from(fuelTable.querySelectorAll('tr'));
+		var dayOneFuelRow = fuelRows.find(function (row) { return row.cells[0] && row.cells[0].textContent.trim() === '1'; });
+		var dayFourFuelRow = fuelRows.find(function (row) { return row.cells[0] && row.cells[0].textContent.trim() === '4'; });
+		var dayFiveFuelRow = fuelRows.find(function (row) { return row.cells[0] && row.cells[0].textContent.trim() === '5'; });
+		var fuelTotals = fuelRows.find(function (row) { return row.cells[0] && row.cells[0].textContent.trim() === 'Total'; });
+		if (dayOneFuelRow) {
+			dayOneFuelRow.cells[1].textContent = '750';
+			dayOneFuelRow.cells[2].textContent = '11 hr 51 min';
+			dayOneFuelRow.cells[3].textContent = '13 hr 06 min';
+		}
+		if (dayFourFuelRow) {
+			dayFourFuelRow.cells[1].textContent = '60';
+			dayFourFuelRow.cells[2].textContent = '1 hr 15 min';
+		}
+		if (dayFiveFuelRow) {
+			dayFiveFuelRow.cells[1].textContent = '450';
+			dayFiveFuelRow.cells[2].textContent = '7 hr 34 min';
+			dayFiveFuelRow.cells[3].textContent = '10 hr 15 min';
+		}
+		if (fuelTotals) {
+			fuelTotals.cells[1].textContent = '2,712';
+			fuelTotals.cells[2].textContent = '43 hr 07 min';
+			fuelTotals.cells[3].textContent = '62 hr 51 min';
+		}
+		var tacomaSlider = document.querySelector('#tacoma-mpg');
+		if (dayOneFuelRow && tacomaSlider) tacomaSlider.dispatchEvent(new Event('input', { bubbles: true }));
+	}
 });
 </script>
 </body>
