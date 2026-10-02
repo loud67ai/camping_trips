@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#293f43">
+<title>Trip Weather | The Winter Loop</title>
+<style>
+:root{--ink:#20262b;--muted:#65717a;--paper:#fffdf8;--canvas:#edf0ef;--line:#d5dcda;--accent:#a94736;--gold:#c58b35;--green:#293f43;--blue:#28647a;--sky:#e5f0f3;--soft:#f8e9e5}
+*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);font:16px/1.5 Georgia,"Times New Roman",serif}main{width:min(1180px,calc(100% - 28px));margin:24px auto 48px}
+header{padding:30px;background:var(--green);color:#fff}header p{margin:0 0 7px;color:#f5d49b;font:700 .72rem Arial,sans-serif;text-transform:uppercase}h1{margin:0;font-size:2rem;line-height:1.15}header .lede{max-width:850px;margin:12px 0 0;color:#edf3ef;font:15px/1.5 Arial,sans-serif}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin:24px 0 10px}.section-head h2{margin:0;font:700 1.25rem Arial,sans-serif}.section-head p{margin:4px 0 0;color:var(--muted);font:13px/1.4 Arial,sans-serif}.tools{display:flex;flex-wrap:wrap;gap:8px}.tools button,.tools a,.back-link{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 12px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:700 .78rem Arial,sans-serif;text-decoration:none;cursor:pointer}.tools button:hover,.tools a:hover,.back-link:hover{border-color:var(--green)}
+.manual-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 10px;padding:9px 12px;border-left:4px solid var(--gold);background:#fff4df;font:13px Arial,sans-serif}.manual-meta span:last-child{color:var(--muted)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--paper)}table{width:100%;border-collapse:collapse}th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}th{background:#3b4d51;color:#fff;font:700 .67rem Arial,sans-serif;text-transform:uppercase}.manual-table{table-layout:fixed}.manual-table th:first-child{width:205px}.manual-table th:nth-child(2),.manual-table th:nth-child(3){width:92px}.manual-table th:nth-child(4){width:115px}.manual-table th:nth-child(5){width:135px}.manual-table th:last-child{width:30%}.day-cell strong{display:block;font:700 .82rem Arial,sans-serif;color:var(--green)}.day-cell span{display:block;margin-top:3px;color:var(--muted);font:12px/1.35 Arial,sans-serif}.manual-table input,.manual-table textarea{display:block;width:100%;min-width:0;padding:7px 8px;border:1px solid var(--line);border-radius:2px;background:#fff;color:var(--ink);font:14px/1.35 Arial,sans-serif}.manual-table textarea{min-height:54px;resize:vertical}.manual-table input:focus,.manual-table textarea:focus{outline:2px solid var(--blue);outline-offset:1px}
+.forecast-status{display:flex;align-items:center;gap:9px;margin:0 0 12px;padding:11px 13px;background:var(--sky);border-left:4px solid var(--blue);font:13px/1.4 Arial,sans-serif}.forecast-status[data-state="error"]{background:var(--soft);border-color:var(--accent)}.forecast-status[data-state="loading"]::before{content:"";width:13px;height:13px;border:2px solid #8da9b4;border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.curve-section{margin-top:24px;padding:20px;background:var(--paper);border:1px solid var(--line)}.curve-section h2{margin:0;font:700 1.3rem Arial,sans-serif}.curve-intro{margin:5px 0 14px;color:var(--muted);font:13px/1.45 Arial,sans-serif}.curve-status{margin:0 0 14px;padding:10px 12px;border-left:4px solid var(--gold);background:#fff4df;font:13px/1.4 Arial,sans-serif}.curve-status[data-state="ready"]{border-color:var(--blue);background:var(--sky)}.curve-status[data-state="error"]{border-color:var(--accent);background:var(--soft)}.curve-legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 14px;font:700 .75rem Arial,sans-serif}.curve-legend span{display:inline-flex;align-items:center;gap:7px}.curve-swatch{width:20px;height:4px;border-radius:2px;background:var(--swatch)}.curve-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}.curve-card{min-width:0;padding:14px;border-top:3px solid var(--green);background:#fff}.curve-card h3{margin:0;font:700 .95rem Arial,sans-serif;color:var(--green)}.curve-card .curve-meta{margin:4px 0 8px;color:var(--muted);font:12px/1.4 Arial,sans-serif}.chart-scroll{overflow-x:auto;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.temperature-chart{display:block;width:100%;min-width:0;height:auto;aspect-ratio:1000/440}.temperature-chart text{fill:var(--muted);font:11px Arial,sans-serif}.temperature-chart .axis{stroke:#65717a;stroke-width:1}.temperature-chart .gridline{stroke:#d5dcda;stroke-width:1}.temperature-chart .hour-tick{stroke:#bac5c4;stroke-width:1}.temperature-chart .curve{fill:none;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}.temperature-chart .empty-label{fill:var(--muted);font:14px Arial,sans-serif}.curve-source{margin:8px 0 0;color:var(--muted);font:11px/1.4 Arial,sans-serif}.curve-source a{color:var(--blue)}.curve-source strong{color:var(--ink)}
+.disclaimer{margin:14px 0;color:var(--muted);font:12px/1.45 Arial,sans-serif}.page-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;padding-top:14px;border-top:1px solid var(--line)}.page-footer p{margin:0;color:var(--muted);font:12px Arial,sans-serif}a{color:var(--blue);font-weight:700}
+@media(max-width:760px){main{width:calc(100% - 16px);margin:8px auto 28px}header{padding:20px}h1{font-size:1.7rem}.curve-section{padding:15px}.curve-grid{grid-template-columns:1fr;gap:14px}.curve-card{padding:10px}.temperature-chart{min-width:900px}.page-footer{align-items:flex-start;flex-direction:column}}
+@media print{body{background:#fff}main{width:100%;margin:0}header{print-color-adjust:exact;-webkit-print-color-adjust:exact}.tools{display:none}.table-wrap{overflow:visible}.manual-table textarea,.manual-table input{border:0;padding:0}.forecast-day,.manual-table tr{break-inside:avoid}}
+</style>
+<style>
+.actual-forecast-section{margin-top:24px;padding:20px;background:var(--paper);border:1px solid var(--line)}.actual-forecast-head{align-items:center}.actual-forecast-head p{max-width:720px}.forecast-refresh{flex:none;min-height:38px;padding:8px 12px;border:1px solid var(--green);background:var(--green);color:#fff;font:700 .78rem Arial,sans-serif;cursor:pointer}.forecast-refresh:hover{background:#3b5658}.forecast-refresh:disabled{opacity:.6;cursor:wait}.actual-forecast-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.actual-forecast-card{min-width:0;padding:14px;border-top:3px solid var(--blue);background:#fff}.actual-forecast-card h3{margin:0;font:700 .95rem Arial,sans-serif;color:var(--green)}.actual-forecast-card .forecast-location{margin:4px 0 10px;color:var(--muted);font:12px/1.4 Arial,sans-serif}.actual-forecast-state{margin:0 0 10px;padding:9px 10px;background:#f3f5f4;color:var(--muted);font:13px/1.4 Arial,sans-serif}.actual-forecast-state[data-state="ready"]{background:var(--sky);color:var(--ink)}.actual-forecast-state[data-state="error"]{background:var(--soft);color:var(--ink)}.actual-periods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.actual-period{min-width:0;padding:10px;border:1px solid var(--line)}.actual-period strong{display:block;font:700 .78rem Arial,sans-serif}.actual-period .actual-temp{margin:4px 0;font:700 1.35rem Arial,sans-serif;color:var(--accent)}.actual-period p{margin:4px 0;color:var(--muted);font:12px/1.4 Arial,sans-serif}.actual-source{display:inline-block;margin-top:10px;font:700 12px Arial,sans-serif}
+@media(max-width:760px){.actual-forecast-section{padding:15px}.actual-forecast-head{align-items:flex-start;flex-direction:column}.forecast-refresh{width:100%}.actual-forecast-grid{grid-template-columns:1fr}.actual-periods{grid-template-columns:1fr}}
+.actual-forecast-controls{display:flex;align-items:flex-end;flex-wrap:wrap;gap:10px 14px;margin:12px 0}.actual-forecast-controls label{display:grid;gap:5px;color:var(--ink);font:700 .76rem Arial,sans-serif}.actual-forecast-controls select{min-width:220px;min-height:40px;padding:8px 32px 8px 10px;border:1px solid var(--line);background:#fff;color:var(--ink);font:14px Arial,sans-serif}.actual-forecast-controls label:first-child select{min-width:260px}.actual-forecast-result{padding:14px;border-top:3px solid var(--blue);background:#fff}.actual-forecast-result h3{margin:0 0 12px;color:var(--green);font:700 1rem Arial,sans-serif}.actual-high-low{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.actual-temp-card{display:grid;gap:3px;padding:12px;border:1px solid var(--line)}.actual-temp-card span{color:var(--muted);font:700 .7rem Arial,sans-serif;text-transform:uppercase}.actual-temp-card strong{color:var(--accent);font:700 1.6rem Arial,sans-serif}.actual-temp-card small{color:var(--muted);font:12px/1.35 Arial,sans-serif}.actual-day-outlook{margin-top:12px;padding:12px 14px;border-left:4px solid var(--gold);background:#fff4df}.actual-day-outlook h4{margin:0 0 5px;font:700 .8rem Arial,sans-serif}.actual-day-outlook p{margin:4px 0;color:var(--ink);font:13px/1.45 Arial,sans-serif}.actual-forecast-source{display:inline-block;margin-top:10px;font:700 12px Arial,sans-serif}
+@media(max-width:760px){.actual-forecast-controls{display:grid;grid-template-columns:1fr}.actual-forecast-controls label,.actual-forecast-controls select,.actual-forecast-controls label:first-child select{width:100%;min-width:0}.actual-forecast-controls .forecast-refresh{width:100%}}
+.actual-forecast-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.actual-forecast-card{padding:11px;border:1px solid var(--line);border-top:3px solid var(--blue)}.actual-forecast-card h3{margin:0 0 8px;font-size:.78rem}.actual-weather-icon{display:block;margin:2px 0 6px;font:2rem/1 "Apple Color Emoji","Segoe UI Emoji",sans-serif}.actual-weather-description{min-height:34px;margin:0 0 7px;color:var(--muted);font:12px/1.35 Arial,sans-serif}.actual-day-values{display:grid;gap:3px;font:700 .76rem Arial,sans-serif}.actual-day-precip{margin:7px 0 0;color:var(--blue);font:700 .72rem Arial,sans-serif}.actual-forecast-result .actual-day-outlook{margin-bottom:14px}
+@media(max-width:980px){.actual-forecast-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.actual-forecast-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+<style>
+.actual-hourly-heading{margin:22px 0 6px;color:var(--green);font:700 1rem Arial,sans-serif}.actual-hourly-meta{margin:0 0 8px;color:var(--muted);font:12px/1.4 Arial,sans-serif}.actual-hourly-chart .curve{stroke:var(--blue)}
+</style>
+</head>
+<body>
+<main>
+<header>
+<p>The Winter Loop · December 25, 2026–January 2, 2027</p>
+<h1>Trip Weather</h1>
+<p class="lede">Compare historically based colder-than-average, average, and warmer-than-average hourly temperature curves for the two key overnight dates. The curves are calculated locally from NOAA station observations and are planning scenarios, not a live forecast.</p>
+</header>
+
+<section class="curve-section" aria-labelledby="curve-heading">
+<h2 id="curve-heading">Historical Temperature Scenarios</h2>
+<p class="curve-intro">Each line shows a representative 24-hour temperature profile from local midnight through the following midnight. Colder and warmer scenarios use historical daily-temperature anomalies applied to the average hourly shape. All temperatures are in °F.</p>
+<p id="curve-status" class="curve-status" data-state="empty" role="status" aria-live="polite">No historical curves loaded. Run the local NOAA retrieval workflow to download observations and calculate sourced estimates.</p>
+<div class="curve-legend" aria-label="Temperature scenarios"><span><i class="curve-swatch" style="--swatch:#28647a"></i>Colder than average</span><span><i class="curve-swatch" style="--swatch:#a94736"></i>Average</span><span><i class="curve-swatch" style="--swatch:#c58b35"></i>Warmer than average</span></div>
+<div class="curve-grid">
+<article class="curve-card"><h3>Palo Duro Canyon · Dec 26</h3><p class="curve-meta">Hackberry Campground area · local Central Time</p><div class="chart-scroll"><svg id="curve-palo-duro" class="temperature-chart" viewBox="0 0 1000 440" role="img" aria-label="Hourly temperature scenario curves for Palo Duro Canyon on December 26"></svg></div><p id="source-palo-duro" class="curve-source">Historical source and method will appear here after data is loaded.</p></article>
+<article class="curve-card"><h3>Dauphin Island · Dec 31</h3><p class="curve-meta">Dauphin Island Campground area · local Central Time</p><div class="chart-scroll"><svg id="curve-dauphin" class="temperature-chart" viewBox="0 0 1000 440" role="img" aria-label="Hourly temperature scenario curves for Dauphin Island on December 31"></svg></div><p id="source-dauphin" class="curve-source">Historical source and method will appear here after data is loaded.</p></article>
+</div>
+<p class="disclaimer">Scenario curves summarize historical variability, not a date-specific forecast. They use regional airport proxy stations and disclose each station's distance and sample coverage. Check current NWS forecasts, alerts, road conditions, and park notices closer to departure.</p>
+</section>
+
+<section class="actual-forecast-section" aria-labelledby="actual-forecast-heading">
+<div class="section-head actual-forecast-head"><div><h2 id="actual-forecast-heading">Actual Weather Forecast</h2><p>Forecasts load automatically when you choose a location. Select a start date to see its high and low plus a five-day outlook; dates follow the current forecast data.</p></div></div>
+<div class="actual-forecast-controls">
+<label for="actual-forecast-location">Location<select id="actual-forecast-location"><option value="hinton">Hinton, Oklahoma</option><option value="palo_duro">Palo Duro Canyon, Texas</option><option value="tyler">Tyler State Park, Texas</option><option value="dauphin_island">Dauphin Island, Alabama</option></select></label>
+<label for="actual-forecast-date">Forecast date<select id="actual-forecast-date" disabled><option value="">Loading available dates…</option></select></label>
+</div>
+<p id="actual-forecast-status" class="forecast-status" data-state="loading" role="status" aria-live="polite">Loading the current forecast…</p>
+<section id="actual-forecast-result" class="actual-forecast-result" aria-live="polite">
+<h3 id="actual-forecast-title">Select a location and date</h3>
+<div class="actual-high-low">
+<div class="actual-temp-card"><span>High</span><strong id="actual-forecast-high">—</strong><small id="actual-forecast-high-period">Daytime forecast</small></div>
+<div class="actual-temp-card"><span>Low</span><strong id="actual-forecast-low">—</strong><small id="actual-forecast-low-period">Overnight forecast</small></div>
+</div>
+<a id="actual-forecast-source" class="actual-forecast-source" href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Forecast data by Open-Meteo</a>
+<h3>Five-Day Outlook</h3>
+<div id="actual-five-day" class="actual-forecast-grid" aria-live="polite"></div>
+<h3 id="actual-hourly-heading" class="actual-hourly-heading">Hourly Forecast</h3>
+<p id="actual-hourly-meta" class="actual-hourly-meta">Hourly temperatures for the selected date will appear here.</p>
+<div class="chart-scroll"><svg id="actual-hourly-chart" class="temperature-chart actual-hourly-chart" viewBox="0 0 1000 440" role="img" aria-labelledby="actual-hourly-heading actual-hourly-meta"></svg></div>
+</section>
+<p class="disclaimer">Forecasts are model-based guidance, not historical scenarios or observations. The date menu starts today and includes only dates with enough returned data for a complete five-day outlook. Source: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>.</p>
+</section>
+
+<footer class="page-footer"><p>Source: NOAA/NCEI Global Hourly. <a href="weather-temperature-curves.md">View calculated data and provenance</a>. Run <code>python update_weather_curves.py</code> to retrieve and recalculate; add <code>--refresh</code> to redownload cached station files.</p><a class="back-link" href="master-plan-2026.html">Back to The Winter Loop</a></footer>
+</main>
+<script id="temperature-curve-data" type="application/json">
+{
+  "schema_version": 1,
+  "generated_on": "2026-10-01",
+  "historical_period": {
+    "start_year": 1991,
+    "end_year": 2025
+  },
+  "methodology": "Calculated from NOAA/NCEI Global Hourly station CSVs. UTC timestamps were converted to local Central Standard Time by subtracting six hours. TMP values with quality flags 1 or 5 were used; one record per local station-hour/year was selected, preferring quality 5 and routine report types. Each hourly mean uses available observations only and requires at least 20 years; no missing temperatures were interpolated. Annual daily means require at least 18 valid hours from 00:00–23:00. Annual anomalies are centered on their sample mean; their 25th and 75th percentiles shift the average hourly profile to form colder and warmer scenarios. The selected airport stations are regional proxies, not campsite observations.",
+  "scenario_definition": "The average line is the per-hour mean of available quality-checked observations. Colder and warmer lines add the 25th and 75th percentile of annual daily temperature anomalies centered on the mean of valid annual daily means.",
+  "locations": {
+    "palo_duro": {
+      "label": "Palo Duro Canyon, TX",
+      "target_date": "2026-12-26",
+      "timezone": "America/Chicago",
+      "station_name": "AMARILLO AIRPORT, TX US",
+      "station_id": "723630-23047 (USAF-WBAN)",
+      "source_name": "NOAA/NCEI Integrated Surface Database (Global Hourly)",
+      "source_url": "https://www.ncei.noaa.gov/data/global-hourly/access/2024/72363023047.csv",
+      "years_used": [
+        1991,
+        1992,
+        1993,
+        1994,
+        1995,
+        1996,
+        1997,
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "source_notes": "Regional proxy station at 35.2203, -101.7173, approximately 17.7 miles from the target coordinates. This airport station may not capture campsite microclimates. Only TMP observations with NOAA quality flags 1 or 5 were used. One observation per local hour and year was selected, preferring quality flag 5, then FM-12/FM-15/FM-16 report priority; missing hours were excluded without interpolation. Hourly sample counts can vary.",
+      "hours_local": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "hourly_sample_counts": [
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        33,
+        33,
+        34,
+        34,
+        34,
+        34,
+        34,
+        33,
+        34,
+        34,
+        34,
+        34,
+        33,
+        34,
+        34,
+        34,
+        34,
+        34
+      ],
+      "colder_than_average_f": [
+        26.1,
+        25.4,
+        24.7,
+        23.4,
+        23.6,
+        23.2,
+        23.1,
+        22.4,
+        24.7,
+        28.3,
+        32.7,
+        36.2,
+        39.5,
+        41.6,
+        42.1,
+        43.0,
+        41.5,
+        37.3,
+        34.0,
+        31.6,
+        30.1,
+        29.2,
+        28.2,
+        28.1,
+        27.9
+      ],
+      "average_f": [
+        31.6,
+        30.9,
+        30.2,
+        28.9,
+        29.1,
+        28.7,
+        28.6,
+        27.9,
+        30.2,
+        33.8,
+        38.2,
+        41.7,
+        45.0,
+        47.1,
+        47.6,
+        48.5,
+        47.0,
+        42.8,
+        39.5,
+        37.1,
+        35.6,
+        34.7,
+        33.7,
+        33.6,
+        33.4
+      ],
+      "warmer_than_average_f": [
+        38.4,
+        37.7,
+        37.0,
+        35.7,
+        35.9,
+        35.5,
+        35.4,
+        34.7,
+        37.0,
+        40.6,
+        45.0,
+        48.5,
+        51.8,
+        53.9,
+        54.4,
+        55.3,
+        53.8,
+        49.6,
+        46.3,
+        43.9,
+        42.4,
+        41.5,
+        40.5,
+        40.4,
+        40.2
+      ]
+    },
+    "dauphin_island": {
+      "label": "Dauphin Island, AL",
+      "target_date": "2026-12-31",
+      "timezone": "America/Chicago",
+      "station_name": "MOBILE REGIONAL AIRPORT, AL US",
+      "station_id": "722230-13894 (USAF-WBAN)",
+      "source_name": "NOAA/NCEI Integrated Surface Database (Global Hourly)",
+      "source_url": "https://www.ncei.noaa.gov/data/global-hourly/access/2024/72223013894.csv",
+      "years_used": [
+        1991,
+        1992,
+        1993,
+        1994,
+        1995,
+        1996,
+        1997,
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "source_notes": "Regional proxy station at 30.6882, -88.2460, approximately 31.0 miles from the target coordinates. This airport station may not capture campsite microclimates. Only TMP observations with NOAA quality flags 1 or 5 were used. One observation per local hour and year was selected, preferring quality flag 5, then FM-12/FM-15/FM-16 report priority; missing hours were excluded without interpolation. Hourly sample counts can vary.",
+      "hours_local": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "hourly_sample_counts": [
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        30
+      ],
+      "colder_than_average_f": [
+        43.3,
+        43.5,
+        43.3,
+        42.9,
+        42.6,
+        42.2,
+        42.1,
+        42.4,
+        44.4,
+        47.0,
+        49.9,
+        51.9,
+        53.3,
+        54.5,
+        54.8,
+        54.3,
+        52.0,
+        49.3,
+        47.1,
+        46.0,
+        45.0,
+        44.2,
+        43.8,
+        43.4,
+        42.9
+      ],
+      "average_f": [
+        50.8,
+        51.0,
+        50.8,
+        50.4,
+        50.1,
+        49.7,
+        49.6,
+        49.9,
+        51.9,
+        54.5,
+        57.4,
+        59.4,
+        60.8,
+        62.0,
+        62.3,
+        61.8,
+        59.5,
+        56.8,
+        54.6,
+        53.5,
+        52.5,
+        51.7,
+        51.3,
+        50.9,
+        50.4
+      ],
+      "warmer_than_average_f": [
+        59.0,
+        59.2,
+        59.0,
+        58.6,
+        58.3,
+        57.9,
+        57.8,
+        58.1,
+        60.1,
+        62.7,
+        65.6,
+        67.6,
+        69.0,
+        70.2,
+        70.5,
+        70.0,
+        67.7,
+        65.0,
+        62.8,
+        61.7,
+        60.7,
+        59.9,
+        59.5,
+        59.1,
+        58.6
+      ]
+    }
+  }
+}
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	var dataNode = document.getElementById('temperature-curve-data');
+	var status = document.getElementById('curve-status');
+	var scenarioMeta = [
+		{key:'colder_than_average_f',label:'Colder than average',color:'#28647a'},
+		{key:'average_f',label:'Average',color:'#a94736'},
+		{key:'warmer_than_average_f',label:'Warmer than average',color:'#c58b35'}
+	];
+	var charts = [
+		{key:'palo_duro',svg:'curve-palo-duro',source:'source-palo-duro',expectedDate:'2026-12-26'},
+		{key:'dauphin_island',svg:'curve-dauphin',source:'source-dauphin',expectedDate:'2026-12-31'}
+	];
+	var svgNS = 'http://www.w3.org/2000/svg';
+	function element(name, attributes, text) {
+		var node = document.createElementNS(svgNS,name);
+		Object.keys(attributes || {}).forEach(function(key){node.setAttribute(key,attributes[key]);});
+		if (text !== undefined) node.textContent = text;
+		return node;
+	}
+  function getSharedYBounds(locations) {
+    var values=[];
+    charts.forEach(function(config){
+      var place=locations[config.key];
+      if(!place)return;
+      var curves=scenarioMeta.map(function(s){return place[s.key];});
+      if(curves.every(function(curve){return Array.isArray(curve)&&curve.length===25&&curve.every(Number.isFinite);})){
+        values=values.concat(curves.flat());
+      }
+    });
+    if(!values.length)return {min:20,max:100};
+    var min=Math.floor((Math.min.apply(null,values)-2)/10)*10;
+    var max=Math.ceil((Math.max.apply(null,values)+2)/10)*10;
+    if(max-min<40){var mid=(max+min)/2;min=Math.floor((mid-20)/10)*10;max=min+40;}
+    return {min:min,max:max};
+  }
+  function drawChart(svg, place, yBounds) {
+		var width=1000,height=440,left=66,right=24,top=24,bottom=82;
+		var plotWidth=width-left-right,plotHeight=height-top-bottom;
+		var curves=scenarioMeta.map(function(s){return place[s.key];});
+		var values=curves.flat();
+		var hasData=values.length===75&&values.every(Number.isFinite);
+    var yMin=yBounds.min,yMax=yBounds.max;
+		var x=function(hour){return left+plotWidth*hour/24;};
+		var y=function(temp){return top+plotHeight*(yMax-temp)/(yMax-yMin);};
+		svg.replaceChildren();
+		svg.setAttribute('viewBox','0 0 '+width+' '+height);
+		for(var temp=yMin;temp<=yMax;temp+=10){
+			svg.appendChild(element('line',{x1:left,y1:y(temp),x2:width-right,y2:y(temp),class:'gridline'}));
+			svg.appendChild(element('text',{x:left-9,y:y(temp)+4,'text-anchor':'end'},temp+'°F'));
+		}
+		for(var hour=0;hour<=24;hour++){
+			var xpos=x(hour);
+			svg.appendChild(element('line',{x1:xpos,y1:top,x2:xpos,y2:top+plotHeight,class:hour%3===0?'gridline':'hour-tick'}));
+			svg.appendChild(element('line',{x1:xpos,y1:top+plotHeight,x2:xpos,y2:top+plotHeight+5,class:'axis'}));
+			svg.appendChild(element('text',{x:xpos,y:top+plotHeight+22,'text-anchor':'middle'},String(hour%24).padStart(2,'0')+':00'));
+		}
+		svg.appendChild(element('line',{x1:left,y1:top,x2:left,y2:top+plotHeight,class:'axis'}));
+		svg.appendChild(element('line',{x1:left,y1:top+plotHeight,x2:width-right,y2:top+plotHeight,class:'axis'}));
+		svg.appendChild(element('text',{x:20,y:top+plotHeight/2,transform:'rotate(-90 20 '+(top+plotHeight/2)+')','text-anchor':'middle'},'Temperature (°F)'));
+		svg.appendChild(element('text',{x:left+plotWidth/2,y:height-13,'text-anchor':'middle'},'Local time · midnight to midnight'));
+		if(hasData){
+			scenarioMeta.forEach(function(s){
+				var points=place[s.key];
+				var path=points.map(function(value,index){return (index?'L':'M')+x(index).toFixed(2)+' '+y(value).toFixed(2);}).join(' ');
+				svg.appendChild(element('path',{d:path,class:'curve',stroke:s.color}));
+			});
+		}else{
+			svg.appendChild(element('text',{x:left+plotWidth/2,y:top+plotHeight/2,'text-anchor':'middle',class:'empty-label'},'No sourced hourly data loaded'));
+		}
+	}
+	var payload;
+	try{payload=JSON.parse(dataNode.textContent||'{}');}catch(error){payload={};}
+	var locations=payload.locations||{};
+  var sharedYBounds=getSharedYBounds(locations);
+	var ready=0;
+	charts.forEach(function(config){
+		var place=locations[config.key];
+		var svg=document.getElementById(config.svg);
+    drawChart(svg,place||{},sharedYBounds);
+		var sourceLine=document.getElementById(config.source);
+		if(place){
+			ready++;
+			var years=(place.years_used||[]);
+			sourceLine.replaceChildren();
+			sourceLine.appendChild(document.createTextNode('Station: '+place.station_name+' ('+place.station_id+'); '+years.length+' years, '+(years[0]||'?')+'–'+(years[years.length-1]||'?')+'. '+(place.source_notes||'')+' '));
+			var sourceLink=document.createElement('a');sourceLink.href=place.source_url;sourceLink.target='_blank';sourceLink.rel='noopener noreferrer';sourceLink.textContent=place.source_name+' source';
+			sourceLine.appendChild(sourceLink);
+		}
+	});
+	if(ready===2){
+		status.dataset.state='ready';
+		status.textContent='Curves loaded from historical data generated '+payload.generated_on+'. Method: '+payload.methodology;
+	}
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	if (!document.getElementById('manual-weather-body')) return;
+	var tripDays = [
+		{day:1,date:'2026-12-25',label:'Fri, Dec 25',area:'Hinton, OK',lat:35.5369521,lon:-98.3827146},
+		{day:2,date:'2026-12-26',label:'Sat, Dec 26',area:'Hackberry Campground · Palo Duro Canyon, TX',lat:34.9669813,lon:-101.6713214},
+		{day:3,date:'2026-12-27',label:'Sun, Dec 27',area:'Hackberry Campground · Palo Duro Canyon, TX',lat:34.9669813,lon:-101.6713214},
+		{day:4,date:'2026-12-28',label:'Mon, Dec 28',area:'MERUS Site 311 · Claude, TX',lat:34.930048974379446,lon:-101.45786800902884},
+		{day:5,date:'2026-12-29',label:'Tue, Dec 29',area:'Big Pines · Tyler State Park, TX',lat:32.479733,lon:-95.3005328},
+		{day:6,date:'2026-12-30',label:'Wed, Dec 30',area:'Big Pines · Tyler State Park, TX',lat:32.479733,lon:-95.3005328},
+		{day:7,date:'2026-12-31',label:'Thu, Dec 31',area:'Dauphin Island Campground, AL',lat:30.255,lon:-88.11},
+		{day:8,date:'2027-01-01',label:'Fri, Jan 1',area:'Dauphin Island Campground, AL',lat:30.255,lon:-88.11},
+		{day:9,date:'2027-01-02',label:'Sat, Jan 2',area:'Evansville, IN',lat:38.0406412,lon:-87.5406968}
+	];
+	var storageKey = 'winter-loop-weather-outlook-v1';
+	var manualBody = document.getElementById('manual-weather-body');
+	var forecastList = document.getElementById('forecast-list');
+	var saveStatus = document.getElementById('save-status');
+	var forecastStatus = document.getElementById('forecast-status');
+	var stored = {};
+	try {
+		var savedOutlook = localStorage.getItem(storageKey);
+		stored = JSON.parse(savedOutlook || '{}');
+		if (savedOutlook) saveStatus.textContent = 'Saved outlook loaded from this browser';
+	} catch (error) { stored = {}; }
+	function makeField(day, name, label, value, placeholder, multiline) {
+		var cell = document.createElement('td');
+		var field = document.createElement(multiline ? 'textarea' : 'input');
+		field.dataset.day = String(day.day);
+		field.dataset.field = name;
+		field.setAttribute('aria-label', day.label + ' ' + label);
+		field.placeholder = placeholder;
+		field.value = value || '';
+		cell.appendChild(field);
+		return cell;
+	}
+	tripDays.forEach(function (day) {
+		var row = document.createElement('tr');
+		var dayCell = document.createElement('td');
+		dayCell.className = 'day-cell';
+		var title = document.createElement('strong');
+		title.textContent = 'Day ' + day.day + ' · ' + day.label;
+		var area = document.createElement('span');
+		area.textContent = day.area;
+		dayCell.append(title, area);
+		row.append(dayCell,
+			makeField(day,'high','forecast high',(stored[day.day]||{}).high,'°F'),
+			makeField(day,'low','forecast low',(stored[day.day]||{}).low,'°F'),
+			makeField(day,'precip','precipitation chance',(stored[day.day]||{}).precip,'%'),
+			makeField(day,'wind','wind',(stored[day.day]||{}).wind,'Direction / speed'),
+			makeField(day,'notes','long-range outlook and concerns',(stored[day.day]||{}).notes,'Cold front, wind exposure, rain/snow concern, backup activity...',true));
+		manualBody.appendChild(row);
+		var forecast = document.createElement('article');
+		forecast.className = 'forecast-day';
+		forecast.id = 'forecast-day-' + day.day;
+		forecast.dataset.date = day.date;
+		var forecastHeader = document.createElement('header');
+		var heading = document.createElement('h3');
+		heading.textContent = 'Day ' + day.day + ' · ' + day.label;
+		var state = document.createElement('span');
+		state.className = 'forecast-day-state';
+		state.textContent = 'Not released';
+		forecastHeader.append(heading,state);
+		var location = document.createElement('p');
+		location.className = 'forecast-location';
+		location.textContent = day.area;
+		var message = document.createElement('p');
+		message.className = 'forecast-state';
+		message.textContent = 'Waiting for the date to enter the NWS forecast window.';
+		forecast.append(forecastHeader,location,message);
+		forecastList.appendChild(forecast);
+	});
+	function saveOutlook() {
+		var current = {};
+		manualBody.querySelectorAll('input,textarea').forEach(function (field) {
+			if (!current[field.dataset.day]) current[field.dataset.day] = {};
+			current[field.dataset.day][field.dataset.field] = field.value;
+		});
+		try {
+			localStorage.setItem(storageKey,JSON.stringify(current));
+			saveStatus.textContent = 'Saved locally at ' + new Date().toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});
+		} catch (error) { saveStatus.textContent = 'Could not save locally; export a backup.'; }
+	}
+	manualBody.addEventListener('input',saveOutlook);
+	document.getElementById('clear-outlook').addEventListener('click',function () {
+		if (!window.confirm('Clear all saved long-range outlook notes from this browser?')) return;
+		localStorage.removeItem(storageKey);
+		manualBody.querySelectorAll('input,textarea').forEach(function(field){field.value='';});
+		saveStatus.textContent='Saved notes cleared';
+	});
+	document.getElementById('export-outlook').addEventListener('click',function () {
+		var content = localStorage.getItem(storageKey) || '{}';
+		var blob = new Blob([content],{type:'application/json'});
+		var link = document.createElement('a');
+		link.href = URL.createObjectURL(blob);
+		link.download = 'winter-loop-weather-outlook.json';
+		link.click();
+		URL.revokeObjectURL(link.href);
+	});
+	function setDayMessage(day, text, state) {
+		var card = document.getElementById('forecast-day-' + day.day);
+		card.querySelector('.forecast-day-state').textContent = state;
+		var oldPeriods = card.querySelector('.periods');
+		if (oldPeriods) oldPeriods.remove();
+		var oldSource = card.querySelector('.forecast-source');
+		if (oldSource) oldSource.remove();
+		var msg = card.querySelector('.forecast-state');
+		msg.hidden = false;
+		msg.textContent = text;
+	}
+	function renderPeriods(day, periods, forecastUrl) {
+		var card = document.getElementById('forecast-day-' + day.day);
+		var existing = card.querySelector('.periods');
+		if (existing) existing.remove();
+		var selected = periods.filter(function(period){return period.startTime.slice(0,10)===day.date;});
+		if (!selected.length) {
+			setDayMessage(day,'No forecast period is published for this date yet. Check again as the date approaches.','Not released');
+			return false;
+		}
+		var msg = card.querySelector('.forecast-state');
+		msg.hidden = true;
+		var group = document.createElement('div');
+		group.className = 'periods';
+		selected.forEach(function(period){
+			var panel = document.createElement('div');
+			panel.className = 'period';
+			if (period.icon) { var icon=document.createElement('img');icon.src=period.icon;icon.alt='';panel.appendChild(icon); }
+			var title=document.createElement('strong');title.textContent=period.name + ' · ' + new Date(period.startTime).toLocaleTimeString([], {hour:'numeric'});panel.appendChild(title);
+			var temperature=document.createElement('div');temperature.className='temperature';temperature.textContent=period.temperature === null ? '—' : period.temperature + '°' + period.temperatureUnit;panel.appendChild(temperature);
+			var detail=document.createElement('p');detail.textContent=period.shortForecast || 'Forecast details unavailable';panel.appendChild(detail);
+			var wind=document.createElement('p');wind.textContent='Wind ' + (period.windSpeed||'—') + ' ' + (period.windDirection||'');panel.appendChild(wind);
+			var precip=period.probabilityOfPrecipitation && period.probabilityOfPrecipitation.value;
+			var rain=document.createElement('p');rain.textContent='Precipitation chance ' + (precip === null || precip === undefined ? 'not reported' : precip + '%');panel.appendChild(rain);
+			group.appendChild(panel);
+		});
+		card.appendChild(group);
+		var source=document.createElement('a');source.className='forecast-source';source.href=forecastUrl;source.target='_blank';source.rel='noopener noreferrer';source.textContent='NWS forecast details';card.appendChild(source);
+		card.querySelector('.forecast-day-state').textContent='Available';
+		return true;
+	}
+	async function fetchForecasts() {
+		forecastStatus.dataset.state='loading';
+		forecastStatus.textContent='Checking published NWS forecasts for the trip locations...';
+		document.getElementById('refresh-weather').disabled=true;
+		var unique = new Map();
+		tripDays.forEach(function(day){var key=day.lat+','+day.lon;if(!unique.has(key))unique.set(key,{lat:day.lat,lon:day.lon,days:[]});unique.get(key).days.push(day);});
+		var available=0,failed=0,notReleased=0;
+		for (var point of unique.values()) {
+			try {
+				var pointResponse=await fetch('https://api.weather.gov/points/'+point.lat+','+point.lon,{headers:{Accept:'application/geo+json'}});
+				if(!pointResponse.ok)throw new Error('NWS point lookup returned '+pointResponse.status);
+				var metadata=await pointResponse.json();
+				var forecastUrl=metadata.properties.forecast;
+				var forecastResponse=await fetch(forecastUrl,{headers:{Accept:'application/geo+json'}});
+				if(!forecastResponse.ok)throw new Error('Forecast returned '+forecastResponse.status);
+				var forecastData=await forecastResponse.json();
+				point.days.forEach(function(day){if(renderPeriods(day,forecastData.properties.periods,forecastUrl))available++;else notReleased++;});
+			} catch(error) {
+				point.days.forEach(function(day){setDayMessage(day,'Could not retrieve this NWS forecast. Retry later or check the linked NWS map directly.','Unavailable');failed++;});
+			}
+		}
+		forecastStatus.dataset.state=failed?'error':'ready';
+		forecastStatus.textContent='Checked '+new Date().toLocaleString()+'. '+available+' trip-day forecasts available, '+notReleased+' not released yet, '+failed+' unavailable.';
+		document.getElementById('refresh-weather').disabled=false;
+	}
+	document.getElementById('refresh-weather').addEventListener('click',fetchForecasts);
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var locations={
+    hinton:{label:'Hinton, Oklahoma',lat:35.5369521,lon:-98.3827146},
+    palo_duro:{label:'Palo Duro Canyon, Texas',lat:34.9670,lon:-101.6713},
+    tyler:{label:'Tyler State Park, Texas',lat:32.479733,lon:-95.3005328},
+    dauphin_island:{label:'Dauphin Island, Alabama',lat:30.2550,lon:-88.1100}
+  };
+  var status=document.getElementById('actual-forecast-status');
+  var locationSelect=document.getElementById('actual-forecast-location');
+  var dateSelect=document.getElementById('actual-forecast-date');
+  var fiveDay=document.getElementById('actual-five-day');
+  var currentDays=[];
+  var currentHourly={};
+  var requestSequence=0;
+  function setStatus(message,state){status.dataset.state=state;status.textContent=message;}
+  function formatDate(value){
+    var parts=value.split('-').map(Number);
+    return new Date(parts[0],parts[1]-1,parts[2]).toLocaleDateString([], {weekday:'long',month:'long',day:'numeric'});
+  }
+  function getLocalDate(timeZone){
+    var parts=new Intl.DateTimeFormat('en-US',{timeZone:timeZone,year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+    var values={};parts.forEach(function(part){values[part.type]=part.value;});
+    return values.year+'-'+values.month+'-'+values.day;
+  }
+  function weatherDescription(code){
+    if(code===0)return {icon:'☀️',label:'Clear sky'};
+    if(code===1)return {icon:'🌤️',label:'Mainly clear'};
+    if(code===2)return {icon:'⛅',label:'Partly cloudy'};
+    if(code===3)return {icon:'☁️',label:'Overcast'};
+    if(code===45||code===48)return {icon:'🌫️',label:'Fog'};
+    if(code>=51&&code<=57)return {icon:'🌦️',label:'Drizzle'};
+    if(code>=61&&code<=67)return {icon:'🌧️',label:'Rain'};
+    if(code>=71&&code<=77)return {icon:'❄️',label:'Snow'};
+    if(code>=80&&code<=82)return {icon:'🌧️',label:'Rain showers'};
+    if(code===85||code===86)return {icon:'🌨️',label:'Snow showers'};
+    if(code>=95)return {icon:'⛈️',label:'Thunderstorm'};
+    return {icon:'🌡️',label:'Conditions unavailable'};
+  }
+  function setTemperature(element,value){element.textContent=Number.isFinite(value)?Math.round(value)+'°F':'—';}
+  function drawHourlyChart(date){
+    var svg=document.getElementById('actual-hourly-chart');
+    var width=1000,height=440,left=66,right=24,top=24,bottom=82;
+    var plotWidth=width-left-right,plotHeight=height-top-bottom;
+    var entries=currentHourly[date]||[];
+    var values=entries.map(function(point){return point.temperature;});
+    var minValue=values.length?Math.min.apply(null,values):20;
+    var maxValue=values.length?Math.max.apply(null,values):100;
+    var yMin=Math.floor((minValue-2)/10)*10;
+    var yMax=Math.ceil((maxValue+2)/10)*10;
+    if(yMax-yMin<40){var mid=(yMax+yMin)/2;yMin=Math.floor((mid-20)/10)*10;yMax=yMin+40;}
+    var x=function(hour){return left+plotWidth*hour/24;};
+    var y=function(temp){return top+plotHeight*(yMax-temp)/(yMax-yMin);};
+    var svgNS='http://www.w3.org/2000/svg';
+    function append(name,attributes,text){var node=document.createElementNS(svgNS,name);Object.keys(attributes).forEach(function(key){node.setAttribute(key,attributes[key]);});if(text!==undefined)node.textContent=text;svg.appendChild(node);}
+    svg.replaceChildren();
+    for(var temp=yMin;temp<=yMax;temp+=10){append('line',{x1:left,y1:y(temp),x2:width-right,y2:y(temp),class:'gridline'});append('text',{x:left-9,y:y(temp)+4,'text-anchor':'end'},temp+'°F');}
+    for(var hour=0;hour<=24;hour++){
+      var xpos=x(hour);
+      append('line',{x1:xpos,y1:top,x2:xpos,y2:top+plotHeight,class:hour%3===0?'gridline':'hour-tick'});
+      append('line',{x1:xpos,y1:top+plotHeight,x2:xpos,y2:top+plotHeight+5,class:'axis'});
+      append('text',{x:xpos,y:top+plotHeight+22,'text-anchor':'middle'},String(hour%24).padStart(2,'0')+':00');
+    }
+    append('line',{x1:left,y1:top,x2:left,y2:top+plotHeight,class:'axis'});
+    append('line',{x1:left,y1:top+plotHeight,x2:width-right,y2:top+plotHeight,class:'axis'});
+    append('text',{x:20,y:top+plotHeight/2,transform:'rotate(-90 20 '+(top+plotHeight/2)+')','text-anchor':'middle'},'Temperature (°F)');
+    append('text',{x:left+plotWidth/2,y:height-13,'text-anchor':'middle'},'Local time · midnight to midnight');
+    if(entries.length){
+      var path=entries.map(function(point,index){return (index?'L':'M')+x(point.hour).toFixed(2)+' '+y(point.temperature).toFixed(2);}).join(' ');
+      append('path',{d:path,class:'curve',stroke:'#28647a'});
+      entries.forEach(function(point){append('circle',{cx:x(point.hour),cy:y(point.temperature),r:3,fill:'#28647a'});});
+    }else{
+      append('text',{x:left+plotWidth/2,y:top+plotHeight/2,'text-anchor':'middle',class:'empty-label'},'Hourly forecast data unavailable');
+    }
+    document.getElementById('actual-hourly-heading').textContent='Hourly Forecast · '+formatDate(date);
+    document.getElementById('actual-hourly-meta').textContent=entries.length+' hourly temperature points · Open-Meteo forecast · '+formatDate(date);
+  }
+  function renderFiveDay(startIndex){
+    fiveDay.replaceChildren();
+    currentDays.slice(startIndex,startIndex+5).forEach(function(day){
+      var weather=weatherDescription(day.code);
+      var card=document.createElement('article');card.className='actual-forecast-card';
+      var heading=document.createElement('h3');heading.textContent=formatDate(day.date);card.appendChild(heading);
+      var icon=document.createElement('span');icon.className='actual-weather-icon';icon.setAttribute('role','img');icon.setAttribute('aria-label',weather.label);icon.textContent=weather.icon;card.appendChild(icon);
+      var description=document.createElement('p');description.className='actual-weather-description';description.textContent=weather.label;card.appendChild(description);
+      var temperatures=document.createElement('div');temperatures.className='actual-day-values';
+      var high=document.createElement('span');high.textContent='High '+(Number.isFinite(day.high)?Math.round(day.high)+'°F':'—');temperatures.appendChild(high);
+      var low=document.createElement('span');low.textContent='Low '+(Number.isFinite(day.low)?Math.round(day.low)+'°F':'—');temperatures.appendChild(low);card.appendChild(temperatures);
+      var precipitation=document.createElement('p');precipitation.className='actual-day-precip';precipitation.textContent='Precip '+(Number.isFinite(day.precipitation)?day.precipitation+'%':'—');card.appendChild(precipitation);
+      fiveDay.appendChild(card);
+    });
+  }
+  function renderSelectedDate(){
+    var date=dateSelect.value;
+    var startIndex=currentDays.findIndex(function(day){return day.date===date;});
+    if(startIndex<0)return;
+    var selected=currentDays[startIndex];
+    document.getElementById('actual-forecast-title').textContent=locations[locationSelect.value].label+' · '+formatDate(date);
+    setTemperature(document.getElementById('actual-forecast-high'),selected.high);
+    setTemperature(document.getElementById('actual-forecast-low'),selected.low);
+    document.getElementById('actual-forecast-high-period').textContent='Expected daytime high';
+    document.getElementById('actual-forecast-low-period').textContent='Expected overnight low';
+    renderFiveDay(startIndex);
+    drawHourlyChart(date);
+  }
+  async function loadForecast(){
+    var requestId=++requestSequence;
+    var location=locations[locationSelect.value];
+    dateSelect.disabled=true;dateSelect.replaceChildren(new Option('Loading available dates…',''));
+    fiveDay.replaceChildren();
+    document.getElementById('actual-forecast-title').textContent=location.label;
+    document.getElementById('actual-forecast-high').textContent='—';
+    document.getElementById('actual-forecast-low').textContent='—';
+    setStatus('Loading the current forecast for '+location.label+'…','loading');
+    try{
+      var url='https://api.open-meteo.com/v1/forecast?latitude='+location.lat+'&longitude='+location.lon+'&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&hourly=temperature_2m&temperature_unit=fahrenheit&timezone=auto&forecast_days=16';
+      var response=await fetch(url);
+      if(requestId!==requestSequence)return;
+      if(!response.ok)throw new Error('Forecast service returned '+response.status);
+      var forecastData=await response.json();
+      var daily=forecastData.daily||{};
+      currentHourly={};
+      var hourly=forecastData.hourly||{};
+      (hourly.time||[]).forEach(function(time,index){
+        var date=time.slice(0,10),hour=Number(time.slice(11,13));
+        if(!currentHourly[date])currentHourly[date]=[];
+        currentHourly[date].push({hour:hour,temperature:hourly.temperature_2m[index]});
+      });
+      currentDays=(daily.time||[]).map(function(date,index){return {date:date,code:daily.weather_code[index],high:daily.temperature_2m_max[index],low:daily.temperature_2m_min[index],precipitation:daily.precipitation_probability_max[index]};}).filter(function(day){return day.date>=getLocalDate(forecastData.timezone||'UTC');});
+      var dates=currentDays.slice(0,Math.max(0,currentDays.length-4)).map(function(day){return day.date;});
+      dateSelect.replaceChildren();
+      dates.forEach(function(date){dateSelect.add(new Option(formatDate(date),date));});
+      if(!dates.length){dateSelect.add(new Option('No five-day forecast dates',''));dateSelect.disabled=true;setStatus('The forecast service did not return enough current daily data for a five-day outlook.','error');return;}
+      dateSelect.disabled=false;
+      dateSelect.value=dates[0];
+      renderSelectedDate();
+      setStatus('Forecast updated '+new Date().toLocaleString()+'. Dates run from today through '+formatDate(dates[dates.length-1])+', based on available forecast data.','ready');
+    }catch(error){
+      if(requestId!==requestSequence)return;
+      currentDays=[];
+      dateSelect.replaceChildren(new Option('Forecast unavailable',''));
+      dateSelect.disabled=true;
+      document.getElementById('actual-forecast-title').textContent=location.label;
+      setStatus('Forecast retrieval failed. Check your connection and try changing the location.','error');
+    }
+  }
+  locationSelect.addEventListener('change',loadForecast);
+  dateSelect.addEventListener('change',renderSelectedDate);
+  loadForecast();
+});
+</script>
+</body>
+</html>
