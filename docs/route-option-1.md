@@ -16,12 +16,12 @@ Route-specific itinerary and decision details. Shared traveler, vehicle, camper,
 |---|---:|
 | Total road miles | Approximately 3,000+; verify from final Google Maps legs |
 | Google Maps moving time | Approximately 46 hours from supplied daily estimates |
-| Tacoma fuel at 12 mpg | To calculate after miles are verified |
-| Bronco fuel at 12 mpg | To calculate after miles are verified |
+| Tacoma fuel at 11 mpg | Mapped-road subtotal; local mileage remains unmeasured |
+| Bronco fuel at 11 mpg | Mapped-road subtotal; local mileage remains unmeasured |
 | Number of driving days | 6 |
 | Number of camping nights | 8 |
 | Basecamps | Palo Duro Canyon / MERUS; Crystal Beach |
-| Reservation snapshot | Hinton: confirmed, Sites 10 and 9, Dec 25 (1 night); Hackberry at Palo Duro and Big Pines: unconfirmed; MERUS: confirmed, Site 311 East Rise Camp, Dec 28 (1 night, 4 guests); Dauphin Island: confirmed, Dec 31-Jan 2 (2 nights) |
+| Reservation snapshot | Hinton: confirmed, Sites 10 and 9, Dec 25 (1 night); Hackberry: confirmed Sites 015 and 017, Dec 26-28 (2 nights), paid $168 total; Big Pines: confirmed Sites BP-306 and BP-308, Dec 29-31 (2 nights), paid $160 total; MERUS: confirmed, Site 311 East Rise Camp, Dec 28 (1 night, 4 guests); Dauphin Island: confirmed, Dec 31-Jan 2 (2 nights) |
 | Work deadline | Work resumes January 4, 2027 |
 
 ## Day-by-Day Itinerary
@@ -47,39 +47,43 @@ Campground reservation charges are recorded where provided. The reservation stat
 | Campground | Reservation detail | Notes | Eric | Aaron | Total |
 |---|---|---|---:|---:|---:|
 | Territory Route 66 RV Park and Campgrounds, Hinton | Confirmed: Sites 10 and 9, Dec 25-26, 2026; 2 adults/1 pet on Site 10 and 2 adults/3 pets on Site 9; paid in full | Two sites at $35.00 each plus $2.00 fee per site; split evenly | $37.00 | $37.00 | $74.00 |
-| Hackberry Campground, Palo Duro Canyon | Unconfirmed | Campground cost not provided | — | — | — |
+| Hackberry Campground, Palo Duro Canyon | Confirmed: Site 015 (reservation 2-21762656) and Site 017 (reservation 2-21762655), Dec 26-28, 2026; 2 nights each; paid in full; balance $0.00 | $52 camping + $32 adult entry per site; $168 combined, split evenly | $84.00 | $84.00 | $168.00 |
 | MERUS Adventure Park | Confirmed: Site 311, East Rise Camp; Dec 28, 2026, 1 night, 4 guests; paid Sep 28, 2026 | Site $45.06; two daily 4x4 passes $53.18; four adult entry passes $64.28; split evenly | $81.26 | $81.26 | $162.52 |
-| Big Pines Campground, Tyler State Park | Unconfirmed; site not recorded | Cost not provided | — | — | — |
+| Big Pines Campground, Tyler State Park | Confirmed: Sites BP-306 (reservation 2-21762775) and BP-308 (reservation 2-21762776), Dec 29-31, 2026; 2 nights each; full hookup; paid in full; balance $0.00 | $56 camping + $24 adult entry per site; $160 combined, split evenly | $80.00 | $80.00 | $160.00 |
 | Dauphin Island Campground, Dauphin Island, AL | Confirmed: Dec 31, 2026-Jan 2, 2027; 2 nights; paid in full, balance $0.00 | Split evenly | $81.12 | $81.12 | $162.24 |
-| **Total confirmed costs** |  |  | **$199.38** | **$199.38** | **$398.76** |
+| **Total confirmed costs** |  |  | **$363.38** | **$363.38** | **$726.76** |
+
+See the local [Palo Duro reservation summary](../receipts/palo-duro.html) and [Tyler reservation summary](../receipts/tyler.html) for confirmations and links to the original receipts.
 
 ### State Park Campsite Reservations
 
-Book both Hackberry campsites at Palo Duro (Dec 26-28) and both Big Pines campsites at Tyler State Park (Dec 29-31); neither booking is confirmed in the trip records. In a Sep 30, 2026 email, Tyler State Park said overnight campers with campsite reservations do not need separate day passes or an annual pass and need not worry about day-use capacity limits. An annual pass is optional for camping discounts. Palo Duro did not reply separately in that thread, so confirm its overnight entry procedure directly when booking. See the [Hackberry Campground info page](campground-info-palo-duro.html).
+Palo Duro Hackberry is confirmed for Sites 015 and 017, Dec 26-28, 2026; $168 total paid. Tyler Big Pines is confirmed for Sites BP-306 and BP-308, Dec 29-31, 2026; $160 total paid. Tyler State Park said overnight campers with reservations do not need separate day passes or an annual pass and need not worry about day-use capacity limits; confirm Palo Duro's late-arrival/gate instructions and the Tyler after-hours arrival procedure. See the [Hackberry Campground info page](../campgrounds/palo-duro.html), [Palo Duro reservation summary](../receipts/palo-duro.html), and [Tyler reservation summary](../receipts/tyler.html).
 
 ### Daily Fuel Estimate
 
-Planning assumptions: 12 mpg for each vehicle and $3.60 per gallon. Tacoma and Bronco costs are shown separately; combined cost is both vehicles together.
+Default fuel economy: 11 mpg for each vehicle, at $3.60 per gallon. Mapped-road subtotals exclude unmeasured local and off-road travel. Days 3, 6, and 8 are not zero-mile days; their local fuel costs remain TBD. The default Day 3 plan is Option A; Option B adds 102 mapped miles, 2 hr moving, and a 5 hr 45 min outing window. Southfork's optional Day 5 detour adds about 17 miles / 34 minutes plus its photo stop. Live traffic and holiday conditions are not included.
 
-| Day | Miles | Google time | Time with stops | Tacoma gallons | Tacoma cost | Bronco gallons | Bronco cost | Combined fuel cost |
+| Day | Mapped miles | Mapped drive | Travel with stops | Tacoma gallons | Tacoma cost | Bronco gallons | Bronco cost | Combined fuel cost |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| 1 | 750 | 11 hr 51 min | 13 hr 06 min | 62.50 | $225.00 | 62.50 | $225.00 | $450.00 |
-| 2 | 280 | 4 hr 24 min | 6 hr | 23.33 | $84.00 | 23.33 | $84.00 | $168.00 |
-| 3 | 0 | 0 | 0 | 0.00 | $0.00 | 0.00 | $0.00 | $0.00 |
-| 4 | 60 | 1 hr 15 min | 10 hr | 5.00 | $18.00 | 5.00 | $18.00 | $36.00 |
-| 5 | 450 | 7 hr 34 min | 10 hr 15 min | 37.50 | $135.00 | 37.50 | $135.00 | $270.00 |
-| 6 | 0 | 0 | 0 | 0.00 | $0.00 | 0.00 | $0.00 | $0.00 |
-| 7 | 533 | 8 hr 25 min | 10 hr | 44.42 | $159.90 | 44.42 | $159.90 | $319.80 |
-| 8 | 0 | 0 | 0 | 0.00 | $0.00 | 0.00 | $0.00 | $0.00 |
-| 9 | 639 | 9 hr 38 min | 11 hr | 53.25 | $191.70 | 53.25 | $191.70 | $383.40 |
-| **Total** | **2,712** | **43 hr 07 min** | **62 hr 51 min** | **226.00** | **$813.60** | **226.00** | **$813.60** | **$1,627.20** |
+| 1 | 750 | 11 hr 51 min | 13 hr 06 min | 68.18 | $245.45 | 68.18 | $245.45 | $490.91 |
+| 2 | 252 | 4 hr 12 min | 8 hr 46 min | 22.91 | $82.47 | 22.91 | $82.47 | $164.95 |
+| 3 | Local / TBD | Not mapped | Camp day | TBD | TBD | TBD | TBD | TBD |
+| 4 | 60 | 1 hr 15 min | 2 hr 30 min | 5.45 | $19.64 | 5.45 | $19.64 | $39.27 |
+| 5 | 450 | 7 hr 34 min | 10 hr 15 min | 40.91 | $147.27 | 40.91 | $147.27 | $294.55 |
+| 6 | Local / TBD | Not mapped | Kilgore outing | TBD | TBD | TBD | TBD | TBD |
+| 7 | 533 | 8 hr 25 min | 10 hr 35 min | 48.45 | $174.44 | 48.45 | $174.44 | $348.87 |
+| 8 | Local / TBD | Not mapped | Island outings | TBD | TBD | TBD | TBD | TBD |
+| 9 | 639 | 9 hr 38 min | 11 hr 53 min + buffer | 58.09 | $209.13 | 58.09 | $209.13 | $418.25 |
+| **Mapped subtotal** | **2,684** | **42 hr 55 min** | **57 hr 05 min** | **244.00** | **$878.40** | **244.00** | **$878.40** | **$1,756.80** |
+
+Travel subtotals exclude breakfast, campsite setup, unallocated buffers, and the additional fuel stop required on Day 1's 232-mile leg at 11 MPG. Day 7's 6:00 AM departure gives a nominal 4:35 PM arrival, with setup possibly continuing after sunset. Day 9's 6:45 AM departure gives a 6:38 PM earliest arrival before extra buffers; retain the 7:30-9:00 PM arrival/unloading window. Verify actual fuel-stop locations on those routes before travel.
 
 ## Stops and Sightseeing
 
 ### Day 1: Hinton, Oklahoma
 
 - Drop both campers at Territory Route 66 RV Park & Campgrounds.
-- Use the [Territory Route 66 arrival guide](campground-info-territory-route-66.html) for directions and Site 9/10 arrival instructions.
+- Use the [Territory Route 66 arrival guide](../campgrounds/territory-route-66.html) for directions and Site 9/10 arrival instructions.
 - Dinner at [Cherokee Restaurant](http://eatatcherokee.com/), 201 S Walbaum Rd, Calumet, OK 73014.
 - Cherokee's published hours: 6:00 AM-9:00 PM daily; verify Christmas Day hours.
 - [Territory Route 66 RV Park website](https://www.territoryroute66.com/)
@@ -112,14 +116,14 @@ Recommended sequence and planning assumptions:
 4. Cadillac Ranch west of Amarillo: photo stop before Palo Duro.
 5. Palo Duro Canyon State Park: arrive and set up Basecamp 1. MERUS remains an alternative only if its camping, dog, and winter-operation details are confirmed first.
 
-Google Maps estimates approximately 280 miles and 4 hr 24 min for the direct Hinton-to-Palo Duro trip. The sightseeing sequence has separately been estimated at approximately 246 miles and 3 hr 53 min of moving time before stops; use the 280-mile figure for conservative fuel planning until the final route is checked.
+The seven legs in the detailed Day 2 guide total about 252 miles and 4 hr 12 min moving, including Cadillac Ranch and Canyon groceries. The scheduled stops bring departure-to-arrival time to 8 hr 46 min. This replaces the older 280-mile fuel budget; skipping Cadillac Ranch changes the route and requires a new distance estimate.
 
 
 ## Detailed Day 1 Schedule
 
 The four mapped legs total approximately **750 miles and 11 hr 51 min of moving time**. Three 25-minute fuel stops bring the planned elapsed drive to **13 hr 06 min**. At a 5:45 AM CST departure, arrival is about **6:51 PM**, after Hinton's listed 5:24 PM sunset and 5:54 PM darkness. Confirm the Christmas Day late-arrival instructions and plan to back both campers into Sites 9 and 10 after dark.
 
-Fuel planning uses 12 mpg, a 21.1-gallon Tacoma tank, and a 20.8-gallon Bronco tank assumption. The theoretical range is about 253 miles for the Tacoma and 250 miles for the Bronco, so fuel is planned before approximately 200 miles while towing.
+Fuel planning uses 11 mpg, a 21.1-gallon Tacoma tank, and a 20.8-gallon Bronco tank assumption. The theoretical range is about 232 miles for the Tacoma and 229 miles for the Bronco, before a reserve. The 232-mile Sikeston-Strafford leg requires an intermediate fuel stop; select and verify it before travel and add its time to the schedule below. Fuel earlier than the calculated limit, especially with towing, wind, or low gauges.
 
 | Approximate time | Plan | Fuel / vehicle note |
 |---|---|---|
@@ -137,15 +141,15 @@ Fuel planning uses 12 mpg, a 21.1-gallon Tacoma tank, and a 20.8-gallon Bronco t
 | After dinner | Return to the Hinton campground and rest for the Route 66 drive on Day 2. | Keep the campers secured and ready for the 8:00 AM departure. |
 
 - Google Maps Day 1 route: [Open Evansville to Territory Route 66 RV Park](https://www.google.com/maps/dir/8650+Manchester+Ct,+Evansville,+IN+47725/Territory+Route+66+RV+Park,+Hinton,+OK)
-- Estimated fuel consumed: Approximately 62.5 gallons per vehicle for 750 miles at 12 mpg.
-- Estimated fuel cost: Approximately $225 per vehicle at $3.60 per gallon.
+- Estimated fuel consumed: Approximately 68.18 gallons per vehicle for 750 miles at 11 mpg.
+- Estimated fuel cost: Approximately $245.45 per vehicle at $3.60 per gallon.
 - Verify holiday hours, fuel availability, turning radius, and trailer exits at each selected Love's before departure.
 
 ## Detailed Day 2 Schedule
 
-Google Maps shows approximately 280 miles and 4 hr 24 min of direct moving time. Plan on 8 hr 30 min for the sightseeing route, including short breaks, one museum, lunch, fuel, and campground setup. This leaves a useful margin before the 5:38 PM sunset, but the group should skip the museum or Cadillac Ranch if delays threaten arrival before dark.
+The detailed sightseeing route totals approximately 252 miles and 4 hr 12 min moving. Including its scheduled stops, allow 8 hr 46 min from the 8:00 AM departure to the nominal 4:46 PM arrival, before campsite setup. The 5:38 PM sunset leaves limited setup light; skip or shorten sightseeing if delays threaten arrival before dark.
 
-Camp at Hackberry Campground (reservation not confirmed in the trip records). Reserve both sites and confirm Palo Duro's overnight arrival and entry instructions; Tyler State Park advised that overnight campers with reservations do not need separate day passes.
+Camp at Hackberry Campground, Sites 015 and 017 (confirmed; Dec 26-28, 2026). Both reservations are paid in full; total camping and adult entry charges are $168. Save the [local receipt summary](../receipts/palo-duro.html) and confirm the late-arrival/gate procedure with Palo Duro.
 
 | Approximate time | Plan | Fuel / vehicle note |
 |---|---|---|
@@ -184,7 +188,7 @@ Day 3 is a no-driving basecamp day at Palo Duro Canyon. The main activity is the
 
 Day 4 is a relocation day from Palo Duro Canyon to a boondocking basecamp at MERUS Adventure Park. The campers move with the group. Plan a short morning at Palo Duro, break camp, travel to MERUS, eat a picnic lunch, stop for groceries before reaching the new camp, and spend the evening setting up and settling in. Confirm MERUS boondocking authorization, site location, 4WD route requirements, fees, dog rules, water plan, and winter operating conditions before departure.
 
-- MERUS reservation and site notes: [MERUS campground information](campground-info-merus.html). Site 311 has no electricity; generator use must stop by 10:00 PM. Check the page for MERUS pass guidance before hiking or off-roading.
+- MERUS reservation and site notes: [MERUS campground information](../campgrounds/merus.html). Site 311 has no electricity; generator use must stop by 10:00 PM. Check the page for MERUS pass guidance before hiking or off-roading.
 
 | Approximate time | Plan | Notes |
 |---|---|---|
@@ -320,9 +324,11 @@ Day 9 is the return from Dauphin Island to Evansville: approximately 639 miles a
 - [ ] Choose Clinton or Elk City museum after checking hours
 - [ ] Verify U-Drop Inn or alternate Route 66 cafe lunch availability
 - [ ] Verify Cadillac Ranch access and parking
-- [ ] Confirm Palo Duro campground reservation and site
+- [x] Confirm Palo Duro Hackberry reservations for Sites 015 and 017, Dec 26-28, 2026; $168 total paid
+- [ ] Confirm Palo Duro late-arrival and gate instructions
 - [ ] Confirm MERUS arrival instructions, 4WD trail access, dog rules, and winter operations
-- [ ] Verify Big Pines Campground at Tyler State Park
+- [x] Confirm Big Pines Sites BP-306 and BP-308 for Dec 29-31, 2026; $160 total paid
+- [ ] Confirm Tyler after-hours arrival instructions
 - [ ] Confirm East Texas Oil Museum hours for Wednesday Dec 30
 - [x] Confirm Dauphin Island campground reservation for Dec 31, 2026-Jan 2, 2027
 - [ ] Verify Dauphin Island beach rules, dog policy, and check-in details
@@ -335,4 +341,4 @@ Day 9 is the return from Dauphin Island to Evansville: approximately 639 miles a
 
 ## Source
 
-Based on the supplied Route 1 schedule, current Route 1 planning notes, and the MERUS invoice in [Merus.pdf](Merus.pdf), reviewed September 28, 2026. Estimates, attraction hours, camping legality, and unconfirmed reservations require verification.
+Based on the supplied Route 1 schedule, current Route 1 planning notes, the MERUS invoice in [Merus.pdf](../assets/receipts/Merus.pdf), and the supplied Palo Duro reservation receipts summarized in [receipt-palo-duro.html](../receipts/palo-duro.html), reviewed October 2, 2026. Estimates, attraction hours, camping legality, and unconfirmed reservations require verification.

@@ -8,7 +8,27 @@ Shared information for both route options. Keep this file limited to facts, pref
 - Destination or destination area: Texas area
 - Trip purpose: Do a long haul in the camper
 - Planning status: Currently choosing between trip options
-- Last updated: September 15, 2026
+- Last updated: October 2, 2026
+
+## Confirmed Palo Duro Reservation
+
+- Campground: Hackberry Campground, Palo Duro Canyon State Park
+- Stay: December 26-28, 2026 (2 nights); check-in 2:00 PM, checkout 12:00 PM
+- Confirmed electric campsites: Site 015 (reservation 2-21762656) and Site 017 (reservation 2-21762655)
+- Cost per site: $52 camping + $32 adult entry = $84 paid; $0 balance
+- Combined cost: $104 camping + $64 adult entry = $168 paid; $0 balance
+- Entry fees shown on both receipts cover 2 adults for Dec 26 and Dec 27 at $8 per adult per day.
+- Local receipt summary: [Palo Duro reservation summary](../receipts/palo-duro.html)
+
+## Confirmed Tyler Reservation
+
+- Campground: Big Pines Campground, Tyler State Park
+- Stay: December 29-31, 2026 (2 nights); check-in 2:00 PM, checkout 12:00 PM
+- Confirmed full-hookup sites: BP-306 (reservation 2-21762775) and BP-308 (reservation 2-21762776)
+- Cost per site: $56 camping + $24 adult entry = $80 paid; $0 balance
+- Combined cost: $112 camping + $48 adult entry = $160 paid; $0 balance
+- Entry fees shown on both receipts cover 2 adults for Dec 29 and Dec 30 at $6 per adult per day.
+- Local receipt summary: [Tyler reservation summary](../receipts/tyler.html)
 
 ## Origin and Optional Meeting Point
 
@@ -69,13 +89,13 @@ Shared information for both route options. Keep this file limited to facts, pref
 
 | Family | Vehicle | Year / make / model | Drive | Fuel type | Towing capacity | Expected fuel economy while towing | Fuel tank |
 |---|---|---|---|---:|---:|---|---|
-| Family A | Tacoma | 2025 Toyota Tacoma TRD Off-Road 4x4 Double Cab, 5-ft bed | 4WD | Gasoline |  | 12 mpg assumed while towing | 21.1 gal; Bronze Oxide / black; i-FORCE; TRD Off-Road Premium Package; Towing Technology Package |
-| Family B | Bronco | 2023 Ford Bronco Outer Banks with Sasquatch package, V6 | 4WD | Gasoline |  | 12 mpg assumed while towing | 20.8 gal assumed for 4-door; confirm body style |
+| Family A | Tacoma | 2025 Toyota Tacoma TRD Off-Road 4x4 Double Cab, 5-ft bed | 4WD | Gasoline |  | 11 mpg assumed while towing | 21.1 gal; Bronze Oxide / black; i-FORCE; TRD Off-Road Premium Package; Towing Technology Package |
+| Family B | Bronco | 2023 Ford Bronco Outer Banks with Sasquatch package, V6 | 4WD | Gasoline |  | 11 mpg assumed while towing | 20.8 gal assumed for 4-door; confirm body style |
 
 - Fuel tank capacity: Tacoma 21.1 gal; Bronco 20.8 gal assumed for 4-door Sasquatch
 - Fuel price assumption:
 - Fueling minimum range or reserve: Plan fuel stops before approximately 200 miles when towing; do not plan on using the full theoretical tank range
-- Fuel calculation assumption: 12 mpg for both tow vehicles while towing
+- Fuel calculation assumption: 11 mpg for both tow vehicles while towing
 - Trailer brake or weight-distribution requirements:
 - Vehicle maintenance needed before departure:
 - Vehicle specification verification: Confirm the Bronco is the 4-door body; the 20.8-gallon tank assumption applies to the 4-door Sasquatch configuration. A 2-door Bronco has a different tank capacity.

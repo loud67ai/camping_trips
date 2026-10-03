@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<base href="../">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#293f43">
+<title>Planned MERUS Trails | 2026 Texas Trip</title>
+<style>
+:root{--ink:#20262b;--muted:#65717a;--paper:#fffdf8;--canvas:#edf0ef;--line:#d5dcda;--accent:#a94736;--gold:#c58b35;--green:#293f43}
+*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);font:16px/1.55 Georgia,"Times New Roman",serif}main{width:min(920px,calc(100% - 28px));margin:24px auto 48px}header{padding:28px 32px;background:var(--green);color:#fff;border-radius:5px}header p{margin:0 0 6px;color:#f5d49b;font:700 .75rem Arial,sans-serif;text-transform:uppercase}h1{margin:0;font-size:2rem;line-height:1.15}header .lede{margin:12px 0 0;color:#edf3ef;font:15px Arial,sans-serif}section{margin-top:16px;padding:22px 24px;background:var(--paper);border:1px solid var(--line);border-radius:5px}h2{margin:0 0 12px;font:700 1.12rem Arial,sans-serif}h3{margin:16px 0 6px;font:700 .94rem Arial,sans-serif}.callout{padding:14px 16px;border-left:4px solid var(--gold);background:#fff4df}.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.fact{padding:12px;background:#fff;border-top:3px solid var(--accent)}.fact strong{display:block;font:700 .72rem Arial,sans-serif;text-transform:uppercase;color:var(--muted)}.fact span{display:block;margin-top:4px}a{color:#145d65;font-weight:700}li{margin:6px 0}.muted{color:var(--muted);font-size:.9rem}.actions{display:flex;flex-wrap:wrap;gap:10px}.actions a{display:inline-block;padding:9px 12px;border:1px solid var(--line);border-radius:4px;background:#fff}footer{margin:16px 4px;color:var(--muted);font:13px Arial,sans-serif}@media(max-width:640px){main{width:calc(100% - 16px);margin:8px auto 28px}header,section{padding:18px}.facts{grid-template-columns:1fr}h1{font-size:1.7rem}}@media print{body{background:#fff}main{width:100%;margin:0}header,section{break-inside:avoid}header{print-color-adjust:exact;-webkit-print-color-adjust:exact}a{color:inherit;text-decoration:none}}
+</style>
+<style>
+.table-scroll{overflow-x:auto}.trail-list{width:100%;min-width:520px;border-collapse:collapse;background:#fff}.trail-list th,.trail-list td{padding:11px 14px;border:1px solid var(--line);text-align:left}.trail-list th{background:var(--green);color:#fff;font:700 .75rem Arial,sans-serif;text-transform:uppercase}.trail-list tbody tr:nth-child(even){background:#f5f7f5}.trail-color{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}.trail-color::before{width:12px;height:12px;border-radius:50%;content:""}.trail-color--green::before{background:#4d8b57}.trail-color--blue::before{background:#1476aa}.rating{text-align:center!important;font-weight:700}.page-note{padding:14px 16px;border-left:4px solid var(--gold);background:#fff4df}.trail-photo img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}.trail-photo figcaption{margin-top:8px;font:700 .9rem Arial,sans-serif}.trail-carousel-window{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;touch-action:pan-x;overscroll-behavior-x:contain}.trail-carousel-window::-webkit-scrollbar{display:none}.trail-carousel-track{display:flex}.trail-carousel-track .trail-photo{flex:0 0 100%;scroll-snap-align:start}.trail-carousel-controls{display:flex;align-items:center;justify-content:space-between;margin-top:10px}.carousel-button{display:grid;width:40px;height:40px;place-items:center;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--green);font:700 1.4rem Arial,sans-serif;cursor:pointer}.carousel-button:disabled{opacity:.4;cursor:default}.carousel-count{color:var(--muted);font:700 .8rem Arial,sans-serif}.trail-picker-tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin:0 0 14px}.trail-picker-actions{display:flex;flex-wrap:wrap;gap:12px}.trail-picker-actions button{padding:7px 0;border:0;border-bottom:1px solid var(--line);background:none;color:#145d65;font:700 .78rem Arial,sans-serif;cursor:pointer}.selection-total{padding:11px 14px;background:#edf3ef;border-left:4px solid var(--green);font:700 .86rem Arial,sans-serif}.trail-picker{display:grid;gap:0}.trail-option,.trail-option-header{display:grid;grid-template-columns:32px minmax(0,1fr) 110px 100px 100px;align-items:center;gap:10px;padding:12px 4px;border-bottom:1px solid var(--line)}.trail-option-header{padding-top:4px;color:var(--muted);font:700 .65rem Arial,sans-serif;text-transform:uppercase;letter-spacing:.03em}.trail-option input{width:19px;height:19px;accent-color:var(--green)}.trail-option-name{font-weight:700}.trail-option-name a{text-decoration:none}.trail-option-name a:hover{text-decoration:underline}.trail-option small{display:block;color:var(--muted);font:12px Arial,sans-serif}.trail-metric{font:700 .82rem Arial,sans-serif}.trail-metric small{display:block;margin-bottom:3px;font-size:.62rem;text-transform:uppercase;letter-spacing:.04em}.trail-missing{color:var(--muted);font-size:.77rem}.route-note-list{display:grid;gap:0}.route-note{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(280px,.88fr);align-items:start;gap:8px 24px;padding:22px 0;border-bottom:1px solid var(--line);scroll-margin-top:16px}.route-note:first-child{padding-top:0}.route-note:last-child{border-bottom:0;padding-bottom:0}.route-summary{grid-column:1;min-width:0}.route-note h3{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin:0 0 8px}.route-badge{padding:3px 8px;border-radius:2px;font:700 .68rem Arial,sans-serif;text-transform:uppercase;white-space:nowrap}.route-badge--green{background:#e6f0e2;color:#35653a}.route-badge--blue{background:#e3edf5;color:#245b82}.route-note p{margin:7px 0}.route-note .trail-metadata{color:var(--muted);font:700 .78rem Arial,sans-serif}.route-warning{padding:10px 12px;background:#fff4df;border-left:3px solid var(--gold)}.route-photo-link{display:inline-block;margin-top:4px;font:700 .75rem Arial,sans-serif}.route-gallery{grid-column:2;grid-row:1;min-width:0;padding:12px;background:#f3f5f3;border:1px solid var(--line);border-radius:3px;scroll-margin-top:16px}.route-gallery-label{margin:0 0 8px;color:var(--muted);font:700 .65rem Arial,sans-serif;text-transform:uppercase}.route-note--no-gallery{grid-template-columns:1fr}.route-note--no-gallery .route-summary{grid-column:1}.trail-photo{margin:0}.main-plan-link{display:inline-flex;align-items:center;gap:9px;margin-top:14px;padding:9px 12px;border:1px solid rgba(255,255,255,.38);border-radius:3px;color:#fff;text-decoration:none;font:700 .78rem Arial,sans-serif}.main-plan-link:hover{background:rgba(255,255,255,.1)}@media(max-width:720px){.trail-option,.trail-option-header{grid-template-columns:26px minmax(0,1fr) 72px 74px;gap:8px}.trail-option-header span:nth-child(3){grid-column:3;grid-row:1}.trail-option-header span:nth-child(4){grid-column:4;grid-row:1}.trail-option-header span:nth-child(5){grid-column:2;grid-row:2}.trail-option .trail-time{grid-column:2;grid-row:2}.trail-option .trail-rating{grid-column:3;grid-row:1 / span 2}.trail-option .trail-distance{grid-column:4;grid-row:1 / span 2}.trail-option small{font-size:10px}.trail-metric{font-size:.75rem}.route-note,.route-note--no-gallery{grid-template-columns:1fr;gap:14px;padding:18px 0}.route-summary,.route-gallery{grid-column:1;grid-row:auto}.route-gallery{padding:0;border:0;background:transparent}}
+</style>
+<style>
+.trail-option--green{border-left:4px solid #4d8b57;padding-left:9px}.trail-option--blue{border-left:4px solid #1476aa;padding-left:9px}.trail-option--green .trail-rating{color:#35653a}.trail-option--blue .trail-rating{color:#245b82}
+</style>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<main>
+<header>
+<p>Christmas 2026 Texas Trip</p>
+<h1>Planned MERUS Trails</h1>
+<p class="lede">Dec 28, 2026 | Planned overlanding outing</p>
+</header>
+<section>
+<h2>Compare Planned Routes</h2>
+<div class="trail-picker-tools">
+<div class="trail-picker-actions"><button type="button" data-select-captured>Select routes with captured details</button><button type="button" data-clear-selection>Clear selection</button></div>
+<div class="selection-total" aria-live="polite" data-selection-total>0 selected · 0.00 mi · 0 min</div>
+</div>
+<div class="trail-picker" role="group" aria-label="Select MERUS routes to compare">
+<div class="trail-option-header" aria-hidden="true"><span></span><span>Trail</span><span>Rating</span><span>Distance</span><span>Typical time</span></div>
+<div class="trail-option" data-mile="4.5" data-minutes="40"><input type="checkbox" aria-label="Include MERUS 101 in route comparison"><div><div class="trail-option-name"><a href="activities/merus-trails.html#merus-101-notes">MERUS 101</a></div><small>Green · beginner</small></div><div class="trail-metric trail-rating"><small>Rating</small>3</div><div class="trail-metric trail-distance"><small>Distance</small>4.5 mi</div><div class="trail-metric trail-time"><small>Typical time</small>40 min</div></div>
+<div class="trail-option" data-mile="1" data-minutes="15"><input type="checkbox" aria-label="Include Landry's Landing in route comparison"><div><div class="trail-option-name"><a href="activities/merus-trails.html#landrys-landing-notes">Landry's Landing</a></div><small>Green · beginner</small></div><div class="trail-metric trail-rating"><small>Rating</small>3</div><div class="trail-metric trail-distance"><small>Distance</small>1 mi</div><div class="trail-metric trail-time"><small>Typical time</small>15 min</div></div>
+<div class="trail-option" data-mile="1.5" data-minutes="30"><input type="checkbox" aria-label="Include Northbound in route comparison"><div><div class="trail-option-name"><a href="activities/merus-trails.html#northbound-notes">Northbound</a></div><small>Green · beginner</small></div><div class="trail-metric trail-rating"><small>Rating</small>3</div><div class="trail-metric trail-distance"><small>Distance</small>1.5 mi</div><div class="trail-metric trail-time"><small>Typical time</small>30 min</div></div>
+<div class="trail-option" data-mile="0.5" data-minutes="10"><input type="checkbox" aria-label="Include Roundabout in route comparison"><div><div class="trail-option-name"><a href="activities/merus-trails.html#roundabout-notes">Roundabout</a></div><small>Green · beginner</small></div><div class="trail-metric trail-rating"><small>Rating</small>3</div><div class="trail-metric trail-distance"><small>Distance</small>0.5 mi</div><div class="trail-metric trail-time"><small>Typical time</small>10 min</div></div>
+<div class="trail-option" data-mile="1" data-minutes="30"><input type="checkbox" aria-label="Include Spicy in route comparison"><div><div class="trail-option-name"><a href="activities/merus-trails.html#spicy-notes">Spicy</a></div><small>Green · beginner</small></div><div class="trail-metric trail-rating"><small>Rating</small>3</div><div class="trail-metric trail-distance"><small>Distance</small>1 mi</div><div class="trail-metric trail-time"><small>Typical time</small>30 min</div></div>
+<div class="trail-option" data-mile="1.54" data-minutes="35"><input type="checkbox" aria-label="Include Sidewinder in route comparison"><div><div class="trail-option-name"><a href="activities/merus-trails.html#sidewinder-notes">Sidewinder</a></div><small>Blue · intermediate</small></div><div class="trail-metric trail-rating"><small>Rating</small>5</div><div class="trail-metric trail-distance"><small>Distance</small>1.54 mi</div><div class="trail-metric trail-time"><small>Typical time</small>35 min</div></div>
+<div class="trail-option" data-mile="1" data-minutes="20"><input type="checkbox" aria-label="Include Deep Creek in route comparison"><div><div class="trail-option-name"><a href="activities/merus-trails.html#deep-creek-notes">Deep Creek</a></div><small>Blue · intermediate</small></div><div class="trail-metric trail-rating"><small>Rating</small>4</div><div class="trail-metric trail-distance"><small>Distance</small>1 mi</div><div class="trail-metric trail-time"><small>Typical time</small>20 min</div></div>
+<div class="trail-option" data-mile="1" data-minutes="15"><input type="checkbox" aria-label="Include The Chute in route comparison"><div><div class="trail-option-name"><a href="activities/merus-trails.html#the-chute-notes">The Chute</a></div><small>Blue · intermediate</small></div><div class="trail-metric trail-rating"><small>Rating</small>4</div><div class="trail-metric trail-distance"><small>Distance</small>1 mi</div><div class="trail-metric trail-time"><small>Typical time</small>15 min</div></div>
+<div class="trail-option" data-mile="0.38" data-minutes="15"><input type="checkbox" aria-label="Include Salt Fork Section 2 in route comparison"><div><div class="trail-option-name"><a href="activities/merus-trails.html#salt-fork-section-2-notes">Salt Fork Section 2</a></div><small>Blue · intermediate</small></div><div class="trail-metric trail-rating"><small>Rating</small>5</div><div class="trail-metric trail-distance"><small>Distance</small>0.38 mi</div><div class="trail-metric trail-time"><small>Typical time</small>15 min</div></div>
+</div>
+<p class="muted">Selections total only the routes with published distance and time. MERUS guide estimates exclude transitions and conditions may change difficulty.</p>
+</section>
+<section>
+<h2>Route Notes</h2>
+<div class="route-note-list">
+<article class="route-note" id="merus-101-notes"><h3>MERUS 101 <span class="route-badge route-badge--green">Green 3 · Beginner</span></h3><p class="trail-metadata">4.5 miles · about 40 minutes</p><p>Runs most of the park's length, beginning with the Drop-In into the canyon and crossing Salt Fork Creek several times. Expect short ledges, steep short climbs and drops, and tight rocky steps.</p><p class="route-warning"><strong>Consider:</strong> The Drop-In is a 21-degree rock, sand, and gravel descent. Rain can make the route slick and crossings wet or muddy.</p><p><strong>Connects to:</strong> Deep Creek, Northbound, Salt Fork Sections 1 and 2, Middle Earth, Huckleberry, Sagissor Blue and Black, 101 Loop Back, Carnage, and Back 40.</p><a class="route-photo-link" href="activities/merus-trails.html#merus-101-photos">View MERUS 101 photos</a></article>
+<article class="route-note" id="landrys-landing-notes"><h3>Landry's Landing <span class="route-badge route-badge--green">Green 3 · Beginner</span></h3><p class="trail-metadata">1 mile · about 15 minutes</p><p>Canyon-access descent from Camp Point toward MERUS 101 and the Drop In ridge, ending at an old cattle gate. The route sheet described it as one-way into the canyon while under construction.</p><p class="route-warning"><strong>Consider:</strong> Drops up to 17 degrees and sharp turns, with soft trail edges and brush near the creek bed. Stay centered on the route.</p><p><strong>Access:</strong> Area 170 campsite on the south side of Camp Point Trail. No side trips listed; a canyon overlook follows the first descent.</p><a class="route-photo-link" href="activities/merus-trails.html#landrys-landing-photos">View Landry's Landing photos</a></article>
+<article class="route-note" id="northbound-notes"><h3>Northbound <span class="route-badge route-badge--green">Green 3 · Beginner</span></h3><p class="trail-metadata">1.5 miles · about 30 minutes</p><p>Scenic route through creek beds beside the canyon walls toward the back of the canyon. The guide highlights native wildflowers, grasses, yucca, prickly pear, mesquite, cottonwood, western soapberry, and hackberry.</p><p class="route-warning"><strong>Consider:</strong> Generally easy but requires 4-low; includes creek crossings, a few rocky climbs, and descents. Crossings are usually dry unless it is actively raining.</p><p><strong>Access and connections:</strong> MERUS 101 near an open old gate; also accessible from Salt Fork Section 1, Tin Tin, and Kate the Great. The trail crosses Salt Fork Section 1 and ends at shaded Meadows Campground.</p><a class="route-photo-link" href="activities/merus-trails.html#northbound-photos">View Northbound photos</a></article>
+<article class="route-note" id="roundabout-notes"><h3>Roundabout <span class="route-badge route-badge--green">Green 3 · Beginner</span></h3><p class="trail-metadata">0.5 mile · about 10 minutes</p><p>Scenic, tree-lined connector between Northbound and Tin Tin, with a creek crossing and panoramic canyon views. The guide describes it as a beginner route suitable for a novice in a stock vehicle.</p><p class="route-warning"><strong>Consider:</strong> A few descents and the creek crossing may challenge long-wheelbase vehicles with poor departure angles. The Tin Tin entrance/exit has soft sand that can be difficult to climb when dry.</p><p><strong>Access:</strong> From Tin Tin or Northbound. No side trips are listed; the guide calls it a good short-break route.</p><a class="route-photo-link" href="activities/merus-trails.html#roundabout-photos">View Roundabout photos</a></article>
+<article class="route-note" id="spicy-notes"><h3>Spicy <span class="route-badge route-badge--green">Green 3 · Beginner</span></h3><p class="trail-metadata">1 mile · about 30 minutes</p><p>Starts on MERUS 101 and climbs toward the Boulders hike trailhead. Turning south from the Boulders, it follows arroyos along the park's eastern boundary with quick, tight turns. The route sheet recommends north-to-south travel because afternoon sun can be blinding.</p><p class="route-warning"><strong>Consider:</strong> Still rated Green, but the tight turns demand attention and offer beginners practice before moving to harder Blue trails. The guide describes it as a shoulder workout.</p><p><strong>Access and side trip:</strong> Starts and finishes on MERUS 101; the Boulders hike is an optional stop with views from the top.</p><a class="route-photo-link" href="activities/merus-trails.html#spicy-photos">View Spicy photos</a></article>
+<article class="route-note" id="sidewinder-notes"><h3>Sidewinder <span class="route-badge route-badge--blue">Blue 5 · Intermediate</span></h3><p class="trail-metadata">1.54 miles · about 35 minutes</p><p>Runs along the canyon rim. From Park Road West it winds through mesquite brush with a mogul, tight turns, dips, and built-up hills; near MERUS 101 it descends steeply before a sharp turn into an incline with a two-foot wall.</p><p class="route-warning"><strong>Consider:</strong> Tight turns and moguls challenge suspension. Longer-wheelbase vehicles may need three-point turns; assess the final descent and rock wall for your vehicle and experience. The guide says the route may also be run in reverse.</p><p><strong>Access:</strong> Left off Park Road West just past the V-notch, or begin from MERUS 101 in reverse.</p><a class="route-photo-link" href="activities/merus-trails.html#sidewinder-photos">View Sidewinder photos</a></article>
+<article class="route-note" id="deep-creek-notes"><h3>Deep Creek <span class="route-badge route-badge--blue">Blue 4 · Intermediate</span></h3><p class="trail-metadata">1 mile · about 20 minutes</p><p>Narrow, rocky trail through a canyon riverbed with red sandstone and white Satin Spar Gypsum veins. The guide also notes fragile cryptobiotic living soil across the ground and rocks.</p><p class="route-warning"><strong>Consider:</strong> Frequent small-to-medium rocks and narrow passages. Careful line choice and tire placement help avoid high-centering or catching differentials or suspension components.</p><p><strong>Connects:</strong> Enter from MERUS 101 and exit onto Salt Fork Section 2. No side trips are listed.</p><a class="route-photo-link" href="activities/merus-trails.html#deep-creek-photos">View Deep Creek photos</a></article>
+<article class="route-note" id="the-chute-notes"><h3>The Chute <span class="route-badge route-badge--blue">Blue 4 · Intermediate</span></h3><p class="trail-metadata">1 mile · about 15 minutes</p><p>One-way descent into the north end of the canyon through two rock walls, followed by sharp turns to the canyon floor and a creek-bed run to Tin Tin.</p><p class="route-warning"><strong>Consider:</strong> Starts with an immediate 22-degree descent. The route sheet describes soft dirt and soft edges; stay centered. It notes steep descents but no significant obstacles.</p><p><strong>Access and connections:</strong> East side of Festival Hilltop camping area near the park entrance. Connects with Tin Tin near Kate the Great.</p><a class="route-photo-link" href="activities/merus-trails.html#the-chute-photos">View The Chute photos</a></article>
+<article class="route-note" id="salt-fork-section-2-notes"><h3>Salt Fork Section 2 <span class="route-badge route-badge--blue">Blue 5 · Intermediate</span></h3><p class="trail-metadata">0.38 mile · about 15 minutes</p><p>Short creek-bed route along the historic Salt Fork, with medium rocks, multiple lines, and a dry waterfall feature. It provides access to Lonesome Dove and Salt Fork Section 3.</p><p class="route-warning"><strong>Consider:</strong> Line choices range from easy to difficult. Rocks, sand, and red clay make tire placement important; the source guide warns the creek bed can be dangerous in rain.</p><p><strong>Access:</strong> MERUS 101, Deep Creek, Lonesome Dove, and Salt Fork Sections 1 and 3.</p><a class="route-photo-link" href="activities/merus-trails.html#salt-fork-section-2-photos">View Salt Fork Section 2 photos</a></article>
+</div>
+</section>
+<section class="trail-photo-source">
+<h2>Trail Photos</h2>
+<h3 id="landrys-landing-photos">Landry's Landing</h3>
+<div class="trail-carousel" data-carousel>
+<div class="trail-carousel-window" tabindex="0" aria-label="Landry's Landing trail photos">
+<div class="trail-carousel-track">
+<figure class="trail-photo">
+<img src="assets/merus/trails/merus-trail-landrys-landing.jpg" alt="View down the Landry's Landing trail toward the canyon">
+<figcaption>View 1</figcaption>
+</figure>
+<figure class="trail-photo">
+<img src="assets/merus/trails/merus-trail-landrys-landing-2.jpg" alt="Canyon overlook along Landry's Landing">
+<figcaption>View 2</figcaption>
+</figure>
+<figure class="trail-photo">
+<img src="assets/merus/trails/merus-trail-landrys-landing-3.jpg" alt="Rocky creek-bed section between canyon walls on Landry's Landing">
+<figcaption>View 3</figcaption>
+</figure>
+<figure class="trail-photo">
+<img src="assets/merus/trails/merus-trail-landrys-landing-4.jpg" alt="Reddish dirt trail crossing at Landry's Landing">
+<figcaption>View 4</figcaption>
+</figure>
+</div>
+</div>
+<div class="trail-carousel-controls">
+<button class="carousel-button" type="button" data-previous aria-label="Previous Landry's Landing photo" title="Previous photo" disabled>&larr;</button>
+<span class="carousel-count" aria-live="polite">1 / 4</span>
+<button class="carousel-button" type="button" data-next aria-label="Next Landry's Landing photo" title="Next photo">&rarr;</button>
+</div>
+</div>
+<h3 id="merus-101-photos">MERUS 101</h3>
+<div class="trail-carousel" data-carousel>
+<div class="trail-carousel-window" tabindex="0" aria-label="MERUS 101 trail photos">
+<div class="trail-carousel-track">
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-merus-101-1.jpg" alt="MERUS 101 route entrance marked by a trail sign"><figcaption>View 1</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-merus-101-2.jpg" alt="The Drop-In descent into Palo Duro Canyon"><figcaption>View 2</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-merus-101-3.jpg" alt="MERUS 101 winding between canyon vegetation and rock walls"><figcaption>View 3</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-merus-101-4.jpg" alt="Rocky steep climb on MERUS 101"><figcaption>View 4</figcaption></figure>
+</div>
+</div>
+<div class="trail-carousel-controls">
+<button class="carousel-button" type="button" data-previous aria-label="Previous MERUS 101 photo" title="Previous photo" disabled>&larr;</button>
+<span class="carousel-count" aria-live="polite">1 / 4</span>
+<button class="carousel-button" type="button" data-next aria-label="Next MERUS 101 photo" title="Next photo">&rarr;</button>
+</div>
+</div>
+<h3 id="northbound-photos">Northbound</h3>
+<div class="trail-carousel" data-carousel>
+<div class="trail-carousel-window" tabindex="0" aria-label="Northbound trail photos">
+<div class="trail-carousel-track">
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-northbound-1.jpg" alt="Vehicle on the Northbound trail beside canyon brush"><figcaption>View 1</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-northbound-2.jpg" alt="Rocky creek-bed section on Northbound"><figcaption>View 2</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-northbound-3.jpg" alt="Vehicle climbing a rocky section of Northbound"><figcaption>View 3</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-northbound-4.jpg" alt="Northbound trail crossing an open canyon area"><figcaption>View 4</figcaption></figure>
+</div>
+</div>
+<div class="trail-carousel-controls">
+<button class="carousel-button" type="button" data-previous aria-label="Previous Northbound photo" title="Previous photo" disabled>&larr;</button>
+<span class="carousel-count" aria-live="polite">1 / 4</span>
+<button class="carousel-button" type="button" data-next aria-label="Next Northbound photo" title="Next photo">&rarr;</button>
+</div>
+</div>
+<h3 id="roundabout-photos">Roundabout</h3>
+<div class="trail-carousel" data-carousel>
+<div class="trail-carousel-window" tabindex="0" aria-label="Roundabout trail photos">
+<div class="trail-carousel-track">
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-roundabout-1.jpg" alt="Vehicle on the Roundabout trail among trees and brush"><figcaption>View 1</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-roundabout-2.jpg" alt="Roundabout trail crossing shallow water"><figcaption>View 2</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-roundabout-3.jpg" alt="Tree-lined section of the Roundabout trail"><figcaption>View 3</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-roundabout-4.jpg" alt="Vehicle driving through brush along Roundabout"><figcaption>View 4</figcaption></figure>
+</div>
+</div>
+<div class="trail-carousel-controls">
+<button class="carousel-button" type="button" data-previous aria-label="Previous Roundabout photo" title="Previous photo" disabled>&larr;</button>
+<span class="carousel-count" aria-live="polite">1 / 4</span>
+<button class="carousel-button" type="button" data-next aria-label="Next Roundabout photo" title="Next photo">&rarr;</button>
+</div>
+</div>
+<h3 id="spicy-photos">Spicy</h3>
+<div class="trail-carousel" data-carousel>
+<div class="trail-carousel-window" tabindex="0" aria-label="Spicy trail photos">
+<div class="trail-carousel-track">
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-spicy-1.jpg" alt="Vehicle starting on the Spicy trail below canyon hills"><figcaption>View 1</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-spicy-2.jpg" alt="Vehicle following an arroyo turn on Spicy"><figcaption>View 2</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-spicy-3.jpg" alt="Steep short climb on the Spicy trail"><figcaption>View 3</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-spicy-4.jpg" alt="Vehicle climbing a short bank on Spicy"><figcaption>View 4</figcaption></figure>
+</div>
+</div>
+<div class="trail-carousel-controls">
+<button class="carousel-button" type="button" data-previous aria-label="Previous Spicy photo" title="Previous photo" disabled>&larr;</button>
+<span class="carousel-count" aria-live="polite">1 / 4</span>
+<button class="carousel-button" type="button" data-next aria-label="Next Spicy photo" title="Next photo">&rarr;</button>
+</div>
+</div>
+<h3 id="deep-creek-photos">Deep Creek</h3>
+<div class="trail-carousel" data-carousel>
+<div class="trail-carousel-window" tabindex="0" aria-label="Deep Creek trail photos">
+<div class="trail-carousel-track">
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-deep-creek-1.jpg" alt="Deep Creek winding through a narrow red-rock canyon"><figcaption>View 1</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-deep-creek-2.jpg" alt="Vehicle navigating rocks in Deep Creek"><figcaption>View 2</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-deep-creek-3.jpg" alt="Rocky narrow passage along Deep Creek"><figcaption>View 3</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-deep-creek-4.jpg" alt="Vehicles on a rocky section of Deep Creek"><figcaption>View 4</figcaption></figure>
+</div>
+</div>
+<div class="trail-carousel-controls">
+<button class="carousel-button" type="button" data-previous aria-label="Previous Deep Creek photo" title="Previous photo" disabled>&larr;</button>
+<span class="carousel-count" aria-live="polite">1 / 4</span>
+<button class="carousel-button" type="button" data-next aria-label="Next Deep Creek photo" title="Next photo">&rarr;</button>
+</div>
+</div>
+<h3 id="salt-fork-section-2-photos">Salt Fork Section 2</h3>
+<div class="trail-carousel" data-carousel>
+<div class="trail-carousel-window" tabindex="0" aria-label="Salt Fork Section 2 trail photos">
+<div class="trail-carousel-track">
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-salt-fork-section-2-1.jpg" alt="Vehicles in the rocky creek bed on Salt Fork Section 2"><figcaption>View 1</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-salt-fork-section-2-2.jpg" alt="Vehicles navigating a rocky creek-bed line on Salt Fork Section 2"><figcaption>View 2</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-salt-fork-section-2-3.jpg" alt="Dry waterfall on Salt Fork Section 2"><figcaption>View 3</figcaption></figure>
+<figure class="trail-photo"><img src="assets/merus/trails/merus-trail-salt-fork-section-2-4.jpg" alt="Vehicles crossing the dry waterfall rock formation on Salt Fork Section 2"><figcaption>View 4</figcaption></figure>
+</div>
+</div>
+<div class="trail-carousel-controls">
+<button class="carousel-button" type="button" data-previous aria-label="Previous Salt Fork Section 2 photo" title="Previous photo" disabled>&larr;</button>
+<span class="carousel-count" aria-live="polite">1 / 4</span>
+<button class="carousel-button" type="button" data-next aria-label="Next Salt Fork Section 2 photo" title="Next photo">&rarr;</button>
+</div>
+</div>
+<h3 id="sidewinder-photos">Sidewinder</h3>
+<div class="trail-carousel" data-carousel>
+<div class="trail-carousel-window" tabindex="0" aria-label="Sidewinder trail photos">
+<div class="trail-carousel-track">
+<figure class="trail-photo">
+<img src="assets/merus/trails/merus-trail-sidewinder-1.jpg" alt="Sidewinder route across a brush-covered canyon rim">
+<figcaption>View 1</figcaption>
+</figure>
+<figure class="trail-photo">
+<img src="assets/merus/trails/merus-trail-sidewinder-2.jpg" alt="Sidewinder trail winding through brushland">
+<figcaption>View 2</figcaption>
+</figure>
+<figure class="trail-photo">
+<img src="assets/merus/trails/merus-trail-sidewinder-3.jpg" alt="Sidewinder route descending through canyon-side brush">
+<figcaption>View 3</figcaption>
+</figure>
+<figure class="trail-photo">
+<img src="assets/merus/trails/merus-trail-sidewinder.jpg" alt="Rock ledge and obstacle on the Sidewinder trail">
+<figcaption>View 4</figcaption>
+</figure>
+</div>
+</div>
+<div class="trail-carousel-controls">
+<button class="carousel-button" type="button" data-previous aria-label="Previous Sidewinder photo" title="Previous photo" disabled>&larr;</button>
+<span class="carousel-count" aria-live="polite">1 / 4</span>
+<button class="carousel-button" type="button" data-next aria-label="Next Sidewinder photo" title="Next photo">&rarr;</button>
+</div>
+</div>
+<h3 id="the-chute-photos">The Chute</h3>
+<div class="trail-carousel" data-carousel>
+<div class="trail-carousel-window" tabindex="0" aria-label="The Chute trail photos">
+<div class="trail-carousel-track">
+<figure class="trail-photo">
+<img src="assets/merus/trails/merus-trail-the-chute-1.jpg" alt="View through the rock walls at the top of The Chute">
+<figcaption>View 1</figcaption>
+</figure>
+<figure class="trail-photo">
+<img src="assets/merus/trails/merus-trail-the-chute-2.jpg" alt="Steep rocky slope on The Chute route">
+<figcaption>View 2</figcaption>
+</figure>
+<figure class="trail-photo">
+<img src="assets/merus/trails/merus-trail-the-chute-3.jpg" alt="Red canyon wall alongside The Chute trail">
+<figcaption>View 3</figcaption>
+</figure>
+<figure class="trail-photo">
+<img src="assets/merus/trails/merus-trail-the-chute-4.jpg" alt="Canyon track and creek bed along The Chute">
+<figcaption>View 4</figcaption>
+</figure>
+</div>
+</div>
+<div class="trail-carousel-controls">
+<button class="carousel-button" type="button" data-previous aria-label="Previous The Chute photo" title="Previous photo" disabled>&larr;</button>
+<span class="carousel-count" aria-live="polite">1 / 4</span>
+<button class="carousel-button" type="button" data-next aria-label="Next The Chute photo" title="Next photo">&rarr;</button>
+</div>
+</div>
+</section>
+<section>
+<h2>Ride Notes</h2>
+<p class="page-note">Use only routes approved by MERUS. East Rise (Area 300) access requires a 4WD vehicle and a 4WD vehicle park pass. Confirm current route access, vehicle limits, and conditions with the park before heading out.</p>
+<div class="actions"><a target="_blank" rel="noopener noreferrer" href="assets/merus/merus-park-map.png">Open full MERUS park map image</a><a href="campgrounds/merus.html">MERUS campsite info</a><a href="master-plan-2026.html">Back to trip plan</a></div>
+</section>
+<footer>Planned outing: Dec 28, 2026, 1:15-2:45 PM.</footer>
+</main>
+<script>
+document.querySelectorAll('.route-note').forEach(function (routeNote) {
+	var photoLink = routeNote.querySelector('.route-photo-link');
+	if (!photoLink) {
+		routeNote.classList.add('route-note--no-gallery');
+		return;
+	}
+
+	var galleryHeading = document.getElementById(decodeURIComponent(new URL(photoLink.href).hash.slice(1)));
+	var carousel = galleryHeading && galleryHeading.nextElementSibling;
+	if (!carousel || !carousel.matches('.trail-carousel')) {
+		routeNote.classList.add('route-note--no-gallery');
+		return;
+	}
+	photoLink.remove();
+
+	var summary = document.createElement('div');
+	summary.className = 'route-summary';
+	while (routeNote.firstChild) summary.appendChild(routeNote.firstChild);
+	routeNote.appendChild(summary);
+
+	var gallery = document.createElement('div');
+	gallery.className = 'route-gallery';
+	gallery.id = galleryHeading.id;
+	gallery.setAttribute('aria-label', galleryHeading.textContent + ' photos');
+	var label = document.createElement('p');
+	label.className = 'route-gallery-label';
+	label.textContent = 'Trail photos';
+	gallery.append(label, carousel);
+	routeNote.appendChild(gallery);
+	galleryHeading.remove();
+});
+document.querySelectorAll('.trail-photo-source').forEach(function (photoSource) {
+	if (!photoSource.querySelector('.trail-carousel')) photoSource.remove();
+});
+
+var trailPicker = document.querySelector('.trail-picker');
+if (trailPicker) {
+	trailPicker.querySelectorAll('.trail-option').forEach(function (option) {
+		var colorText = option.querySelector('.trail-option-name').parentElement.querySelector('small').textContent.toLowerCase();
+		option.classList.add(colorText.indexOf('green') === 0 ? 'trail-option--green' : 'trail-option--blue');
+	});
+	var totalLabel = document.querySelector('[data-selection-total]');
+	var choices = Array.from(trailPicker.querySelectorAll('.trail-option input[type="checkbox"]'));
+	function updateTrailTotals() {
+		var selected = choices.filter(function (choice) { return choice.checked; });
+		var known = selected.filter(function (choice) { return choice.closest('.trail-option').dataset.mile !== ''; });
+		var miles = known.reduce(function (sum, choice) { return sum + Number(choice.closest('.trail-option').dataset.mile); }, 0);
+		var minutes = known.reduce(function (sum, choice) { return sum + Number(choice.closest('.trail-option').dataset.minutes); }, 0);
+		var unknownCount = selected.length - known.length;
+		totalLabel.textContent = selected.length + ' selected · ' + miles.toFixed(2) + ' mi · ' + minutes + ' min' + (unknownCount ? ' · ' + unknownCount + ' missing estimate' + (unknownCount === 1 ? '' : 's') : '');
+	}
+	choices.forEach(function (choice) { choice.addEventListener('change', updateTrailTotals); });
+	document.querySelector('[data-select-captured]').addEventListener('click', function () {
+		choices.forEach(function (choice) { choice.checked = choice.closest('.trail-option').dataset.mile !== ''; });
+		updateTrailTotals();
+	});
+	document.querySelector('[data-clear-selection]').addEventListener('click', function () {
+		choices.forEach(function (choice) { choice.checked = false; });
+		updateTrailTotals();
+	});
+}
+
+document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
+	var viewport = carousel.querySelector('.trail-carousel-window');
+	var slides = Array.from(carousel.querySelectorAll('.trail-photo'));
+	var previous = carousel.querySelector('[data-previous]');
+	var next = carousel.querySelector('[data-next]');
+	var count = carousel.querySelector('.carousel-count');
+	var current = 0;
+	var scrollTimer;
+
+	function showSlide(index) {
+		current = Math.max(0, Math.min(index, slides.length - 1));
+		viewport.scrollTo({ left: current * viewport.clientWidth, behavior: 'smooth' });
+		updateControls();
+	}
+
+	function updateControls() {
+		count.textContent = (current + 1) + ' / ' + slides.length;
+		previous.disabled = current === 0;
+		next.disabled = current === slides.length - 1;
+	}
+
+	previous.addEventListener('click', function () { showSlide(current - 1); });
+	next.addEventListener('click', function () { showSlide(current + 1); });
+	viewport.addEventListener('scroll', function () {
+		window.clearTimeout(scrollTimer);
+		scrollTimer = window.setTimeout(function () {
+			current = Math.round(viewport.scrollLeft / viewport.clientWidth);
+			updateControls();
+		}, 80);
+	});
+	viewport.addEventListener('keydown', function (event) {
+		if (event.key === 'ArrowLeft') showSlide(current - 1);
+		if (event.key === 'ArrowRight') showSlide(current + 1);
+	});
+});
+</script>
+</body>
+</html>

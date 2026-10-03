@@ -187,9 +187,9 @@ The details below were transcribed from the supplied trail PDFs. Extracted trail
 
 ## Related Trip Links
 
-- Planned-trails page: [merus-trails.html](merus-trails.html)
-- MERUS campsite details: [campground-info-merus.html](campground-info-merus.html)
-- MERUS park map image: [merus-park-map.png](merus-park-map.png)
+- Planned-trails page: [merus-trails.html](../activities/merus-trails.html)
+- MERUS campsite details: [campground-info-merus.html](../campgrounds/merus.html)
+- MERUS park map image: [merus-park-map.png](../assets/merus/merus-park-map.png)
 
 ## Follow-Up Before Publishing More Detail
 

@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<base href="../">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#263f39">
+<title>Choose Tyler Campsites | The Winter Loop</title>
+<style>
+:root{--ink:#202923;--muted:#66736c;--paper:#fffefa;--canvas:#e9eee8;--line:#d2d9d1;--forest:#263f39;--forest-light:#36564a;--teal:#276d68;--rust:#ae4b38;--gold:#d1a04a;--soft:#f7eadc;--sage:#e4ede5;--shadow:0 12px 34px rgb(36 55 45 / 9%)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,rgb(255 255 255 / 28%),transparent 42%),repeating-linear-gradient(135deg,#e9eee8 0,#e9eee8 16px,#e5ebe4 16px,#e5ebe4 17px);color:var(--ink);font:16px/1.5 Georgia,"Times New Roman",serif}button,input,textarea{font:inherit}button{color:inherit}a{color:var(--teal);font-weight:700}a:hover{color:var(--rust)}.shell{width:min(1440px,calc(100% - 32px));margin:0 auto 56px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 0}.topbar a{font:700 .76rem Arial,sans-serif;text-decoration:none}.crumb{color:var(--muted);font:700 .7rem Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px;padding:27px 30px;background:var(--forest);color:#fff;border-top:5px solid var(--gold);box-shadow:var(--shadow)}.hero-kicker{margin:0 0 6px;color:#f2d396;font:700 .7rem Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}.hero h1{margin:0;font-size:clamp(1.8rem,4vw,2.65rem);line-height:1.08}.hero-copy{max-width:690px;margin:11px 0 0;color:#e1e9e3;font:15px/1.5 Arial,sans-serif}.hero-date{min-width:180px;padding-left:18px;border-left:1px solid rgb(255 255 255 / 24%);font:700 .78rem/1.6 Arial,sans-serif;color:#f7e5bd}.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:15px;background:var(--line);border:1px solid var(--line)}.fact{padding:13px 16px;background:var(--paper)}.fact strong{display:block;color:var(--muted);font:700 .62rem Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}.fact span{display:block;margin-top:3px;font-size:.93rem;font-weight:700}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:16px;margin-top:16px;align-items:start}.map-panel,.side-panel,.vote-panel{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow)}.map-panel{min-width:0}.map-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:17px 20px;border-bottom:1px solid var(--line)}.map-head h2,.side-panel h2,.vote-panel h2{margin:0;font:700 1rem Arial,sans-serif}.map-subtitle{margin:4px 0 0;color:var(--muted);font:13px Arial,sans-serif}.map-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px}.tool-button,.action-button{min-height:38px;padding:8px 11px;border:1px solid var(--line);background:#fff;font:700 .75rem Arial,sans-serif;cursor:pointer}.tool-button:hover,.action-button:hover{border-color:var(--teal);color:var(--teal)}.tool-button:focus-visible,.action-button:focus-visible,.loop-shortcut:focus-visible,.map-hotspots g:focus-visible{outline:3px solid var(--gold);outline-offset:2px}.tool-button[hidden]{display:none}.map-frame{padding:12px;background:#263631}.map-viewport{height:clamp(400px,62vh,760px);overflow:auto;overscroll-behavior:contain;background:#e1e6df;scrollbar-color:#778981 #e1e6df}.map-canvas{position:relative;width:100%;min-width:100%;line-height:0}.map-canvas img.map-image{display:block;width:100%;height:auto}.map-canvas img.roads-layer,.map-hotspots{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.map-canvas img.roads-layer{object-fit:fill}.map-hotspots svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.map-hotspots path{fill:transparent;stroke:transparent;pointer-events:all;cursor:pointer;transition:fill .16s ease,stroke .16s ease}.map-hotspots g:hover path,.map-hotspots g:focus-visible path{fill:rgb(255 255 255 / 20%);stroke:#fff;stroke-width:5;vector-effect:non-scaling-stroke}.map-hotspots g[aria-pressed="true"] path{fill:rgb(209 160 74 / 25%);stroke:#f6d991;stroke-width:6;vector-effect:non-scaling-stroke}.map-placeholder{display:grid;min-height:400px;place-content:center;gap:8px;padding:30px;text-align:center;color:var(--muted);line-height:1.5}.map-placeholder strong{color:var(--forest);font:700 1rem Arial,sans-serif}.map-placeholder code{font-size:.85rem}.map-caption{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 15px;background:#f7f8f4;color:var(--muted);font:12px Arial,sans-serif}.map-caption .status{min-height:1em}.loop-shortcuts{display:flex;flex-wrap:wrap;gap:8px;padding:12px 15px;border-top:1px solid var(--line)}.loop-shortcut{padding:7px 10px;border:1px solid var(--line);background:white;color:var(--forest);font:700 .7rem Arial,sans-serif;cursor:pointer}.loop-shortcut:hover,.loop-shortcut[aria-current="true"]{background:var(--sage);border-color:var(--teal)}.map-note{padding:0 15px 14px;margin:0;color:var(--muted);font:12px Arial,sans-serif}.side-panel{padding:18px}.side-panel h2{padding-bottom:12px;border-bottom:1px solid var(--line)}.empty-detail{padding:15px 0 17px;color:var(--muted);font-size:.9rem}.detail-card{padding:15px 0}.detail-title{display:flex;justify-content:space-between;align-items:center;gap:10px}.detail-title h3{margin:0;font:700 1.12rem Arial,sans-serif}.status-chip{padding:4px 7px;background:var(--soft);color:#79402e;font:700 .61rem Arial,sans-serif;text-transform:uppercase}.detail-photo{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;margin:12px 0;background:#edf0eb}.photo-empty{display:grid;min-height:130px;place-items:center;margin-top:12px;padding:16px;background:#f1f3ed;color:var(--muted);font:13px Arial,sans-serif;text-align:center}.detail-copy{margin:11px 0;color:var(--muted);font-size:.88rem}.action-button.primary{width:100%;margin-top:4px;background:var(--forest);border-color:var(--forest);color:#fff}.action-button.primary:hover{background:var(--forest-light)}.action-button:disabled{cursor:not-allowed;opacity:.45}.pair-list{display:grid;gap:7px;margin:13px 0}.pair-slot{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:42px;padding:9px 10px;border:1px dashed #b9c4ba;background:#fafbf7;color:var(--muted);font:700 .76rem Arial,sans-serif}.pair-slot.filled{border-style:solid;border-color:#acc5b7;background:var(--sage);color:var(--forest)}.pair-help,.vote-status{color:var(--muted);font:12px/1.45 Arial,sans-serif}.clear-button{padding:0;border:0;background:none;color:var(--teal);font:700 .72rem Arial,sans-serif;text-decoration:underline;cursor:pointer}.vote-panel{margin-top:16px;padding:20px}.vote-head{display:flex;justify-content:space-between;align-items:start;gap:16px}.vote-panel .lede{margin:5px 0 16px;color:var(--muted);font:13px Arial,sans-serif}.vote-grid{display:grid;grid-template-columns:minmax(170px,.75fr) minmax(240px,1.25fr) auto;align-items:end;gap:12px}.field label{display:block;margin-bottom:5px;color:var(--muted);font:700 .65rem Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase}.field input,.field textarea{width:100%;padding:10px 11px;border:1px solid var(--line);background:#fffefa;color:var(--ink);font:14px Arial,sans-serif}.field input:focus,.field textarea:focus{outline:2px solid var(--teal);outline-offset:1px}.field textarea{min-height:42px;resize:vertical}.vote-submit{min-height:42px;padding:10px 14px;border:0;background:var(--rust);color:#fff;font:700 .78rem Arial,sans-serif;cursor:pointer}.vote-submit:disabled{cursor:not-allowed;opacity:.48}.vote-status{margin:12px 0 0}.results-link{display:none;margin-top:9px;font:700 .76rem Arial,sans-serif}.fine-print{margin-top:16px;color:var(--muted);font:12px/1.5 Arial,sans-serif}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}footer{padding:18px 2px;color:var(--muted);font:12px Arial,sans-serif}
+@media(max-width:980px){.workspace{grid-template-columns:minmax(0,1fr) 285px}.vote-grid{grid-template-columns:1fr 1fr}.vote-submit{grid-column:1/-1}.map-viewport{height:58vh}}
+@media(max-width:700px){.shell{width:calc(100% - 16px);margin-bottom:28px}.topbar{padding:11px 0}.hero{grid-template-columns:1fr;padding:22px 19px}.hero-date{min-width:0;padding:0;border:0}.facts{grid-template-columns:1fr}.fact{padding:10px 13px}.workspace{grid-template-columns:1fr}.map-head{align-items:flex-start;padding:14px;flex-direction:column}.map-actions{justify-content:flex-start}.map-frame{padding:7px}.map-viewport{height:58vh;min-height:340px}.map-placeholder{min-height:340px}.map-caption{align-items:flex-start;flex-direction:column}.side-panel{padding:15px}.vote-panel{padding:16px}.vote-head{flex-direction:column}.vote-grid{grid-template-columns:1fr}.vote-submit{grid-column:auto}.loop-shortcuts{gap:6px}.loop-shortcut{flex:1 1 125px;text-align:center}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+.map-viewport{height:auto;min-height:0;aspect-ratio:2644 / 2084}
+[hidden]{display:none!important}
+.map-viewport.is-zoomed{cursor:grab;touch-action:none}.map-viewport.is-panning{cursor:grabbing;user-select:none}.map-image,.roads-layer{user-select:none;-webkit-user-drag:none}.map-frame{position:relative}.map-hotspots g:focus-visible{outline:none}.map-hotspots g:hover path,.map-hotspots g:focus-visible path{fill:transparent;stroke:#fff;stroke-width:2;stroke-dasharray:6 4;vector-effect:non-scaling-stroke}.map-tooltip{position:absolute;z-index:4;top:12px;left:50%;transform:translateX(-50%);padding:6px 9px;border:1px solid rgb(255 255 255 / 45%);background:var(--forest);color:#fff;font:700 .72rem Arial,sans-serif;box-shadow:0 3px 12px rgb(0 0 0 / 25%);pointer-events:none;white-space:nowrap}.map-tooltip[hidden]{display:none}
+.map-hotspots path{stroke:rgb(255 255 255 / 90%);stroke-width:2;stroke-dasharray:6 4;vector-effect:non-scaling-stroke}.map-hotspots g:hover path,.map-hotspots g:focus-visible path{fill:rgb(209 160 74 / 20%);stroke:var(--gold);stroke-width:3;stroke-dasharray:3 3}.map-hotspots g:focus-visible{outline:none!important}
+body.map-expanded{overflow:hidden;background:#263631}body.map-expanded .shell{width:100%;max-width:none;height:100vh;height:100dvh;margin:0}body.map-expanded .topbar,body.map-expanded .hero,body.map-expanded .facts,body.map-expanded .side-panel,body.map-expanded .vote-panel,body.map-expanded footer,body.map-expanded .loop-shortcuts,body.map-expanded .map-note{display:none}body.map-expanded .workspace{display:block;height:100%;margin:0}body.map-expanded .map-panel{display:flex;height:100%;flex-direction:column;border:0;box-shadow:none}body.map-expanded .map-head{flex:none;padding:10px 16px}body.map-expanded .map-frame{display:flex;flex:1;min-height:0;padding:6px}body.map-expanded .map-viewport{display:flex;width:100%;height:auto;min-height:0;flex:1;aspect-ratio:auto;max-height:none}body.map-expanded .map-canvas{flex:none}body.map-expanded .map-canvas img.map-image{width:100%;height:100%;object-fit:contain}body.map-expanded .map-placeholder{flex:1;min-height:0}
+</style>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<div class="shell">
+<header class="hero">
+  <div><p class="hero-kicker">Big Pines Campground · Tyler State Park</p><h1>Big Pines sites reserved</h1><p class="hero-copy">Sites BP-306 and BP-308 are confirmed for Dec 29-31. Use the map to review your booked sites and campground details.</p></div>
+  <div class="hero-date">Planned stay<br>Dec 29-31, 2026</div>
+</header>
+<div class="facts" aria-label="Trip details">
+  <div class="fact"><strong>Campground</strong><span>Big Pines Campground</span></div>
+  <div class="fact"><strong>Booked sites</strong><span>BP-306 and BP-308</span></div>
+  <div class="fact"><strong>Reservation</strong><span>Confirmed · $160 paid</span><span><a href="receipts/tyler.html">View local receipt summary</a></span></div>
+</div>
+
+<div class="workspace">
+<section class="map-panel" aria-labelledby="mapTitle">
+  <div class="map-head">
+    <div><h2 id="mapTitle">Campground overview</h2><p class="map-subtitle" id="mapSubtitle">Select a loop to explore its campsites.</p></div>
+    <div class="map-actions" role="group" aria-label="Map controls">
+      <button class="tool-button" id="backButton" type="button" hidden>Back to campground</button>
+      <button class="tool-button" id="roadsButton" type="button" aria-pressed="false" hidden>Show roads</button>
+      <button class="tool-button" id="zoomOut" type="button" aria-label="Zoom out">-</button>
+      <button class="tool-button" id="zoomIn" type="button" aria-label="Zoom in">+</button>
+      <button class="tool-button" id="zoomReset" type="button">Fit</button>
+      <button class="tool-button" id="expandMap" type="button" aria-pressed="false">Expand map</button>
+    </div>
+  </div>
+  <div class="map-frame">
+    <div class="map-tooltip" id="mapTooltip" role="tooltip" hidden></div>
+    <div class="map-viewport" id="mapViewport" tabindex="0" aria-label="Scrollable campground map">
+      <div class="map-canvas" id="mapCanvas">
+        <img class="map-image" id="mapImage" src="assets/tyler/campground-map.jpg" alt="Aerial campground map with three selectable loop regions" draggable="false">
+        <img class="roads-layer" id="roadsLayer" alt="" hidden draggable="false">
+        <div class="map-hotspots" id="mapHotspots"></div>
+      </div>
+      <div class="map-placeholder" id="mapPlaceholder" hidden></div>
+    </div>
+  </div>
+  <div class="map-caption"><span class="status" id="mapStatus" aria-live="polite">Loading campground map...</span><span id="zoomReadout">100%</span></div>
+  <nav class="loop-shortcuts" id="loop-shortcuts" aria-label="Choose a campground loop">
+    <button class="loop-shortcut" type="button" data-loop="big-pines-loop">Big Pines Loop</button>
+    <button class="loop-shortcut" type="button" data-loop="lake-view-loop">Lake View Loop</button>
+    <button class="loop-shortcut" type="button" data-loop="cedar-point-loop">Cedar Point Loop</button>
+  </nav>
+  <p class="map-note">Drag to pan when zoomed. Use the mouse wheel or zoom buttons to zoom. The road overlay is available on loop maps only.</p>
+</section>
+
+<aside class="side-panel" aria-labelledby="sitePanelTitle">
+  <h2 id="sitePanelTitle">Campsite details</h2>
+  <div id="emptyDetail" class="empty-detail">Choose a loop, then select a campsite marker to see its photos and details.</div>
+  <div id="siteDetail" class="detail-card" hidden>
+    <div class="detail-title"><h3 id="siteTitle"></h3><span class="status-chip" id="siteStatus">Availability unverified</span></div>
+    <div class="photo-empty" id="photoEmpty">Ground-level photos have not been added yet.</div>
+    <img class="detail-photo" id="sitePhoto" alt="" hidden>
+    <p class="detail-copy" id="siteDescription">Campsite details have not been added yet. Confirm current availability with Texas State Parks before booking.</p>
+    <button class="action-button primary" id="selectSiteButton" type="button">Add site to preferred pair</button>
+  </div>
+  <h2 style="margin-top:18px;padding-top:15px;border-top:1px solid var(--line)">Your preferred pair</h2>
+  <div class="pair-list" aria-live="polite">
+    <div class="pair-slot" id="pairSlotOne">1. Select a campsite</div>
+    <div class="pair-slot" id="pairSlotTwo">2. Select another in the same loop</div>
+  </div>
+  <p class="pair-help" id="pairHelp">Choose two distinct sites in one loop. You can change the pair before voting.</p>
+  <button class="clear-button" id="clearPair" type="button" hidden>Clear pair</button>
+</aside>
+</div>
+
+<section class="vote-panel" aria-labelledby="voteTitle">
+  <div class="vote-head"><div><h2 id="voteTitle">Share your vote</h2><p class="lede">Choose a pair above, then send your preference through the group form.</p></div><a class="results-link" id="resultsLink" target="_blank" rel="noopener noreferrer">View live results</a></div>
+  <div class="vote-grid">
+    <div class="field"><label for="voterName">Your name</label><input id="voterName" name="name" autocomplete="name" placeholder="Name" required></div>
+    <div class="field"><label for="voteComment">Optional note</label><textarea id="voteComment" name="comment" placeholder="What makes this pair work for you?"></textarea></div>
+    <button class="vote-submit" id="voteSubmit" type="button" disabled>Open voting form</button>
+  </div>
+  <p class="vote-status" id="voteStatus" aria-live="polite">Voting form is not connected yet. The map and site options can be prepared while the Google Form is set up.</p>
+  <p class="fine-print">This page collects preferences only; it does not reserve campsites. Availability, site fit, and the final booking must be confirmed with Texas State Parks. Votes use self-entered names, so duplicate submissions cannot be reliably prevented.</p>
+</section>
+<footer>Tyler State Park · Big Pines Campground · Planned for Dec 29-31, 2026</footer>
+</div>
+
+<script>
+(() => {
+const tylerLoops = {
+    'big-pines-loop': { label: 'Big Pines Loop', map: 'big-pines-loop-map.jpg', roads: 'big-pines-loop-roads-overlay.png', hotspots: 'big-pines-loop-hotspots.svg', unavailableSites: ['bp-326'] },
+    'lake-view-loop': { label: 'Lake View Loop', map: 'lake-view-loop-map.jpg', roads: 'lake-view-loop-roads-overlay.png', hotspots: 'lake-view-loop-hotspots.svg' },
+    'cedar-point-loop': { label: 'Cedar Point Loop', map: 'cedar-point-loop-map.png', roads: 'cedar-point-loop-roads-overlay.png', hotspots: 'cedar-point-loop-hotspots.svg' }
+  };
+
+  const assetRoot = 'assets/tyler/';
+  const loops = tylerLoops;
+  const voteForm = {
+    url: 'https://docs.google.com/forms/d/e/1FAIpQLSfz6nNyEA3zC2X7mvfZ1Wle3prCeIHjRGefdR51WMAMAUj6Kw/viewform',
+    resultsUrl: '',
+    entry: { name: 'entry.877086558', firstSite: 'entry.1498135098', secondSite: 'entry.1424661284', comment: 'entry.2606285' }
+  };
+
+  const mapImage = document.getElementById('mapImage');
+  const mapCanvas = document.getElementById('mapCanvas');
+  const mapHotspots = document.getElementById('mapHotspots');
+  const mapPlaceholder = document.getElementById('mapPlaceholder');
+  const roadsLayer = document.getElementById('roadsLayer');
+  const mapStatus = document.getElementById('mapStatus');
+  const mapTitle = document.getElementById('mapTitle');
+  const mapSubtitle = document.getElementById('mapSubtitle');
+  const mapViewport = document.getElementById('mapViewport');
+  const mapFrame = document.querySelector('.map-frame');
+  const mapTooltip = document.getElementById('mapTooltip');
+  const roadsButton = document.getElementById('roadsButton');
+  const backButton = document.getElementById('backButton');
+  const expandMapButton = document.getElementById('expandMap');
+  const siteDetail = document.getElementById('siteDetail');
+  const emptyDetail = document.getElementById('emptyDetail');
+  const selectedPair = [];
+  let activeLoop = null;
+  let activeSite = null;
+  let zoom = 1;
+  let loadToken = 0;
+  let panStart = null;
+  let suppressMapClick = false;
+  let mapExpanded = false;
+  let pageScrollBeforeExpand = 0;
+
+  const overviewLoops = {
+    'loop-big-pines': 'big-pines-loop',
+    'loop-lake-view': 'lake-view-loop',
+    'loop-cedar-point': 'cedar-point-loop'
+  };
+
+  function showLoopTooltip(loopId, event) {
+    mapTooltip.textContent = loops[loopId].label;
+    mapTooltip.hidden = false;
+    if (!event) return;
+    const frame = mapFrame.getBoundingClientRect();
+    const tooltip = mapTooltip.getBoundingClientRect();
+    const left = Math.max(8, Math.min(event.clientX - frame.left + 12, frame.width - tooltip.width - 8));
+    const top = Math.max(8, Math.min(event.clientY - frame.top + 12, frame.height - tooltip.height - 8));
+    mapTooltip.style.left = `${left}px`;
+    mapTooltip.style.top = `${top}px`;
+    mapTooltip.style.transform = 'none';
+  }
+
+  function hideLoopTooltip() {
+    mapTooltip.hidden = true;
+    mapTooltip.style.left = '';
+    mapTooltip.style.top = '';
+    mapTooltip.style.transform = '';
+  }
+
+  function updateZoom() {
+    if (mapExpanded && mapImage.naturalWidth && mapViewport.clientWidth && mapViewport.clientHeight) {
+      const fitScale = Math.max(mapViewport.clientWidth / mapImage.naturalWidth, mapViewport.clientHeight / mapImage.naturalHeight);
+      mapCanvas.style.width = `${Math.round(mapImage.naturalWidth * fitScale * zoom)}px`;
+      mapCanvas.style.height = `${Math.round(mapImage.naturalHeight * fitScale * zoom)}px`;
+    } else {
+      mapCanvas.style.width = `${zoom * 100}%`;
+      mapCanvas.style.height = '';
+    }
+    mapViewport.classList.toggle('is-zoomed', zoom > 1);
+    document.getElementById('zoomReadout').textContent = `${Math.round(zoom * 100)}%`;
+    document.getElementById('zoomOut').disabled = zoom <= 1;
+    document.getElementById('zoomIn').disabled = zoom >= 3;
+  }
+
+  function setZoomAt(nextZoom, clientX, clientY) {
+    const frame = mapViewport.getBoundingClientRect();
+    const anchorX = clientX === undefined ? mapViewport.clientWidth / 2 : clientX - frame.left;
+    const anchorY = clientY === undefined ? mapViewport.clientHeight / 2 : clientY - frame.top;
+    const oldWidth = Math.max(mapCanvas.clientWidth, 1);
+    const oldHeight = Math.max(mapCanvas.clientHeight, 1);
+    const relativeX = (mapViewport.scrollLeft + anchorX) / oldWidth;
+    const relativeY = (mapViewport.scrollTop + anchorY) / oldHeight;
+
+    zoom = Math.max(1, Math.min(3, nextZoom));
+    updateZoom();
+
+    if (zoom === 1) {
+      mapViewport.scrollTo(0, 0);
+      return;
+    }
+
+    mapViewport.scrollLeft = relativeX * mapCanvas.clientWidth - anchorX;
+    mapViewport.scrollTop = relativeY * mapCanvas.clientHeight - anchorY;
+  }
+
+  function showPlaceholder(title, detail) {
+    mapCanvas.hidden = true;
+    mapPlaceholder.hidden = false;
+    mapPlaceholder.replaceChildren();
+    const heading = document.createElement('strong');
+    heading.textContent = title;
+    const message = document.createElement('span');
+    message.textContent = detail;
+    mapPlaceholder.append(heading, message);
+  }
+
+  function showCanvas() {
+    mapPlaceholder.hidden = true;
+    mapCanvas.hidden = false;
+  }
+
+  function attachSiteTargets(svg) {
+    const siteTargets = svg.querySelectorAll('[id^="site-"], [id^="bp-"], [id^="lv-"], [id^="cp-"]');
+    siteTargets.forEach(target => {
+      if (loops[activeLoop]?.unavailableSites?.includes(target.id)) {
+        target.remove();
+        return;
+      }
+      const siteId = target.id.replace(/^site-/, '');
+      const displaySiteId = siteId.replace(/^(bp|lv|cp)-/, (_, prefix) => `${prefix.toUpperCase()}-`);
+      target.setAttribute('role', 'button');
+      target.setAttribute('tabindex', '0');
+      target.setAttribute('aria-label', `View campsite ${displaySiteId}`);
+      target.addEventListener('click', () => inspectSite(activeLoop, siteId, displaySiteId));
+      target.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          inspectSite(activeLoop, siteId, displaySiteId);
+        }
+      });
+    });
+    return siteTargets.length;
+  }
+
+  async function loadHotspots(source, token, mode) {
+    mapHotspots.replaceChildren();
+    try {
+      const response = await fetch(source);
+      if (!response.ok) throw new Error('Hotspot file not found');
+      const text = await response.text();
+      if (token !== loadToken) return;
+      const parsed = new DOMParser().parseFromString(text, 'image/svg+xml');
+      const svg = parsed.documentElement;
+      if (svg.localName !== 'svg' || parsed.querySelector('parsererror')) throw new Error('Invalid SVG');
+      const importedSvg = document.importNode(svg, true);
+      importedSvg.classList.add('interactive-hotspots');
+      mapHotspots.append(importedSvg);
+
+      if (mode === 'overview') {
+        Object.entries(overviewLoops).forEach(([hotspotId, loopId]) => {
+          const target = importedSvg.querySelector(`#${hotspotId}`);
+          if (target) {
+            target.setAttribute('role', 'button');
+            target.setAttribute('tabindex', '0');
+            target.setAttribute('aria-label', `Open ${loops[loopId].label}`);
+            target.addEventListener('pointerenter', event => showLoopTooltip(loopId, event));
+            target.addEventListener('pointermove', event => showLoopTooltip(loopId, event));
+            target.addEventListener('pointerleave', hideLoopTooltip);
+            target.addEventListener('focusin', () => showLoopTooltip(loopId));
+            target.addEventListener('focusout', hideLoopTooltip);
+            target.addEventListener('click', () => openLoop(loopId));
+            target.addEventListener('keydown', event => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openLoop(loopId);
+              }
+            });
+          }
+        });
+      } else {
+        const siteCount = attachSiteTargets(importedSvg);
+        if (!siteCount) mapStatus.textContent = 'Loop map loaded; campsite hotspots have not been added yet.';
+      }
+    } catch {
+      if (token !== loadToken) return;
+      if (mode === 'overview') mapStatus.textContent = 'Campground hotspots could not be loaded.';
+      else mapStatus.textContent = 'Loop map loaded; campsite hotspots have not been added yet.';
+    }
+  }
+
+  function loadMap(source, alt, token, loopId) {
+    mapImage.onload = () => {
+      if (token !== loadToken) return;
+      mapImage.alt = alt;
+      mapViewport.style.aspectRatio = mapExpanded ? 'auto' : `${mapImage.naturalWidth} / ${mapImage.naturalHeight}`;
+      showCanvas();
+      updateZoom();
+      if (loopId) {
+        const loop = loops[loopId];
+        loadHotspots(assetRoot + loop.hotspots, token, 'loop');
+        mapStatus.textContent = 'Select a campsite marker to view its details.';
+        roadsLayer.onload = () => {
+          if (token !== loadToken) return;
+          const aligned = Math.abs(roadsLayer.naturalWidth - mapImage.naturalWidth) <= 1 && Math.abs(roadsLayer.naturalHeight - mapImage.naturalHeight) <= 1;
+          roadsButton.hidden = !aligned;
+          roadsLayer.hidden = true;
+          if (!aligned) mapStatus.textContent = `Campsites loaded. Road overlay is ${roadsLayer.naturalWidth} x ${roadsLayer.naturalHeight}; it must match the map at ${mapImage.naturalWidth} x ${mapImage.naturalHeight}.`;
+        };
+        roadsLayer.onerror = () => {
+          if (token === loadToken) roadsButton.hidden = true;
+        };
+        roadsLayer.src = assetRoot + loop.roads;
+      } else {
+        loadHotspots(assetRoot + 'campground-hotspots.svg', token, 'overview');
+        mapStatus.textContent = 'Select one of the three outlined loops.';
+      }
+    };
+    mapImage.onerror = () => {
+      if (token !== loadToken) return;
+      if (loopId) {
+        const loop = loops[loopId];
+        showPlaceholder(`${loop.label} map is not added yet`, `Add ${assetRoot}${loop.map} to the project image folder.`);
+        mapStatus.textContent = 'Loop map asset pending.';
+      } else {
+        showPlaceholder('Campground map could not be loaded', 'Check that assets/tyler/campground-map.jpg is present.');
+        mapStatus.textContent = 'Map asset unavailable.';
+      }
+    };
+    mapImage.src = source;
+  }
+
+  function openLoop(loopId) {
+    if (!loops[loopId]) return;
+    hideLoopTooltip();
+    if (selectedPair.length && selectedPair[0].loopId !== loopId) {
+      selectedPair.splice(0, selectedPair.length);
+      renderPair();
+      mapStatus.textContent = 'Previous selection cleared because both sites must be in the same loop.';
+    }
+    activeLoop = loopId;
+    activeSite = null;
+    const token = ++loadToken;
+    const loop = loops[loopId];
+    mapTitle.textContent = loop.label;
+    mapSubtitle.textContent = 'Select a campsite marker to inspect it and add it to your pair.';
+    backButton.hidden = false;
+    roadsButton.hidden = true;
+    roadsButton.setAttribute('aria-pressed', 'false');
+    roadsButton.textContent = 'Show roads';
+    roadsLayer.hidden = true;
+    mapHotspots.replaceChildren();
+    mapViewport.scrollTo(0, 0);
+    zoom = 1;
+    updateZoom();
+    document.querySelectorAll('.loop-shortcut').forEach(button => button.setAttribute('aria-current', String(button.dataset.loop === loopId)));
+    emptyDetail.hidden = false;
+    siteDetail.hidden = true;
+    loadMap(assetRoot + loop.map, `${loop.label} campsite map`, token, loopId);
+  }
+
+  function returnToOverview() {
+    hideLoopTooltip();
+    activeLoop = null;
+    activeSite = null;
+    const token = ++loadToken;
+    mapTitle.textContent = 'Campground overview';
+    mapSubtitle.textContent = 'Select a loop to explore its campsites.';
+    backButton.hidden = true;
+    roadsButton.hidden = true;
+    roadsLayer.hidden = true;
+    mapHotspots.replaceChildren();
+    mapViewport.scrollTo(0, 0);
+    zoom = 1;
+    updateZoom();
+    document.querySelectorAll('.loop-shortcut').forEach(button => button.removeAttribute('aria-current'));
+    emptyDetail.hidden = false;
+    siteDetail.hidden = true;
+    loadMap(assetRoot + 'campground-map.jpg', 'Aerial campground map with three selectable loop regions', token, null);
+  }
+
+  function inspectSite(loopId, siteId, displaySiteId = siteId) {
+    if (!loopId) return;
+    activeSite = { loopId, siteId, displaySiteId, loopLabel: loops[loopId].label };
+    emptyDetail.hidden = true;
+    siteDetail.hidden = false;
+    document.getElementById('siteTitle').textContent = `Site ${displaySiteId}`;
+    document.getElementById('siteStatus').textContent = 'Availability unverified';
+    document.getElementById('siteDescription').textContent = `${loops[loopId].label}. Site details have not been added yet. Confirm current availability and fit for your camper before booking.`;
+    const photo = document.getElementById('sitePhoto');
+    const photoEmpty = document.getElementById('photoEmpty');
+    photo.hidden = true;
+    photoEmpty.hidden = false;
+    photo.onerror = () => { photo.hidden = true; photoEmpty.hidden = false; };
+    photo.onload = () => { photo.hidden = false; photoEmpty.hidden = true; };
+    photo.alt = `Ground-level view of campsite ${displaySiteId}`;
+    photo.src = `${assetRoot}site-${siteId.toLowerCase()}-ground-01.jpg`;
+    const isSelected = selectedPair.some(site => site.loopId === loopId && site.siteId === siteId);
+    const button = document.getElementById('selectSiteButton');
+    button.textContent = isSelected ? 'Remove from preferred pair' : 'Add site to preferred pair';
+    button.disabled = !isSelected && selectedPair.length >= 2;
+  }
+
+  function renderPair() {
+    const slots = [document.getElementById('pairSlotOne'), document.getElementById('pairSlotTwo')];
+    slots.forEach((slot, index) => {
+      const site = selectedPair[index];
+      slot.textContent = site ? `${index + 1}. ${site.displaySiteId} - ${site.loopLabel}` : `${index + 1}. ${index ? 'Select another site' : 'Select a campsite'}`;
+      slot.classList.toggle('filled', Boolean(site));
+    });
+    document.getElementById('clearPair').hidden = !selectedPair.length;
+    document.getElementById('pairHelp').textContent = selectedPair.length === 2 ? 'Pair selected. Add your name and optional note below to continue.' : 'Choose two distinct sites in one loop. You can change the pair before voting.';
+    updateVoteState();
+    if (activeSite) inspectSite(activeSite.loopId, activeSite.siteId, activeSite.displaySiteId);
+  }
+
+  function toggleSiteInPair() {
+    if (!activeSite) return;
+    const existingIndex = selectedPair.findIndex(site => site.loopId === activeSite.loopId && site.siteId === activeSite.siteId);
+    if (existingIndex >= 0) selectedPair.splice(existingIndex, 1);
+    else if (selectedPair.length < 2) selectedPair.push({ ...activeSite });
+    renderPair();
+  }
+
+  function updateVoteState() {
+    const configured = voteForm.url && voteForm.entry.name && voteForm.entry.firstSite && voteForm.entry.secondSite;
+    const hasName = document.getElementById('voterName').value.trim().length > 0;
+    document.getElementById('voteSubmit').disabled = !(configured && hasName && selectedPair.length === 2);
+    const resultsLink = document.getElementById('resultsLink');
+    if (voteForm.resultsUrl) {
+      resultsLink.href = voteForm.resultsUrl;
+      resultsLink.style.display = 'inline-block';
+    }
+    if (configured && selectedPair.length === 2 && hasName) document.getElementById('voteStatus').textContent = 'Your name, preferred pair, and note will be sent to the group form.';
+  }
+
+  document.getElementById('backButton').addEventListener('click', returnToOverview);
+  document.getElementById('roadsButton').addEventListener('click', () => {
+    const show = roadsLayer.hidden;
+    roadsLayer.hidden = !show;
+    roadsButton.setAttribute('aria-pressed', String(show));
+    roadsButton.textContent = show ? 'Hide roads' : 'Show roads';
+  });
+  document.getElementById('zoomIn').addEventListener('click', () => setZoomAt(zoom + 0.25));
+  document.getElementById('zoomOut').addEventListener('click', () => setZoomAt(zoom - 0.25));
+  document.getElementById('zoomReset').addEventListener('click', () => { zoom = 1; updateZoom(); mapViewport.scrollTo(0, 0); });
+  mapViewport.addEventListener('wheel', event => {
+    const multiplier = event.deltaMode === WheelEvent.DOM_DELTA_LINE ? 16 : event.deltaMode === WheelEvent.DOM_DELTA_PAGE ? mapViewport.clientHeight : 1;
+    const nextZoom = zoom * Math.exp(-event.deltaY * multiplier * 0.001);
+    const boundedZoom = Math.max(1, Math.min(3, nextZoom));
+    if (boundedZoom === zoom) return;
+    event.preventDefault();
+    setZoomAt(boundedZoom, event.clientX, event.clientY);
+  }, { passive: false });
+  function setMapExpanded(expanded) {
+    mapExpanded = expanded;
+    document.body.classList.toggle('map-expanded', mapExpanded);
+    mapViewport.style.aspectRatio = mapExpanded ? 'auto' : `${mapImage.naturalWidth} / ${mapImage.naturalHeight}`;
+    expandMapButton.setAttribute('aria-pressed', String(mapExpanded));
+    expandMapButton.textContent = mapExpanded ? 'Restore layout' : 'Expand map';
+    zoom = 1;
+    mapViewport.scrollTo(0, 0);
+    updateZoom();
+    if (mapExpanded) {
+      mapViewport.focus({ preventScroll: true });
+    } else {
+      window.scrollTo(0, pageScrollBeforeExpand);
+    }
+  }
+  expandMapButton.addEventListener('click', () => {
+    if (!mapExpanded) pageScrollBeforeExpand = window.scrollY;
+    setMapExpanded(!mapExpanded);
+  });
+  window.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && mapExpanded) setMapExpanded(false);
+  });
+  window.addEventListener('resize', () => { if (mapExpanded) updateZoom(); });
+  mapViewport.addEventListener('pointerdown', event => {
+    if (zoom <= 1 || event.button !== 0 || event.target.closest?.('button, a, input, textarea')) return;
+    panStart = { pointerId: event.pointerId, x: event.clientX, y: event.clientY, left: mapViewport.scrollLeft, top: mapViewport.scrollTop, moved: false };
+  });
+  mapViewport.addEventListener('pointermove', event => {
+    if (!panStart || event.pointerId !== panStart.pointerId) return;
+    const deltaX = event.clientX - panStart.x;
+    const deltaY = event.clientY - panStart.y;
+    if (!panStart.moved && Math.hypot(deltaX, deltaY) < 5) return;
+    if (!panStart.moved) {
+      panStart.moved = true;
+      mapViewport.setPointerCapture(event.pointerId);
+      mapViewport.classList.add('is-panning');
+    }
+    mapViewport.scrollLeft = panStart.left - deltaX;
+    mapViewport.scrollTop = panStart.top - deltaY;
+  });
+  function finishPan(event) {
+    if (!panStart || event.pointerId !== panStart.pointerId) return;
+    if (panStart.moved) {
+      suppressMapClick = true;
+      setTimeout(() => { suppressMapClick = false; }, 0);
+    }
+    panStart = null;
+    mapViewport.classList.remove('is-panning');
+  }
+  mapViewport.addEventListener('pointerup', finishPan);
+  mapViewport.addEventListener('pointercancel', finishPan);
+  mapViewport.addEventListener('click', event => {
+    if (!suppressMapClick) return;
+    event.preventDefault();
+    event.stopPropagation();
+  }, true);
+  document.querySelectorAll('.loop-shortcut').forEach(button => button.addEventListener('click', () => openLoop(button.dataset.loop)));
+  document.getElementById('selectSiteButton').addEventListener('click', toggleSiteInPair);
+  document.getElementById('clearPair').addEventListener('click', () => { selectedPair.splice(0, selectedPair.length); renderPair(); });
+  document.getElementById('voteSubmit').addEventListener('click', () => {
+    const target = new URL(voteForm.url);
+    target.searchParams.set('usp', 'pp_url');
+    target.searchParams.set(voteForm.entry.name, document.getElementById('voterName').value);
+    target.searchParams.set(voteForm.entry.firstSite, `${selectedPair[0].displaySiteId} (${loops[selectedPair[0].loopId].label})`);
+    target.searchParams.set(voteForm.entry.secondSite, `${selectedPair[1].displaySiteId} (${loops[selectedPair[1].loopId].label})`);
+    if (voteForm.entry.comment) target.searchParams.set(voteForm.entry.comment, document.getElementById('voteComment').value);
+    window.open(target.toString(), '_blank', 'noopener,noreferrer');
+  });
+  document.getElementById('voterName').addEventListener('input', updateVoteState);
+
+  updateZoom();
+  updateVoteState();
+  returnToOverview();
+})();
+</script>
+</body>
+</html>

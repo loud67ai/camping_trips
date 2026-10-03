@@ -29,7 +29,10 @@ header{padding:30px;background:var(--green);color:#fff}header p{margin:0 0 7px;c
 </style>
 <style>
 .actual-hourly-heading{margin:22px 0 6px;color:var(--green);font:700 1rem Arial,sans-serif}.actual-hourly-meta{margin:0 0 8px;color:var(--muted);font:12px/1.4 Arial,sans-serif}.actual-hourly-chart .curve{stroke:var(--blue)}
+.temperature-chart .temperature-point{cursor:crosshair;stroke:#fff;stroke-width:1.5}.temperature-chart .temperature-point:hover,.temperature-chart .temperature-point:focus{stroke:var(--ink);stroke-width:2;outline:none}.temperature-chart .chart-hover-tooltip rect{fill:#263f39!important;stroke:#fff;stroke-width:1}.temperature-chart .chart-hover-tooltip text{fill:#fff!important;font:700 12px Arial,sans-serif}
 </style>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 </head>
 <body>
 <main>
@@ -76,6 +79,29 @@ header{padding:30px;background:var(--green);color:#fff}header p{margin:0 0 7px;c
 
 <footer class="page-footer"><p>Source: NOAA/NCEI Global Hourly. <a href="weather-temperature-curves.md">View calculated data and provenance</a>. Run <code>python update_weather_curves.py</code> to retrieve and recalculate; add <code>--refresh</code> to redownload cached station files.</p><a class="back-link" href="master-plan-2026.html">Back to The Winter Loop</a></footer>
 </main>
+<script>
+window.temperatureChartTimeLabel=function(hour){var localHour=hour%24;var suffix=localHour<12?'AM':'PM';var hour12=localHour%12||12;return hour12+' '+suffix;};
+window.addTemperatureChartPoint=function(svg,attributes,label,hour,temperature,width,height){
+  var namespace='http://www.w3.org/2000/svg';
+  var point=document.createElementNS(namespace,'circle');
+  Object.keys(attributes).forEach(function(key){point.setAttribute(key,attributes[key]);});
+  point.setAttribute('class','temperature-point');point.setAttribute('tabindex','0');point.setAttribute('role','img');
+  var tooltipText=label+' · '+window.temperatureChartTimeLabel(hour)+' · '+Math.round(temperature)+'°F';
+  point.setAttribute('aria-label',tooltipText);
+  function showTooltip(){
+    var existing=svg.querySelector('.chart-hover-tooltip');if(existing)existing.remove();
+    var tooltipWidth=Math.min(width-12,Math.max(190,tooltipText.length*6.3+18));
+    var tooltipHeight=30;var pointX=Number(point.getAttribute('cx'));var pointY=Number(point.getAttribute('cy'));
+    var x=Math.max(6,Math.min(pointX+9,width-tooltipWidth-6));var y=pointY-tooltipHeight-9;
+    if(y<6)y=Math.min(height-tooltipHeight-6,pointY+10);
+    var group=document.createElementNS(namespace,'g');group.setAttribute('class','chart-hover-tooltip');group.setAttribute('aria-hidden','true');group.setAttribute('pointer-events','none');
+    var rect=document.createElementNS(namespace,'rect');rect.setAttribute('x',x);rect.setAttribute('y',y);rect.setAttribute('width',tooltipWidth);rect.setAttribute('height',tooltipHeight);rect.setAttribute('rx','4');rect.setAttribute('fill','#263f39');rect.setAttribute('opacity','.96');group.appendChild(rect);
+    var text=document.createElementNS(namespace,'text');text.setAttribute('x',x+9);text.setAttribute('y',y+19);text.setAttribute('fill','#fff');text.setAttribute('font-family','Arial, sans-serif');text.setAttribute('font-size','12');text.textContent=tooltipText;group.appendChild(text);svg.appendChild(group);
+  }
+  function hideTooltip(){var tooltip=svg.querySelector('.chart-hover-tooltip');if(tooltip)tooltip.remove();}
+  point.addEventListener('pointerenter',showTooltip);point.addEventListener('pointerleave',hideTooltip);point.addEventListener('focus',showTooltip);point.addEventListener('blur',hideTooltip);svg.appendChild(point);
+};
+</script>
 <script id="temperature-curve-data" type="application/json">
 {
   "schema_version": 1,
@@ -507,7 +533,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			var xpos=x(hour);
 			svg.appendChild(element('line',{x1:xpos,y1:top,x2:xpos,y2:top+plotHeight,class:hour%3===0?'gridline':'hour-tick'}));
 			svg.appendChild(element('line',{x1:xpos,y1:top+plotHeight,x2:xpos,y2:top+plotHeight+5,class:'axis'}));
-			svg.appendChild(element('text',{x:xpos,y:top+plotHeight+22,'text-anchor':'middle'},String(hour%24).padStart(2,'0')+':00'));
+      if(hour%3===0)svg.appendChild(element('text',{x:xpos,y:top+plotHeight+22,'text-anchor':'middle'},window.temperatureChartTimeLabel(hour)));
 		}
 		svg.appendChild(element('line',{x1:left,y1:top,x2:left,y2:top+plotHeight,class:'axis'}));
 		svg.appendChild(element('line',{x1:left,y1:top+plotHeight,x2:width-right,y2:top+plotHeight,class:'axis'}));
@@ -518,6 +544,9 @@ document.addEventListener('DOMContentLoaded', function () {
 				var points=place[s.key];
 				var path=points.map(function(value,index){return (index?'L':'M')+x(index).toFixed(2)+' '+y(value).toFixed(2);}).join(' ');
 				svg.appendChild(element('path',{d:path,class:'curve',stroke:s.color}));
+        points.forEach(function(value,hour){
+          window.addTemperatureChartPoint(svg,{cx:x(hour),cy:y(value),r:4,fill:s.color},s.label,hour,value,width,height);
+        });
 			});
 		}else{
 			svg.appendChild(element('text',{x:left+plotWidth/2,y:top+plotHeight/2,'text-anchor':'middle',class:'empty-label'},'No sourced hourly data loaded'));
@@ -777,7 +806,7 @@ document.addEventListener('DOMContentLoaded',function(){
       var xpos=x(hour);
       append('line',{x1:xpos,y1:top,x2:xpos,y2:top+plotHeight,class:hour%3===0?'gridline':'hour-tick'});
       append('line',{x1:xpos,y1:top+plotHeight,x2:xpos,y2:top+plotHeight+5,class:'axis'});
-      append('text',{x:xpos,y:top+plotHeight+22,'text-anchor':'middle'},String(hour%24).padStart(2,'0')+':00');
+      if(hour%3===0)append('text',{x:xpos,y:top+plotHeight+22,'text-anchor':'middle'},window.temperatureChartTimeLabel(hour));
     }
     append('line',{x1:left,y1:top,x2:left,y2:top+plotHeight,class:'axis'});
     append('line',{x1:left,y1:top+plotHeight,x2:width-right,y2:top+plotHeight,class:'axis'});
@@ -786,7 +815,7 @@ document.addEventListener('DOMContentLoaded',function(){
     if(entries.length){
       var path=entries.map(function(point,index){return (index?'L':'M')+x(point.hour).toFixed(2)+' '+y(point.temperature).toFixed(2);}).join(' ');
       append('path',{d:path,class:'curve',stroke:'#28647a'});
-      entries.forEach(function(point){append('circle',{cx:x(point.hour),cy:y(point.temperature),r:3,fill:'#28647a'});});
+      entries.forEach(function(point){window.addTemperatureChartPoint(svg,{cx:x(point.hour),cy:y(point.temperature),r:4,fill:'#28647a'},'Hourly forecast',point.hour,point.temperature,width,height);});
     }else{
       append('text',{x:left+plotWidth/2,y:top+plotHeight/2,'text-anchor':'middle',class:'empty-label'},'Hourly forecast data unavailable');
     }

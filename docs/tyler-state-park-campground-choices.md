@@ -2,15 +2,15 @@
 
 ## Status
 
-Planning notes only. No campground-choice page has been built.
+Interactive page: [Tyler campsite choices](../campgrounds/tyler-sites.html). Tyler sites BP-306 and BP-308 are now confirmed for Dec 29-31, 2026; this document is retained as the page and asset reference.
 
 ## Trip Context
 
 - Campground: Big Pines Campground, Tyler State Park
 - Planned stay: Dec 29-31, 2026
-- Goal: choose two campsites for the trip
-- Reservation status in the trip plan: not yet confirmed; site numbers are not recorded
-- Map currently in the workspace: [Tyler State Park Map.pdf](Tyler%20State%20Park%20Map.pdf)
+- Goal: document the campsite comparison page and selected sites
+- Reservation confirmed: Big Pines Sites BP-306 and BP-308, Dec 29-31, 2026; $160 paid, no balance due. See [Tyler reservation summary](../receipts/tyler.html).
+- Map currently in the workspace: [Tyler State Park Map.pdf](../assets/maps/Tyler%20State%20Park%20Map.pdf)
 - Site availability, map images with roadway detail, and campsite-level photos still need to be supplied or identified
 
 ## Intended Experience
@@ -36,7 +36,7 @@ This is a discussion aid, not a reservation system. Availability and the final b
 - Results: live tally shared with voters
 - Comments: allow an optional explanation with each vote
 - Map navigation: campground overview -> select Big Pines Loop, Lake View Loop, or Cedar Point Loop -> replace with loop map -> optional road overlay -> select a campsite -> ground-level image; return control goes back to overview
-- Image assets: place them in [tyler-site-images](tyler-site-images/); see its [README](tyler-site-images/README.md) for the naming convention
+- Image assets: place them in [tyler-site-images](../assets/tyler); see its [README](../assets/tyler/README.md) for the naming convention
 
 Because the form will be open to anyone with the link, self-entered names cannot reliably prevent duplicate votes. A live tally may also influence later voters. These are accepted tradeoffs for easier access and visible results.
 

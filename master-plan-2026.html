@@ -44,18 +44,20 @@
 }
 </style>
 <style>
-.campsite-selection-alert{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:14px 0;padding:15px 18px;border:1px solid #e2b7ad;border-left:6px solid var(--accent);border-radius:4px;background:#f8e9e5}.campsite-selection-alert h2{margin:0 0 3px;color:#79372d;font:700 .72rem Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}.campsite-selection-alert p{margin:0;color:var(--ink);font:14px/1.4 Arial,sans-serif}.campsite-selection-alert a{flex:none;display:inline-block;padding:10px 13px;border-radius:3px;background:var(--accent);color:#fff;font:700 .78rem Arial,sans-serif;text-align:center;text-decoration:none}.campsite-selection-alert a:hover,.campsite-selection-alert a:focus-visible{background:#87392d}.campsite-selection-alert a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}@media(max-width:640px){.campsite-selection-alert{align-items:stretch;flex-direction:column;gap:11px}.campsite-selection-alert a{width:100%}}
+.trip-nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px;padding:9px 12px;border:1px solid var(--line);border-left:4px solid var(--gold);background:var(--paper)}.trip-nav a{display:inline-flex;align-items:center;min-height:34px;padding:6px 9px;color:#145d65;font:700 .73rem Arial,sans-serif;text-decoration:none}.trip-nav a:hover,.trip-nav a:focus-visible{background:#edf3ef;color:var(--accent);outline:2px solid var(--gold);outline-offset:1px}.trip-nav .nav-separator{align-self:center;color:var(--line)}.quick-stops{padding-top:13px;border-top:1px solid var(--line)}.quick-stops h3{margin:0 0 6px;color:var(--green);font:700 .78rem Arial,sans-serif;text-transform:uppercase}.quick-stops p{margin:5px 0;color:var(--muted);font:13px/1.45 Arial,sans-serif}.quick-stops strong{color:var(--ink)}html{scroll-behavior:smooth}#itinerary,#reservations,#trip-costs{scroll-margin-top:14px}@media(max-width:640px){.trip-nav{gap:3px;padding:7px}.trip-nav a{min-height:38px;padding:7px}.trip-nav .nav-separator{display:none}}
+.quick-stops-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.quick-stops-grid>div{padding-left:12px;border-left:3px solid var(--gold)}#optional-stops{scroll-margin-top:14px}@media(max-width:640px){.quick-stops-grid{grid-template-columns:1fr;gap:8px}}
 </style>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 </head>
 <body>
 <main>
 <header><p class="eyebrow">2026 Winter Texas Trip</p><h1>The Winter Loop</h1><p class="lede">A nine-day route from Evansville through Oklahoma, Palo Duro Canyon, MERUS Adventure Park, East Texas and Dauphin Island before returning home, with stops along Route 66, at Southfork Ranch and at the East Texas Oil Museum.</p></header>
-<section class="campsite-selection-alert" aria-labelledby="campsiteSelectionStatus"><div><h2 id="campsiteSelectionStatus">Selection needed</h2><p>Choose two preferred campsites at Big Pines before booking. The group has not recorded its site choices yet.</p></div><a href="tyler-campsite-choices.html">Choose two Tyler campsites</a></section>
-<section class="trip-inputs"><h2>Trip Inputs</h2><div class="grid"><div class="card"><h3>Travelers and dogs</h3><p>Family A: Aaron and Lisa with one large dog.</p><p>Family B: Eric and Victoria with two German Shepherds.</p></div><div class="card"><h3>Shared start</h3><p>Home: 8650 Manchester Court, Evansville, Indiana 47725.</p><p>Meet: Windmill Bakery on Highway 41 at 5:30 AM. Depart approximately 5:45 AM.</p></div><div class="card"><h3>Vehicles</h3><p>Family A: 2025 Toyota Tacoma TRD Off-Road 4x4 Double Cab, 5-ft bed.</p><p>Family B: 2023 Ford Bronco Outer Banks with Sasquatch package, V6, 4WD.</p></div><div class="card"><h3>Campers and fuel</h3><p>2023 TAG Boondock XL and custom-built TAG-like teardrop, both under 14 ft.</p><p>Planning fuel economy: 12 mpg per vehicle. Tacoma tank: 21.1 gal. Bronco: 20.8 gal assumed for 4-door.</p></div></div><p class="note">Both campers use the same campground at each overnight stop when possible. Electric-only, electric-and-water, full-hookup, and primitive sites are possible; no dump station is needed.</p></section>
+<section class="trip-inputs"><h2>Trip Inputs</h2><div class="grid"><div class="card"><h3>Travelers and dogs</h3><p>Family A: Aaron and Lisa with one large dog.</p><p>Family B: Eric and Victoria with two German Shepherds.</p></div><div class="card"><h3>Shared start</h3><p>Home: 8650 Manchester Court, Evansville, Indiana 47725.</p><p>Meet: Windmill Bakery on Highway 41 at 5:30 AM. Depart approximately 5:45 AM.</p></div><div class="card"><h3>Vehicles</h3><p>Family A: 2025 Toyota Tacoma TRD Off-Road 4x4 Double Cab, 5-ft bed.</p><p>Family B: 2023 Ford Bronco Outer Banks with Sasquatch package, V6, 4WD.</p></div><div class="card"><h3>Campers and fuel</h3><p>2023 TAG Boondock XL and custom-built TAG-like teardrop, both under 14 ft.</p><p>Planning fuel economy: 11 mpg per vehicle. Tacoma tank: 21.1 gal. Bronco: 20.8 gal assumed for 4-door.</p></div></div><p class="note">Both campers use the same campground at each overnight stop when possible. Electric-only, electric-and-water, full-hookup, and primitive sites are possible; no dump station is needed.</p></section>
 
 <section><h2>Day 1: Friday, December 25</h2><p><strong>Evansville, Indiana to Hinton, Oklahoma</strong></p><div class="scroll"><table><tr><th>Time (CST)</th><th>Schedule</th><th>Fuel / notes</th></tr><tr><td>5:00-5:30 AM</td><td>Final packing, dog care, hitch, lights, and tire checks.</td><td>Start both vehicles full; check fuel range and weather.</td></tr><tr><td>5:30 AM</td><td>Meet at Windmill Marathon &amp; Bakery.</td><td>Confirm both rigs are ready and verify early access to the meeting location.</td></tr><tr><td>5:45 AM</td><td>Depart Evansville for Sikeston.</td><td>170 miles / about 3 hr 07 min.</td></tr><tr><td>8:52-9:17 AM</td><td>Fuel, restroom, and dog break at Love's #356 in Sikeston.</td><td>25-minute stop; cumulative route distance 170 miles.</td></tr><tr><td>9:17 AM-12:56 PM</td><td>Drive to Love's in Strafford.</td><td>232 miles / about 3 hr 39 min.</td></tr><tr><td>12:56-1:21 PM</td><td>Fuel, restroom, and dog break in Strafford.</td><td>25-minute stop; cumulative route distance 402 miles.</td></tr><tr><td>1:21-3:21 PM</td><td>Drive to Love's #403 in Big Cabin.</td><td>136 miles / about 2 hr.</td></tr><tr><td>3:21-3:46 PM</td><td>Fuel, restroom, and dog break at Big Cabin.</td><td>25-minute stop; cumulative route distance 538 miles.</td></tr><tr><td>3:46-6:51 PM</td><td>Drive to Territory Route 66 RV Park in Hinton.</td><td>212 miles / about 3 hr 05 min; sunset 5:24 PM, dark 5:54 PM.</td></tr><tr><td>6:51-7:30 PM</td><td>Back into Sites 9 and 10 and set up after dark.</td><td>Use after-hours arrival instructions and safe lighting.</td></tr><tr><td>After setup</td><td>Dinner at Cherokee Restaurant if open.</td><td>Confirm Christmas hours; bring a camp meal as a backup.</td></tr></table></div><p><a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/8650+Manchester+Ct,+Evansville,+IN+47725/Territory+Route+66+RV+Park,+Hinton,+OK">Day 1 Google Maps route</a></p></section>
 
-<section><h2>Day 2: Saturday, December 26</h2><p><strong>Hinton to Hackberry Campground, Palo Duro Canyon, via Route 66</strong></p><p class="note">Leave Territory RV Park around 8:00 AM with full tanks. Visit Lucille's, the Clinton museum, and Shamrock; refuel at Love's #229 before Amarillo, then shop in Canyon before entering Palo Duro. Cadillac Ranch is optional: skip it to protect daylight for setup. The seven mapped legs total about 252 miles / 4 hr 12 min driving before stops; allow through about 5:00 PM for arrival, with limited setup light before the listed 5:38 PM sunset. Use 280 miles as a conservative fuel budget and confirm museum hours, grocery access, and the Hackberry reservation.</p><div class="scroll"><table><tr><th>Time</th><th>Schedule</th><th>Fuel / notes</th></tr><tr><td>6:00-7:30 AM</td><td>Breakfast, pack, and break camp at Territory RV Park.</td><td>Confirm checkout time; have both vehicles fueled from Day 1.</td></tr><tr><td>8:00 AM</td><td>Depart Hinton westbound.</td><td>Keep dogs secured and supplied for the morning.</td></tr><tr><td>8:15-8:50 AM</td><td>Lucille's Service Station, Hydro.</td><td>Short historic photo and dog/stretch break; not a fuel stop.</td></tr><tr><td>9:15-10:15 AM</td><td>Oklahoma Route 66 Museum, Clinton.</td><td>Confirm Dec 26 hours and camper parking; use an exterior stop if closed.</td></tr><tr><td>11:30 AM-12:30 PM</td><td>U-Drop Inn photo stop and lunch near Shamrock.</td><td>Verify a cafe or bring a packed lunch; do not rely on the historic building serving food.</td></tr><tr><td>1:30-2:00 PM</td><td>Fuel, restroom, and dog break at Love's #229, I-40 Exit 96.</td><td>About 182 miles from Hinton via planned stops; use Love's #253 in Erick earlier if gauges require it.</td></tr><tr><td>2:35-3:05 PM</td><td>Optional Cadillac Ranch photo stop west of Amarillo.</td><td>Skip if running late or trailer parking is unsuitable.</td></tr><tr><td>3:30-4:15 PM</td><td>Groceries at United Supermarkets, 201 N 23rd St, Canyon.</td><td>Buy dinner, water, and Day 3 hiking supplies; confirm holiday hours and trailer parking.</td></tr><tr><td>4:45-5:00 PM</td><td>Arrive at Hackberry Campground in Palo Duro Canyon and begin setup.</td><td>Allow for the park entrance and canyon road; sunset listed at 5:38 PM. Confirm reservation and entry requirements.</td></tr></table></div><p><a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/Territory+Route+66+RV+Park,+Hinton,+OK/Lucille's+Service+Station,+Hydro,+OK/Route+66+Museum,+Clinton,+OK/U-Drop+Inn,+Shamrock,+TX/Cadillac+Ranch,+Amarillo,+TX/Palo+Duro+Canyon+State+Park,+Canyon,+TX">Day 2 sightseeing route</a></p></section>
+<section><h2>Day 2: Saturday, December 26</h2><p><strong>Hinton to Hackberry Campground, Palo Duro Canyon, via Route 66</strong></p><p class="note">Leave Territory RV Park around 8:00 AM with full tanks. Visit Lucille's, the Clinton museum, and Shamrock; refuel at Love's #229 before Amarillo, then shop in Canyon before entering Palo Duro. Cadillac Ranch is optional: skip it to protect daylight for setup. The seven mapped legs total about 252 miles / 4 hr 12 min driving before stops; allow through about 5:00 PM for arrival, with limited setup light before the listed 5:38 PM sunset. Use 280 miles as a conservative fuel budget and confirm museum hours, grocery access, and Hackberry late-arrival instructions; Sites 015 and 017 are confirmed and paid.</p><div class="scroll"><table><tr><th>Time</th><th>Schedule</th><th>Fuel / notes</th></tr><tr><td>6:00-7:30 AM</td><td>Breakfast, pack, and break camp at Territory RV Park.</td><td>Confirm checkout time; have both vehicles fueled from Day 1.</td></tr><tr><td>8:00 AM</td><td>Depart Hinton westbound.</td><td>Keep dogs secured and supplied for the morning.</td></tr><tr><td>8:15-8:50 AM</td><td>Lucille's Service Station, Hydro.</td><td>Short historic photo and dog/stretch break; not a fuel stop.</td></tr><tr><td>9:15-10:15 AM</td><td>Oklahoma Route 66 Museum, Clinton.</td><td>Confirm Dec 26 hours and camper parking; use an exterior stop if closed.</td></tr><tr><td>11:30 AM-12:30 PM</td><td>U-Drop Inn photo stop and lunch near Shamrock.</td><td>Verify a cafe or bring a packed lunch; do not rely on the historic building serving food.</td></tr><tr><td>1:30-2:00 PM</td><td>Fuel, restroom, and dog break at Love's #229, I-40 Exit 96.</td><td>About 182 miles from Hinton via planned stops; use Love's #253 in Erick earlier if gauges require it.</td></tr><tr><td>2:35-3:05 PM</td><td>Optional Cadillac Ranch photo stop west of Amarillo.</td><td>Skip if running late or trailer parking is unsuitable.</td></tr><tr><td>3:30-4:15 PM</td><td>Groceries at United Supermarkets, 201 N 23rd St, Canyon.</td><td>Buy dinner, water, and Day 3 hiking supplies; confirm holiday hours and trailer parking.</td></tr><tr><td>4:45-5:00 PM</td><td>Arrive at Hackberry Campground in Palo Duro Canyon and begin setup.</td><td>Allow for the park entrance and canyon road; sunset listed at 5:38 PM. Sites 015 and 017 are confirmed; follow saved late-arrival and gate instructions.</td></tr></table></div><p><a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/Territory+Route+66+RV+Park,+Hinton,+OK/Lucille's+Service+Station,+Hydro,+OK/Route+66+Museum,+Clinton,+OK/U-Drop+Inn,+Shamrock,+TX/Cadillac+Ranch,+Amarillo,+TX/Palo+Duro+Canyon+State+Park,+Canyon,+TX">Day 2 sightseeing route</a></p></section>
 
 <section><h2>Day 3: Sunday, December 27</h2><p><strong>Palo Duro basecamp, Lighthouse Trail, and camp day</strong></p><p class="note">No towing or travel is planned. Verify Lighthouse Trail access, conditions, water requirements, and dog rules before leaving camp.</p><div class="scroll"><table><tr><th>Time</th><th>Schedule</th><th>Notes</th></tr><tr><td>7:00-7:45 AM</td><td>Breakfast at camp and prepare for the hike.</td><td>Pack water for every person and dog, snacks, sun protection, first-aid supplies, and waste bags.</td></tr><tr><td>7:45-8:15 AM</td><td>Drive to the Lighthouse Trailhead.</td><td>Confirm parking and current trail conditions; keep campers secured.</td></tr><tr><td>8:15-11:30 AM</td><td>Hike the Lighthouse Trail and return to the trailhead.</td><td>Use a relaxed pace with photo and water breaks; turn around early for heat, weather, dog, or group concerns.</td></tr><tr><td>11:30 AM-12:00 PM</td><td>Return to camp and cool down.</td><td>Refresh water, clean up hiking gear, and check dogs for paw or heat problems.</td></tr><tr><td>12:00-1:00 PM</td><td>Lunch at the campsite.</td><td>Prepare a simple hot lunch or camp meal; keep food secured.</td></tr><tr><td>1:00-3:30 PM</td><td>Hang out at camp and rest.</td><td>Reading, conversation, naps, cards, and a low-key camper reset.</td></tr><tr><td>3:30-4:30 PM</td><td>Optional short campground walk and camp setup.</td><td>Refill water, organize gear, and prepare dinner before daylight fades.</td></tr><tr><td>4:30-6:00 PM</td><td>Dinner preparation and dinner at camp.</td><td>Keep the meal simple; use a sheltered cooking area if windy or cold.</td></tr><tr><td>6:00-8:30 PM</td><td>Evening at camp.</td><td>Conversation, cards, quiet music, and stargazing if conditions are clear.</td></tr><tr><td>8:30-9:00 PM</td><td>Final dog walk, cleanup, and quiet hours.</td><td>Secure food and gear; prepare clothing and water for Day 4.</td></tr></table></div></section>
 <section><h2>Day 4: Monday, December 28</h2><p><strong>Move camp from Palo Duro to MERUS boondocking</strong></p><p class="note">The campers move to MERUS for the overnight basecamp. Plan approximately 54 miles one way: break camp at Palo Duro, shop for groceries in Canyon on the way, establish the MERUS site, have a picnic lunch, overland, and finish with dinner at the new camp.</p><div class="scroll"><table><tr><th>Time</th><th>Schedule</th><th>Notes</th></tr><tr><td>7:00-8:30 AM</td><td>Breakfast and a final relaxed morning at Palo Duro camp.</td><td>Pack the picnic, secure dogs, confirm the boondocking water and power plan, and check recovery gear.</td></tr><tr><td>8:30-10:00 AM</td><td>Break camp and hitch the trailers.</td><td>Complete water, power, leveling, and gear checks before leaving Palo Duro.</td></tr><tr><td>10:00-11:15 AM</td><td>Drive the campers toward MERUS and stop for groceries in Canyon.</td><td>Buy dinner, breakfast, drinks, dog supplies, water, and ice before reaching the boondocking site.</td></tr><tr><td>11:15 AM-12:30 PM</td><td>Continue to MERUS, position the campers, and establish the boondocking site.</td><td>Travel as a convoy; level, secure, and confirm the site is suitable.</td></tr><tr><td>12:30-1:15 PM</td><td>Picnic lunch at MERUS.</td><td>Eat from the packed cooler; keep food and dogs managed around the vehicles.</td></tr><tr><td>1:15-2:45 PM</td><td>Overlanding at MERUS.</td><td>Use approved routes only; keep the outing within daylight and vehicle limits.</td></tr><tr><td>2:45-4:45 PM</td><td>Finish overlanding and return to the MERUS camp.</td><td>Keep the campers at the new basecamp; groceries were purchased on the way in.</td></tr><tr><td>4:45-6:30 PM</td><td>Finish camp setup and prepare dinner.</td><td>Check battery, solar, water, heat, leveling, and food storage before dark.</td></tr><tr><td>6:30-8:30 PM</td><td>Dinner and evening at the MERUS boondock camp.</td><td>Relax, review the next day's long-drive plan, and observe site quiet hours.</td></tr></table></div></section>
@@ -64,11 +66,29 @@
 <section><h2>Day 7: Thursday, December 31</h2><p><strong>Move from Big Pines to Dauphin Island</strong></p><p class="note">Plan approximately 533 miles and 8 hr 25 min of moving time, with a 10-hour operating window for teardown, fuel and dog breaks, a packed lunch, and campground setup. Target arrival before the 5:04 PM sunset; keep New Year's Eve simple after the long tow.</p><div class="scroll"><table><tr><th>Time</th><th>Schedule</th><th>Fuel / notes</th></tr><tr><td>4:45-5:15 AM</td><td>Breakfast at Big Pines.</td><td>Use a quick camp breakfast; fill dog-water containers and pack the lunch cooler.</td></tr><tr><td>5:15-6:00 AM</td><td>Break camp and hitch both campers.</td><td>Complete leveling, water, power, lights, tires, hitch, and brake checks.</td></tr><tr><td>6:00 AM</td><td>Depart Big Pines for Dauphin Island.</td><td>Start with both tow vehicles fueled; keep the convoy together.</td></tr><tr><td>8:15-8:40 AM</td><td>Fuel, restroom, and dog break near the Tyler-to-Shreveport corridor.</td><td>Use a trailer-accessible station and inspect tires and hitch connections.</td></tr><tr><td>10:45-11:15 AM</td><td>Fuel, restroom, and dog break near Shreveport or western Louisiana.</td><td>Top off before continuing south and refill dog water.</td></tr><tr><td>11:15 AM-12:00 PM</td><td>Picnic lunch in the vehicles or at a safe roadside stop.</td><td>Keep lunch packed and efficient; avoid a restaurant stop.</td></tr><tr><td>1:45-2:15 PM</td><td>Fuel, restroom, and dog break near Mobile or the Gulf Coast approach.</td><td>Confirm enough fuel for the island arrival and check-in.</td></tr><tr><td>3:15-4:15 PM</td><td>Arrive at Dauphin Island Campground and set up.</td><td>Target setup before sunset at 5:04 PM; complete leveling, water, power, and dog routine.</td></tr><tr><td>4:15-5:30 PM</td><td>Dinner preparation and dinner at camp.</td><td>Use a simple meal; keep the evening flexible if setup runs late.</td></tr><tr><td>5:30-8:30 PM</td><td>Quiet New Year's Eve at camp.</td><td>Conversation, cards, a short dog walk, and a low-key celebration; follow quiet hours.</td></tr><tr><td>8:30-9:00 PM</td><td>Secure camp and prepare for New Year's Day.</td><td>Protect food, charge devices, and confirm the next day's beach and meal plan.</td></tr></table></div></section>
 <section><h2>Day 8: Friday, January 1</h2><p><strong>Dauphin Island basecamp, forts, beach walks, and Airbnb scouting</strong></p><p class="note">Keep the campers at the campground while the group tours one nearby fort, walks the beach, eats at a seafood restaurant, and scouts the island for a future Airbnb vacation. Choose Fort Gaines or Fort Morgan based on ferry, holiday hours, weather, parking, and dog logistics.</p><div class="scroll"><table><tr><th>Time</th><th>Schedule</th><th>Notes</th></tr><tr><td>7:00-8:00 AM</td><td>Breakfast at the campground and dog walk.</td><td>Pack water, beach gear, sunscreen, towels, waste bags, and a small cooler.</td></tr><tr><td>8:00-9:00 AM</td><td>Beach walk and first island exploration loop.</td><td>Note beach access, parking, quiet areas, grocery distance, and possible rental neighborhoods.</td></tr><tr><td>9:00 AM-12:00 PM</td><td>Tour Fort Gaines or Fort Morgan.</td><td>Choose one fort; verify holiday hours, ferry or driving logistics, admission, parking, and dog rules.</td></tr><tr><td>12:00-1:30 PM</td><td>Seafood lunch.</td><td>Choose a nearby restaurant with practical parking and a dog plan; make a reservation if needed.</td></tr><tr><td>1:30-3:30 PM</td><td>Explore Dauphin Island for future Airbnb planning.</td><td>Compare beach access, restaurants, groceries, neighborhoods, parking, pet policies, and storm exposure.</td></tr><tr><td>3:30-4:30 PM</td><td>Second beach walk or relaxed shoreline time.</td><td>Use the block for photos and a final look at potential vacation areas.</td></tr><tr><td>4:30-6:00 PM</td><td>Return to camp and rest.</td><td>Refresh the dogs, secure purchases, and prepare dinner.</td></tr><tr><td>6:00-7:30 PM</td><td>Dinner at camp or a seafood dinner alternative.</td><td>Keep dinner flexible based on the lunch choice and the group's energy.</td></tr><tr><td>7:30-8:30 PM</td><td>Review island notes and prepare for Day 9.</td><td>Check fuel, weather, checkout, hitch equipment, lights, tires, and water.</td></tr></table></div></section>
 <section><h2>Day 9: Saturday, January 2</h2><p><strong>Return from Dauphin Island to Evansville</strong></p><p class="note">Plan approximately 639 miles and 9 hr 38 min of moving time, with an 11-hour operating window. Use early island time for a beach walk and future Airbnb scouting, then have a seafood meal near Mobile or along the route. A full Fort Gaines or Fort Morgan tour does not fit safely into this return day; schedule the fort tours on Day 8 or a future visit.</p><div class="scroll"><table><tr><th>Time</th><th>Schedule</th><th>Fuel / notes</th></tr><tr><td>4:45-5:15 AM</td><td>Wake, walk the dogs, and prepare a quick breakfast.</td><td>Secure the campsite and pack a cooler with water, snacks, and lunch supplies.</td></tr><tr><td>5:15-6:00 AM</td><td>Beach walk and future Airbnb scouting on Dauphin Island.</td><td>Note beach access, parking, grocery distance, campground alternatives, neighborhood feel, and possible rental locations.</td></tr><tr><td>6:00-6:45 AM</td><td>Break camp and hitch both campers.</td><td>Complete leveling, water, power, lights, tires, hitch, and brake checks.</td></tr><tr><td>6:45 AM</td><td>Depart Dauphin Island for Evansville.</td><td>The return drive takes priority; do not add a fort tour to this day.</td></tr><tr><td>8:45-9:10 AM</td><td>Fuel, restroom, and dog break near the Mobile approach.</td><td>Use a trailer-accessible station and inspect tires and hitch connections.</td></tr><tr><td>11:30 AM-12:30 PM</td><td>Seafood lunch near Mobile or along the northbound route.</td><td>Choose a dog-compatible stop with trailer parking; use packed lunch if delayed.</td></tr><tr><td>1:45-2:15 PM</td><td>Fuel, restroom, and dog break near Montgomery or the selected route corridor.</td><td>Top off before the final long leg and refill dog water.</td></tr><tr><td>4:30-4:50 PM</td><td>Final fuel and restroom break near Birmingham or the selected route corridor.</td><td>Keep the stop short and check the remaining arrival estimate.</td></tr><tr><td>7:30-9:00 PM</td><td>Arrive home in Evansville, unload essentials, and secure the campers.</td><td>Actual arrival depends on traffic, weather, and stops; avoid extending the drive for a fort visit.</td></tr></table></div></section>
-<section><h2>Daily Fuel and Cost Summary</h2><p class="note">Planning assumptions: 12 mpg for each vehicle and $3.60 per gallon. Tacoma and Bronco costs are shown separately; combined cost is both vehicles together.</p><div class="scroll"><table><tr><th>Day</th><th>Miles</th><th>Google time</th><th>Time with stops</th><th>Tacoma gallons</th><th>Tacoma cost</th><th>Bronco gallons</th><th>Bronco cost</th><th>Combined cost</th></tr><tr><td>1</td><td>750</td><td>11 hr 51 min</td><td>13 hr 06 min</td><td>62.50</td><td>$225.00</td><td>62.50</td><td>$225.00</td><td>$450.00</td></tr><tr><td>2</td><td>280</td><td>4 hr 24 min</td><td>6 hr</td><td>23.33</td><td>$84.00</td><td>23.33</td><td>$84.00</td><td>$168.00</td></tr><tr><td>3</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>$0.00</td><td>0.00</td><td>$0.00</td><td>$0.00</td></tr><tr><td>4</td><td>60</td><td>1 hr 15 min</td><td>10 hr</td><td>5.00</td><td>$18.00</td><td>5.00</td><td>$18.00</td><td>$36.00</td></tr><tr><td>5</td><td>450</td><td>7 hr 34 min</td><td>10 hr 15 min</td><td>37.50</td><td>$135.00</td><td>37.50</td><td>$135.00</td><td>$270.00</td></tr><tr><td>6</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>$0.00</td><td>0.00</td><td>$0.00</td><td>$0.00</td></tr><tr><td>7</td><td>533</td><td>8 hr 25 min</td><td>10 hr</td><td>44.42</td><td>$159.90</td><td>44.42</td><td>$159.90</td><td>$319.80</td></tr><tr><td>8</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>$0.00</td><td>0.00</td><td>$0.00</td><td>$0.00</td></tr><tr><td>9</td><td>639</td><td>9 hr 38 min</td><td>11 hr</td><td>53.25</td><td>$191.70</td><td>53.25</td><td>$191.70</td><td>$383.40</td></tr><tr><th>Total</th><th>2,712</th><th>43 hr 07 min</th><th>62 hr 51 min</th><th>226.00</th><th>$813.60</th><th>226.00</th><th>$813.60</th><th>$1,627.20</th></tr></table></div></section>
+<section><h2>Daily Fuel and Cost Summary</h2><div class="scroll"><table>
+<tr><th>Day</th><th>Mapped miles</th><th>Mapped drive</th><th>Travel with stops</th><th>Tacoma gallons</th><th>Tacoma cost</th><th>Bronco gallons</th><th>Bronco cost</th><th>Combined cost</th></tr>
+<tr><td>1</td><td>750</td><td>11 hr 51 min</td><td>13 hr 06 min</td><td>68.18</td><td>$245.45</td><td>68.18</td><td>$245.45</td><td>$490.91</td></tr>
+<tr><td>2</td><td>252</td><td>4 hr 12 min</td><td>8 hr 46 min</td><td>22.91</td><td>$82.47</td><td>22.91</td><td>$82.47</td><td>$164.95</td></tr>
+<tr><td>3</td><td>Local / TBD</td><td>Not mapped</td><td>Camp day</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+<tr><td>4</td><td>60</td><td>1 hr 15 min</td><td>2 hr 30 min</td><td>5.45</td><td>$19.64</td><td>5.45</td><td>$19.64</td><td>$39.27</td></tr>
+<tr><td>5</td><td>450</td><td>7 hr 34 min</td><td>10 hr 15 min</td><td>40.91</td><td>$147.27</td><td>40.91</td><td>$147.27</td><td>$294.55</td></tr>
+<tr><td>6</td><td>Local / TBD</td><td>Not mapped</td><td>Kilgore outing</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+<tr><td>7</td><td>533</td><td>8 hr 25 min</td><td>10 hr 35 min</td><td>48.45</td><td>$174.44</td><td>48.45</td><td>$174.44</td><td>$348.87</td></tr>
+<tr><td>8</td><td>Local / TBD</td><td>Not mapped</td><td>Island outings</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+<tr><td>9</td><td>639</td><td>9 hr 38 min</td><td>11 hr 53 min + buffer</td><td>58.09</td><td>$209.13</td><td>58.09</td><td>$209.13</td><td>$418.25</td></tr>
+<tr><th>Mapped subtotal</th><th>2,684</th><th>42 hr 55 min</th><th>57 hr 05 min</th><th>244.00</th><th>$878.40</th><th>244.00</th><th>$878.40</th><th>$1,756.80</th></tr>
+</table></div><p class="source">Mapped road legs only; local drives to trailheads, Kilgore and island outings, and off-road miles remain unmeasured. Day 2 includes Cadillac Ranch; Day 5 excludes the optional Southfork detour (about 17 miles / 34 minutes plus the photo stop). Travel subtotals exclude breakfast, campsite setup and unallocated buffers. Day 7 and Day 9 use the itinerary's road estimates plus scheduled stops; fuel-stop locations still need route verification. These are not live holiday traffic forecasts. Day 1 needs an additional fuel stop on its 232-mile leg at 11 MPG; its extra stop time remains TBD.</p></section>
 
-<section><h2>Campgrounds and Verification</h2><ul><li><a target="_blank" rel="noopener noreferrer" href="https://www.territoryroute66.com/">Territory Route 66 RV Park</a>: confirm reservation, hookups, and camper access.</li><li><a target="_blank" rel="noopener noreferrer" href="https://tpwd.texas.gov/state-parks/palo-duro-canyon">Palo Duro State Park</a> or MERUS: confirm basecamp, dogs, fees, 4WD access, and winter operations.</li><li>Big Pines Campground at Tyler State Park: confirm reservation and site fit.</li><li>Dauphin Island Campground: confirm reservation, beach rules, dogs, and winter conditions.</li><li>Use the current 12 mpg assumptions and each vehicle's fuel tank/range when selecting exact gas stations.</li></ul></section>
+<section id="reservations"><h2>Reservations</h2><div class="scroll"><table><thead><tr><th>Campground</th><th>Dates and sites</th><th>Status</th><th>Campground information</th></tr></thead><tbody>
+<tr><td>Territory Route 66 RV Park</td><td>Dec 25-26 · Sites 9 and 10</td><td>Confirmed</td><td><a href="campgrounds/territory-route-66.html">Camp info</a></td></tr>
+<tr><td>Hackberry Campground · Palo Duro</td><td>Dec 26-28 · Sites 015 and 017</td><td>Confirmed</td><td><a href="campgrounds/palo-duro.html">Camp info</a></td></tr>
+<tr><td>MERUS Adventure Park</td><td>Dec 28-29 · Site 311</td><td>Confirmed</td><td><a href="campgrounds/merus.html">Camp info</a></td></tr>
+<tr><td>Big Pines Campground · Tyler</td><td>Dec 29-31 · Sites BP-306 and BP-308</td><td>Confirmed</td><td><a href="campgrounds/tyler-sites.html">Camp info</a></td></tr>
+<tr><td>Dauphin Island Campground</td><td>Dec 31-Jan 2 · Site numbers to confirm</td><td>Confirmed</td><td><a href="campgrounds/dauphin-island.html">Camp info</a></td></tr>
+</tbody></table></div><p class="source">Reservations are confirmed; separately verify site fit, hookup access, late-arrival instructions, and park-road conditions before travel.</p></section>
 
-<footer>Source: route-option-1.md and the supplied nine-day schedule. Verify reservations, attraction hours, legal camping, weather, and exact route distances before departure.</footer>
+<footer>Source: docs/route-option-1.md and the supplied nine-day schedule. Verify reservations, attraction hours, legal camping, weather, and exact route distances before departure.</footer>
 </main>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -77,25 +97,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	while (textNode = textWalker.nextNode()) {
 		textNode.nodeValue = textNode.nodeValue.replace(/Windmill Bakery on Highway 41/g, 'Windmill Marathon & Bakery, 6801 US-41, Evansville, IN 47711').replace(/Windmill Bakery/g, 'Windmill Marathon & Bakery');
 	}
-	var campgroundLinks = document.querySelectorAll('section h2');
-	campgroundLinks.forEach(function (heading) {
-		if (heading.textContent !== 'Campgrounds and Verification') return;
-		var listItems = heading.parentElement.querySelectorAll('li');
-		listItems.forEach(function (item) {
-			if (item.textContent.indexOf('Territory Route 66 RV Park') === 0) {
-				item.innerHTML = '<a target="_blank" rel="noopener noreferrer" href="https://www.territoryroute66.com/">Territory Route 66 RV Park</a>: reservation confirmed for Sites 10 and 9, Dec 25-26, 2026; verify hookups and camper access.';
-			}
-			if (item.textContent.indexOf('Palo Duro State Park') === 0) {
-				item.innerHTML = '<a target="_blank" rel="noopener noreferrer" href="https://tpwd.texas.gov/state-parks/palo-duro-canyon">Palo Duro State Park</a>: confirm campground reservation and site. MERUS reservation is confirmed for Site 311 East Rise Camp; verify arrival instructions, 4WD trail access, dog rules, and winter operations.';
-			}
-			if (item.textContent.indexOf('Big Pines Campground at Tyler State Park') === 0) {
-				item.innerHTML = '<a href="tyler-campsite-choices.html">Choose two Tyler campsites</a> · <a target="_blank" rel="noopener noreferrer" href="https://tpwd.texas.gov/state-parks/tyler">Big Pines Campground at Tyler State Park</a>: confirm reservation and site fit.';
-			}
-			if (item.textContent.indexOf('Dauphin Island Campground') === 0) {
-				item.innerHTML = '<a target="_blank" rel="noopener noreferrer" href="https://dauphinisland.org/camping/">Dauphin Island Campground</a>: confirm reservation, beach rules, dogs, and winter conditions.';
-			}
-		});
-	});
 	var sourceFooter = document.querySelector('footer');
 	if (sourceFooter) sourceFooter.remove();
 	var fuelSection = Array.from(document.querySelectorAll('main > section')).find(function (section) {
@@ -104,19 +105,22 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 	if (fuelSection) {
 		fuelSection.classList.add('trip-costs');
+		fuelSection.id = 'trip-costs';
 		fuelSection.querySelector('h2').textContent = 'Trip Costs';
 		var dailyFuelScroll = fuelSection.querySelector('.scroll');
 		var campgroundCosts = document.createElement('div');
 		campgroundCosts.className = 'scroll cost-breakdown';
-		campgroundCosts.innerHTML = '<h3>Campground Costs</h3><table><thead><tr><th>Campground</th><th>Reservation detail</th><th>Notes</th><th>Eric</th><th>Aaron</th><th>Total</th></tr></thead><tbody><tr><td>Territory Route 66 RV Park and Campgrounds, Hinton</td><td>Confirmed: Sites 10 and 9, Dec 25-26, 2026; Site 10: 2 adults/1 pet; Site 9: 2 adults/3 pets. Paid in full; balance $0.00.</td><td>Two sites at $35.00 each plus $2.00 fee per site; split evenly.</td><td>$37.00</td><td>$37.00</td><td>$74.00</td></tr><tr><td>Hackberry Campground, Palo Duro Canyon</td><td>Unconfirmed</td><td>Campground cost not provided</td><td>—</td><td>—</td><td>—</td></tr><tr><td>MERUS Adventure Park</td><td>Confirmed: Site 311, East Rise Camp; Dec 28, 2026, 1 night, 4 guests. Paid Sep 28, 2026; balance $0.00.</td><td>Site $45.06; two daily 4x4 passes $53.18; four adult entry passes $64.28; split evenly.</td><td>$81.26</td><td>$81.26</td><td>$162.52</td></tr><tr><td>Big Pines Campground, Tyler State Park</td><td>Unconfirmed; site not recorded</td><td>Cost not provided</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Dauphin Island Campground, Dauphin Island, AL</td><td>Confirmed: Dec 31, 2026-Jan 2, 2027; 2 nights.</td><td>Split evenly.</td><td>$81.12</td><td>$81.12</td><td>$162.24</td></tr><tr><th colspan="3">Total confirmed campground costs</th><th>$199.38</th><th>$199.38</th><th>$398.76</th></tr></tbody></table>';
+		campgroundCosts.innerHTML = '<h3>Campground Costs</h3><table><thead><tr><th>Campground</th><th>Reservation detail</th><th>Notes</th><th>Eric</th><th>Aaron</th><th>Total</th></tr></thead><tbody><tr><td>Territory Route 66 RV Park and Campgrounds, Hinton</td><td>Confirmed: Sites 10 and 9, Dec 25-26, 2026; Site 10: 2 adults/1 pet; Site 9: 2 adults/3 pets. Paid in full; balance $0.00.</td><td>Two sites at $35.00 each plus $2.00 fee per site; split evenly.</td><td>$37.00</td><td>$37.00</td><td>$74.00</td></tr><tr><td>Hackberry Campground, Palo Duro Canyon</td><td>Confirmed: Site 015 (2-21762656) and Site 017 (2-21762655), Dec 26-28, 2026; 2 nights each. Paid in full; balance $0.00.</td><td>$52 camping + $32 adult entry per site; $168 combined, split evenly.</td><td>$84.00</td><td>$84.00</td><td>$168.00</td></tr><tr><td>MERUS Adventure Park</td><td>Confirmed: Site 311, East Rise Camp; Dec 28, 2026, 1 night, 4 guests. Paid Sep 28, 2026; balance $0.00.</td><td>Site $45.06; two daily 4x4 passes $53.18; four adult entry passes $64.28; split evenly.</td><td>$81.26</td><td>$81.26</td><td>$162.52</td></tr><tr><td>Big Pines Campground, Tyler State Park</td><td>Confirmed: Site BP-306 (2-21762775) and Site BP-308 (2-21762776), Dec 29-31, 2026; 2 nights each; full hookup; paid in full; balance $0.00.</td><td>$56 camping + $24 adult entry per site; $160 combined, split evenly.</td><td>$80.00</td><td>$80.00</td><td>$160.00</td></tr><tr><td>Dauphin Island Campground, Dauphin Island, AL</td><td>Confirmed: Dec 31, 2026-Jan 2, 2027; 2 nights.</td><td>Split evenly.</td><td>$81.12</td><td>$81.12</td><td>$162.24</td></tr><tr><th colspan="3">Total confirmed campground costs</th><th>$363.38</th><th>$363.38</th><th>$726.76</th></tr></tbody></table>';
 		var dauphinIslandCostRow = Array.from(campgroundCosts.querySelectorAll('tbody tr')).find(function (row) {
 			return row.cells[0] && row.cells[0].textContent.indexOf('Dauphin Island Campground') === 0;
 		});
 		if (dauphinIslandCostRow) dauphinIslandCostRow.cells[1].textContent = 'Confirmed: Dec 31, 2026-Jan 2, 2027; 2 nights. Paid in full; balance $0.00.';
 		var receiptRows = [
-			{ name: 'Territory Route 66 RV Park and Campgrounds', href: 'receipt-territoryrv.html', label: 'Territory RV receipt' },
-			{ name: 'MERUS Adventure Park', href: 'receipt-merus.html', label: 'MERUS receipt' },
-			{ name: 'Dauphin Island Campground', href: 'receipt-dauphin-island.html', label: 'Dauphin Island receipt' }
+			{ name: 'Territory Route 66 RV Park and Campgrounds', href: 'receipts/territory-rv.html', label: 'Territory RV receipt' },
+			{ name: 'Hackberry Campground, Palo Duro Canyon', href: 'receipts/palo-duro.html', label: 'Palo Duro receipt summary' },
+			{ name: 'Big Pines Campground, Tyler State Park', href: 'receipts/tyler.html', label: 'Tyler receipt summary' },
+			{ name: 'MERUS Adventure Park', href: 'receipts/merus.html', label: 'MERUS receipt' },
+			{ name: 'Dauphin Island Campground', href: 'receipts/dauphin-island.html', label: 'Dauphin Island receipt' }
 		];
 		receiptRows.forEach(function (receipt) {
 			var row = Array.from(campgroundCosts.querySelectorAll('tbody tr')).find(function (candidate) {
@@ -134,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		dailyFuelScroll.before(fuelHeading);
 		var fuelControls = document.createElement('div');
 		fuelControls.className = 'fuel-controls';
-		fuelControls.innerHTML = '<div class="fuel-control"><label for="tacoma-mpg">Tacoma MPG <output id="tacoma-mpg-value">12</output></label><input id="tacoma-mpg" type="range" min="6" max="20" step="1" value="12"></div><div class="fuel-control"><label for="bronco-mpg">Bronco MPG <output id="bronco-mpg-value">12</output></label><input id="bronco-mpg" type="range" min="6" max="20" step="1" value="12"></div>';
+		fuelControls.innerHTML = '<div class="fuel-control"><label for="tacoma-mpg">Tacoma MPG <output id="tacoma-mpg-value">11</output></label><input id="tacoma-mpg" type="range" min="6" max="20" step="1" value="11"></div><div class="fuel-control"><label for="bronco-mpg">Bronco MPG <output id="bronco-mpg-value">11</output></label><input id="bronco-mpg" type="range" min="6" max="20" step="1" value="11"></div>';
 		fuelSection.querySelector('h2').after(fuelControls);
 		var fuelTable = fuelSection.querySelector('.scroll:not(.cost-breakdown) table');
 		[campgroundCosts.querySelector('table'), fuelTable].forEach(function (table) {
@@ -153,30 +157,43 @@ document.addEventListener('DOMContentLoaded', function () {
 		var tacomaSlider = fuelControls.querySelector('#tacoma-mpg');
 		var broncoSlider = fuelControls.querySelector('#bronco-mpg');
 		var fuelPrice = 3.60;
-		var fuelNote = fuelSection.querySelector('.note');
 		fuelHeading.after(fuelControls);
-		if (fuelNote) fuelControls.after(fuelNote);
 		var fuelInputCard = Array.from(document.querySelectorAll('section h2')).find(function (heading) {
 			return heading.textContent === 'Trip Inputs';
 		});
 		fuelInputCard = fuelInputCard ? fuelInputCard.parentElement.querySelector('.card:last-of-type p:last-child') : null;
 		function formatGallons(value) { return value.toFixed(2); }
 		function formatCost(value) { return '$' + value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+		function durationMinutes(value) {
+			var hours = value.match(/(\d+)\s*hr/);
+			var minutes = value.match(/(\d+)\s*min/);
+			return (hours ? Number(hours[1]) * 60 : 0) + (minutes ? Number(minutes[1]) : 0);
+		}
+		function formatDuration(minutes) { return Math.floor(minutes / 60) + ' hr ' + String(minutes % 60).padStart(2, '0') + ' min'; }
 		function updateFuelTable() {
 			var tacomaMpg = Number(tacomaSlider.value);
 			var broncoMpg = Number(broncoSlider.value);
 			var tacomaGallons = 0;
 			var broncoGallons = 0;
 			var combinedCost = 0;
+			var mappedMiles = 0;
+			var mappedMinutes = 0;
+			var travelMinutes = 0;
 			fuelControls.querySelector('#tacoma-mpg-value').value = tacomaMpg;
 			fuelControls.querySelector('#tacoma-mpg-value').textContent = tacomaMpg;
 			fuelControls.querySelector('#bronco-mpg-value').value = broncoMpg;
 			fuelControls.querySelector('#bronco-mpg-value').textContent = broncoMpg;
-			if (fuelNote) fuelNote.textContent = 'Planning assumptions: Tacoma ' + tacomaMpg + ' mpg, Bronco ' + broncoMpg + ' mpg, and $3.60 per gallon. Costs are shown separately; combined cost is both vehicles together.';
-			if (fuelInputCard) fuelInputCard.textContent = 'Selected fuel economy: Tacoma ' + tacomaMpg + ' mpg; Bronco ' + broncoMpg + ' mpg. Tacoma tank: 21.1 gal. Bronco: 20.8 gal assumed for 4-door.';
+			if (fuelInputCard) fuelInputCard.textContent = 'Selected fuel economy: Tacoma ' + tacomaMpg + ' mpg; Bronco ' + broncoMpg + ' mpg. Fuel: $3.60/gal. Tacoma tank: 21.1 gal. Bronco: 20.8 gal assumed for 4-door.';
 			fuelRows.forEach(function (row) {
 				var cells = row.querySelectorAll('td');
 				var miles = Number(cells[1].textContent.replace(/,/g, ''));
+				if (!Number.isFinite(miles)) {
+					Array.from(cells).slice(4).forEach(function (cell) { cell.textContent = 'TBD'; });
+					return;
+				}
+				mappedMiles += miles;
+				mappedMinutes += durationMinutes(cells[2].textContent);
+				travelMinutes += durationMinutes(cells[3].textContent);
 				var rowTacomaGallons = miles / tacomaMpg;
 				var rowBroncoGallons = miles / broncoMpg;
 				var rowTacomaCost = rowTacomaGallons * fuelPrice;
@@ -191,11 +208,25 @@ document.addEventListener('DOMContentLoaded', function () {
 				cells[8].textContent = formatCost(rowTacomaCost + rowBroncoCost);
 			});
 			var totalCells = totalRow.querySelectorAll('th');
+			totalCells[1].textContent = mappedMiles.toLocaleString('en-US');
+			totalCells[2].textContent = formatDuration(mappedMinutes);
+			totalCells[3].textContent = formatDuration(travelMinutes);
 			totalCells[4].textContent = formatGallons(tacomaGallons);
 			totalCells[5].textContent = formatCost(tacomaGallons * fuelPrice);
 			totalCells[6].textContent = formatGallons(broncoGallons);
 			totalCells[7].textContent = formatCost(broncoGallons * fuelPrice);
 			totalCells[8].textContent = formatCost(combinedCost);
+			var dayOneNote = document.querySelector('.day-one-route-note');
+			if (dayOneNote) {
+				var warning = dayOneNote.querySelector('.fuel-range-warning');
+				if (warning) warning.remove();
+				if (232 / broncoMpg > 20.8 || 232 / tacomaMpg > 21.1) {
+					warning = document.createElement('strong');
+					warning.className = 'fuel-range-warning';
+					warning.textContent = ' At the selected MPG, the 232-mile Sikeston-Strafford leg exceeds at least one full tank\'s calculated range. An intermediate fuel stop is required; additional stop time is not yet included.';
+					dayOneNote.append(warning);
+				}
+			}
 		}
 		tacomaSlider.addEventListener('input', updateFuelTable);
 		broncoSlider.addEventListener('input', updateFuelTable);
@@ -209,34 +240,40 @@ document.addEventListener('DOMContentLoaded', function () {
 		var heading = section.querySelector('h2');
 		return heading && /^Day 1:/.test(heading.textContent);
 	});
+	if (firstDaySection) firstDaySection.id = 'itinerary';
 	if (tripInputsSection && firstDaySection) {
 		var tripSummary = document.createElement('section');
 		tripSummary.className = 'trip-summary';
-		tripSummary.innerHTML = '<div><h2>Trip at a Glance</h2><p>This nine-day loop travels from Evansville through Oklahoma and the Texas Panhandle to MERUS, Tyler, and Dauphin Island before returning home. The itinerary balances long travel days with basecamp time for hiking, overlanding, beach walks, fort tours, and relaxed campsite meals. Nights 2-4, 5-6, and 7-8 are grouped to show where the trip settles in between moves.</p><p><a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/8650+Manchester+Ct,+Evansville,+IN+47725/Territory+Route+66+RV+Park,+Hinton,+OK/Palo+Duro+Canyon+State+Park,+Canyon,+TX/MERUS+Adventure+Park,+Claude,+TX/Big+Pines+Campground,+Tyler,+TX/Dauphin+Island+Campground,+Dauphin+Island,+AL/8650+Manchester+Ct,+Evansville,+IN+47725">Open full loop in Google Maps</a></p></div><div class="trip-stats"><div class="trip-stat"><strong>6</strong><span>Driving days</span></div><div class="trip-stat"><strong>3</strong><span>Basecamp days</span></div><div class="trip-stat"><strong>8</strong><span>Campground nights</span></div></div><div id="trip-timeline" class="timeline grouped-view mode-sage" aria-label="Trip campground night timeline"></div>';
+		tripSummary.innerHTML = '<div><h2>Trip at a Glance</h2><p>This nine-day loop travels from Evansville through Oklahoma and the Texas Panhandle to MERUS, Tyler, and Dauphin Island before returning home. The itinerary balances long travel days with basecamp time for hiking, overlanding, beach walks, fort tours, and relaxed campsite meals. Two nights each at Palo Duro, Tyler, and Dauphin Island frame the one-night stays in Hinton and at MERUS.</p><p><a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/8650+Manchester+Ct,+Evansville,+IN+47725/Territory+Route+66+RV+Park,+Hinton,+OK/Palo+Duro+Canyon+State+Park,+Canyon,+TX/MERUS+Adventure+Park,+Claude,+TX/Big+Pines+Campground,+Tyler,+TX/Dauphin+Island+Campground,+Dauphin+Island,+AL/8650+Manchester+Ct,+Evansville,+IN+47725">Open full loop in Google Maps</a></p></div><div class="trip-stats"><div class="trip-stat"><strong>6</strong><span>Driving days</span></div><div class="trip-stat"><strong>3</strong><span>Basecamp days</span></div><div class="trip-stat"><strong>8</strong><span>Campground nights</span></div></div><div id="trip-timeline" class="timeline grouped-view mode-sage" aria-label="Trip campground night timeline"></div>';
 		tripInputsSection.after(tripSummary);
 		var weatherLink = document.createElement('p');
 		weatherLink.innerHTML = '<a href="weather-forecast.html">Open trip weather outlook</a>';
 		tripSummary.appendChild(weatherLink);
 		var reservationSnapshot = document.createElement('p');
 		reservationSnapshot.className = 'reservation-snapshot';
-		reservationSnapshot.innerHTML = '<strong>Reservations:</strong> Hinton: confirmed, Sites 10 and 9, Dec 25 (1 night). Hackberry at Palo Duro and Big Pines at Tyler remain unconfirmed; book both campsites at each park. Tyler State Park says overnight campers with reservations do not need separate day passes or an annual pass, even when day-use capacity is reached; confirm Palo Duro-specific entry instructions with that park. MERUS: confirmed, Site 311 East Rise Camp, Dec 28 (1 night, 4 guests). Dauphin Island: confirmed, Dec 31-Jan 2 (2 nights). <a href="campground-info-territory-route-66.html">Territory Route 66</a> · <a href="campground-info-palo-duro.html">Hackberry Campground info</a> · <a href="campground-info-merus.html">MERUS campsite info</a>.';
+		reservationSnapshot.innerHTML = '<strong>Reservations:</strong> Confirmed for Hinton (Sites 9/10), Hackberry (Sites 015/017), MERUS (Site 311), Big Pines (BP-306/BP-308), and Dauphin Island. See <a href="#reservations">Reservations</a> for dates and campground information.';
 		var mapLinkParagraph = Array.from(tripSummary.querySelectorAll('p')).find(function (paragraph) { return paragraph.querySelector('a'); });
 		var overlandingSnapshot = document.createElement('p');
 		overlandingSnapshot.className = 'reservation-snapshot overlanding-snapshot';
-		overlandingSnapshot.innerHTML = '<strong>MERUS overlanding:</strong> Planned for Dec 28, 1:15-2:45 PM. Compare route ratings, distances, typical times, notes, and photos in <a href="merus-trails.html">MERUS trail info</a>.';
+		overlandingSnapshot.innerHTML = '<strong>MERUS overlanding:</strong> Planned for Dec 28, 1:15-2:45 PM. Compare route ratings, distances, typical times, notes, and photos in <a href="activities/merus-trails.html">MERUS trail info</a>.';
+		var nearbyStops = document.createElement('div');
+		nearbyStops.className = 'nearby-stops';
+		nearbyStops.id = 'optional-stops';
+		nearbyStops.innerHTML = '<p class="reservation-snapshot"><strong>Southfork Ranch · Dec 29, optional:</strong> Keep the stop only if ahead of schedule; skip it to protect the Tyler arrival window. <a target="_blank" rel="noopener noreferrer" href="https://southforkranch.com/tours/">Visit Southfork</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&amp;query=Southfork+Ranch%2C+Parker%2C+TX">Map</a></p><p class="reservation-snapshot"><strong>Kilgore · East Texas Oil Museum · Dec 30:</strong> Planned outing from Big Pines. Check holiday hours and the dog-in-vehicle plan before leaving camp. <a target="_blank" rel="noopener noreferrer" href="https://easttexasoilmuseum.kilgore.edu/visit/">Hours and visit information</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&amp;query=East+Texas+Oil+Museum%2C+Kilgore%2C+TX">Map</a></p>';
 		if (mapLinkParagraph) {
 			mapLinkParagraph.before(reservationSnapshot);
 			reservationSnapshot.after(overlandingSnapshot);
+			overlandingSnapshot.after(nearbyStops);
 		}
 		var nights = [
-			{ night: 1, date: 'Dec 25', city: 'West of Oklahoma City', campground: 'Territory Route 66 RV Park', site: 'Sites 10 and 9', campgroundHref: 'campground-info-territory-route-66.html', type: 'Drive in', icon: '🚗', activity: 'Driving' },
-			{ night: 2, date: 'Dec 26', city: 'Palo Duro Canyon', campground: 'Hackberry Campground', campgroundHref: 'campground-info-palo-duro.html', type: 'Drive in', icon: '🚗', activity: 'Driving' },
-			{ night: 3, date: 'Dec 27', city: 'Palo Duro Canyon', campground: 'Hackberry Campground', campgroundHref: 'campground-info-palo-duro.html', type: 'Basecamp', icon: '🥾', activity: 'Hiking' },
-			{ night: 4, date: 'Dec 28', city: 'Claude, TX', campground: 'MERUS Adventure Park', site: 'Site 311 East Rise Camp', campgroundHref: 'campground-info-merus.html', type: 'Boondock', icon: '🛞', activity: 'Off-roading' },
-			{ night: 5, date: 'Dec 29', city: 'Tyler State Park', campground: 'Big Pines Campground', type: 'Drive in', icon: '🚗', activity: 'Driving' },
-			{ night: 6, date: 'Dec 30', city: 'Tyler State Park', campground: 'Big Pines Campground', type: 'Basecamp', icon: '🥾', activity: 'Hiking' },
-			{ night: 7, date: 'Dec 31', city: 'Dauphin Island, AL', campground: 'Dauphin Island Campground', type: 'Drive in', icon: '🚗', activity: 'Driving' },
-			{ night: 8, date: 'Jan 1', city: 'Dauphin Island, AL', campground: 'Dauphin Island Campground', type: 'Basecamp', icon: '💣', activity: 'Fort tours' }
+			{ night: 1, date: 'Dec 25', city: 'West of Oklahoma City', campground: 'Territory Route 66 RV Park', site: 'Sites 10 and 9', campgroundHref: 'campgrounds/territory-route-66.html', type: 'Drive in', icon: '🚗', activity: 'Driving' },
+			{ night: 2, date: 'Dec 26', city: 'Palo Duro Canyon', campground: 'Hackberry Campground', campgroundHref: 'campgrounds/palo-duro.html', type: 'Drive in', icon: '🚗', activity: 'Driving' },
+			{ night: 3, date: 'Dec 27', city: 'Palo Duro Canyon', campground: 'Hackberry Campground', campgroundHref: 'campgrounds/palo-duro.html', type: 'Basecamp', icon: '🥾', activity: 'Hiking' },
+			{ night: 4, date: 'Dec 28', city: 'Claude, TX', campground: 'MERUS Adventure Park', site: 'Site 311 East Rise Camp', campgroundHref: 'campgrounds/merus.html', type: 'Boondock', icon: '🛞', activity: 'Off-roading' },
+			{ night: 5, date: 'Dec 29', city: 'Tyler State Park', campground: 'Big Pines Campground', site: 'BP-306 and BP-308', campgroundHref: 'campgrounds/tyler-sites.html', type: 'Drive in', icon: '🚗', activity: 'Driving' },
+			{ night: 6, date: 'Dec 30', city: 'Tyler State Park', campground: 'Big Pines Campground', campgroundHref: 'campgrounds/tyler-sites.html', type: 'Basecamp', icon: '🥾', activity: 'Hiking' },
+			{ night: 7, date: 'Dec 31', city: 'Dauphin Island, AL', campground: 'Dauphin Island Campground', campgroundHref: 'campgrounds/dauphin-island.html', type: 'Drive in', icon: '🚗', activity: 'Driving' },
+			{ night: 8, date: 'Jan 1', city: 'Dauphin Island, AL', campground: 'Dauphin Island Campground', campgroundHref: 'campgrounds/dauphin-island.html', type: 'Basecamp', icon: '💣', activity: 'Fort tours' }
 		];
 		var groups = [
 			{ label: 'Nights 1', nights: [nights[0]] },
@@ -266,6 +303,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		var detail = document.createElement('details');
 		detail.className = 'day-detail';
+		if (section.id) detail.id = section.id;
 		var summary = document.createElement('summary');
 		var summaryHeading = heading.cloneNode(true);
 		var route = section.querySelector('p strong');
@@ -323,7 +361,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	document.querySelectorAll('tr').forEach(function (row) {
 		if (row.cells.length !== 3 || row.cells[0].textContent.trim() !== '1:15-2:45 PM' || row.cells[1].textContent.trim() !== 'Overlanding at MERUS.') return;
 		var link = document.createElement('a');
-		link.href = 'merus-trails.html';
+		link.href = 'activities/merus-trails.html';
 		link.textContent = 'Overlanding at MERUS';
 		row.cells[1].replaceChildren(link, document.createTextNode('.'));
 	});
@@ -445,8 +483,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (dayOneRouteLink) {
 			dayOneRouteLink.href = 'https://www.google.com/maps/dir/?api=1&origin=The+Windmill+Marathon+%26+Bakery%2C+6801+US-41%2C+Evansville%2C+IN+47711&destination=Territory+Route+66+RV+Park%2C+14144+Old+66+Rd%2C+Hinton%2C+OK&waypoints=Love%27s+Travel+Stop%2C+1401+S+Main+St%2C+Sikeston%2C+MO+63801%7CLove%27s+Travel+Stop%2C+400+MO-125%2C+Strafford%2C+MO%7CLove%27s+Travel+Stop%2C+437071+E+310+Rd%2C+Big+Cabin%2C+OK+74332&travelmode=driving';
 			dayOneRouteLink.textContent = 'Day 1 Google Maps route with all travel-center stops';
-			if (!dayOne.querySelector('a[href="driving-plan-day01.html"]')) {
-				dayOneRouteLink.insertAdjacentHTML('afterend', ' · <a href="driving-plan-day01.html">Open detailed Day 1 drive plan</a>');
+			if (!dayOne.querySelector('a[href="driving/day01.html"]')) {
+				dayOneRouteLink.insertAdjacentHTML('afterend', ' · <a href="driving/day01.html">Open detailed Day 1 drive plan</a>');
 			}
 		}
 		var dayOneTopOff = document.createElement('p');
@@ -459,6 +497,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		return heading && heading.textContent.indexOf('Day 2:') === 0;
 	});
 	if (dayTwo) {
+		var dayTwoNote = dayTwo.querySelector('.note');
+		if (dayTwoNote) dayTwoNote.textContent = dayTwoNote.textContent.replace('Use 280 miles as a conservative fuel budget and confirm', 'Confirm');
 		var dayTwoRoute = Array.from(dayTwo.querySelectorAll('a')).find(function (link) {
 			return link.textContent.trim() === 'Day 2 sightseeing route';
 		});
@@ -467,7 +507,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			dayTwoRoute.textContent = 'Day 2 Route 66 stops to fuel';
 		}
 		var dayTwoLink = document.createElement('p');
-		dayTwoLink.innerHTML = '<a href="driving-plan-day02.html">Open detailed Day 2 drive plan with fuel and grocery stops</a>';
+		dayTwoLink.innerHTML = '<a href="driving/day02.html">Open detailed Day 2 drive plan with fuel and grocery stops</a>';
 		dayTwo.append(dayTwoLink);
 	}
 	var dayThree = Array.from(document.querySelectorAll('details.day-detail')).find(function (detail) {
@@ -494,7 +534,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			'<tr><td>4:30-4:45 PM</td><td>Exit MERUS before sunset.</td><td>Allow 15 minutes to leave the park; sunset is estimated around 5:42 PM.</td></tr>' +
 			'<tr><td>4:45-6:00 PM</td><td>Drive back to Hackberry Campground.</td><td>Allow 75 minutes; the return may be after dusk. Confirm canyon road and gate access.</td></tr>' +
 			'<tr><td>6:00-7:00 PM</td><td>Dinner back at camp.</td><td>Keep dinner simple and prepare for the Day 4 move to MERUS.</td></tr>' +
-			'</tbody></table></div><p><a href="driving-plan-day03-b.html">Open detailed Day 3 Option B route plan</a> · <a href="merus-trails.html">MERUS trail options</a></p>';
+			'</tbody></table></div><p><a href="driving/day03-b.html">Open detailed Day 3 Option B route plan</a> · <a href="activities/merus-trails.html">MERUS trail options</a></p>';
 		var routeParagraph = Array.from(dayThree.children).find(function (child) { return child.tagName === 'P' && child.querySelector('strong'); });
 		var dayThreeNote = dayThree.querySelector('.note');
 		var dayThreeTable = dayThree.querySelector('.scroll');
@@ -504,7 +544,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			optionA.append(dayThreeNote);
 		}
 		if (dayThreeTable) optionA.append(dayThreeTable);
-		optionA.insertAdjacentHTML('beforeend', '<p><a href="driving-plan-day03-a.html">Open detailed Day 3 Option A route plan</a></p>');
+		optionA.insertAdjacentHTML('beforeend', '<p><a href="driving/day03-a.html">Open detailed Day 3 Option A route plan</a></p>');
 		var switcher = document.createElement('div');
 		switcher.className = 'day-three-switch';
 		switcher.setAttribute('role', 'group');
@@ -522,6 +562,15 @@ document.addEventListener('DOMContentLoaded', function () {
 			});
 			var summaryRoute = dayThree.querySelector('summary > p strong');
 			if (summaryRoute) summaryRoute.textContent = showB ? 'Lighthouse Trail, MERUS day trip, dinner at Hackberry' : 'Palo Duro basecamp, Lighthouse Trail, and camp day';
+			var dailyFuelTable = document.querySelector('#trip-costs .scroll:not(.cost-breakdown) table');
+			var dayThreeFuelRow = dailyFuelTable && Array.from(dailyFuelTable.rows).find(function (row) { return row.cells[0].textContent.trim() === '3'; });
+			if (dayThreeFuelRow) {
+				dayThreeFuelRow.cells[1].textContent = showB ? '102' : 'Local / TBD';
+				dayThreeFuelRow.cells[2].textContent = showB ? '2 hr' : 'Not mapped';
+				dayThreeFuelRow.cells[3].textContent = showB ? '5 hr 45 min' : 'Camp day';
+				var mpgSlider = document.querySelector('#tacoma-mpg');
+				if (mpgSlider) mpgSlider.dispatchEvent(new Event('input', { bubbles: true }));
+			}
 		});
 	}
 	var dayFour = Array.from(document.querySelectorAll('details.day-detail')).find(function (detail) {
@@ -540,11 +589,11 @@ document.addEventListener('DOMContentLoaded', function () {
 			'<tr><td>11:00 AM-12:00 PM</td><td>Drive the campers from Canyon to MERUS.</td><td>About 43 miles / 47 minutes mapped; allow an hour and follow MERUS entrance instructions.</td></tr>' +
 			'<tr><td>12:00-12:45 PM</td><td>Check in and position both campers at Site 311.</td><td>Confirm the 4WD approach, trailer fit, purchased passes, and site access; do not follow GPS shortcuts.</td></tr>' +
 			'<tr><td>12:45-1:30 PM</td><td>Picnic lunch at the MERUS campsite.</td><td>Eat from the packed cooler; manage food and dogs around the vehicles.</td></tr>' +
-			'<tr><td>1:30-4:00 PM</td><td>Overlanding at MERUS.</td><td>Use approved routes and daylight; <a href="merus-trails.html">compare trail options</a>.</td></tr>' +
+			'<tr><td>1:30-4:00 PM</td><td>Overlanding at MERUS.</td><td>Use approved routes and daylight; <a href="activities/merus-trails.html">compare trail options</a>.</td></tr>' +
 			'<tr><td>4:00-4:45 PM</td><td>Return to the MERUS campsite and finish setup.</td><td>Finish the off-road outing before dark; check water, heat, battery, and food storage.</td></tr>' +
 			'<tr><td>6:30-8:30 PM</td><td>Dinner and evening at MERUS Site 311.</td><td>Prepare for the Day 5 drive; generator quiet hours begin at 10:00 PM.</td></tr>' +
 			'</tbody>';
-		dayFour.insertAdjacentHTML('beforeend', '<p><a href="driving-plan-day04.html">Open detailed Day 4 drive plan with gas and grocery stops</a></p>');
+		dayFour.insertAdjacentHTML('beforeend', '<p><a href="driving/day04.html">Open detailed Day 4 drive plan with gas and grocery stops</a></p>');
 	}
 	var dayFive = Array.from(document.querySelectorAll('details.day-detail')).find(function (detail) {
 		var heading = detail.querySelector('summary h2');
@@ -566,46 +615,40 @@ document.addEventListener('DOMContentLoaded', function () {
 			'<tr><td>4:15-5:30 PM</td><td>Drive to Big Pines Campground, Tyler State Park.</td><td>Allow about 63 miles; arrival may be after the listed 5:25 PM sunset.</td></tr>' +
 			'<tr><td>Evening</td><td>Set up camp, eat dinner, and prepare for Day 6.</td><td>Confirm after-hours entry and both campsites in advance; use Day 4 groceries.</td></tr>' +
 			'</tbody>';
-		dayFive.insertAdjacentHTML('beforeend', '<p><a href="driving-plan-day05.html">Open detailed Day 5 drive plan with gas and optional Southfork stop</a></p>');
+		dayFive.insertAdjacentHTML('beforeend', '<p><a href="driving/day05.html">Open detailed Day 5 drive plan with gas and optional Southfork stop</a></p>');
 	}
 	var merusSnapshot = document.querySelector('.overlanding-snapshot');
-	if (merusSnapshot) merusSnapshot.innerHTML = '<strong>MERUS overlanding:</strong> Planned for Dec 28, 1:30-4:00 PM after fuel, groceries, campsite setup, and lunch. Compare approved routes in <a href="merus-trails.html">MERUS trail info</a>.';
+	if (merusSnapshot) merusSnapshot.innerHTML = '<strong>MERUS overlanding:</strong> Planned for Dec 28, 1:30-4:00 PM after fuel, groceries, campsite setup, and lunch. Compare approved routes in <a href="activities/merus-trails.html">MERUS trail info</a>.';
 
-	var tripCosts = Array.from(document.querySelectorAll('main > section')).find(function (section) {
-		var heading = section.querySelector('h2');
-		return heading && heading.textContent.trim() === 'Trip Costs';
+	var daySeven = Array.from(document.querySelectorAll('details.day-detail')).find(function (detail) {
+		return detail.querySelector('summary h2').textContent.indexOf('Day 7:') === 0;
 	});
-	var fuelTable = tripCosts && Array.from(tripCosts.querySelectorAll('table')).find(function (table) {
-		return table.querySelector('tr th') && table.querySelector('tr th').textContent.trim() === 'Day';
-	});
-	if (fuelTable) {
-		var fuelRows = Array.from(fuelTable.querySelectorAll('tr'));
-		var dayOneFuelRow = fuelRows.find(function (row) { return row.cells[0] && row.cells[0].textContent.trim() === '1'; });
-		var dayFourFuelRow = fuelRows.find(function (row) { return row.cells[0] && row.cells[0].textContent.trim() === '4'; });
-		var dayFiveFuelRow = fuelRows.find(function (row) { return row.cells[0] && row.cells[0].textContent.trim() === '5'; });
-		var fuelTotals = fuelRows.find(function (row) { return row.cells[0] && row.cells[0].textContent.trim() === 'Total'; });
-		if (dayOneFuelRow) {
-			dayOneFuelRow.cells[1].textContent = '750';
-			dayOneFuelRow.cells[2].textContent = '11 hr 51 min';
-			dayOneFuelRow.cells[3].textContent = '13 hr 06 min';
-		}
-		if (dayFourFuelRow) {
-			dayFourFuelRow.cells[1].textContent = '60';
-			dayFourFuelRow.cells[2].textContent = '1 hr 15 min';
-		}
-		if (dayFiveFuelRow) {
-			dayFiveFuelRow.cells[1].textContent = '450';
-			dayFiveFuelRow.cells[2].textContent = '7 hr 34 min';
-			dayFiveFuelRow.cells[3].textContent = '10 hr 15 min';
-		}
-		if (fuelTotals) {
-			fuelTotals.cells[1].textContent = '2,712';
-			fuelTotals.cells[2].textContent = '43 hr 07 min';
-			fuelTotals.cells[3].textContent = '62 hr 51 min';
-		}
-		var tacomaSlider = document.querySelector('#tacoma-mpg');
-		if (dayOneFuelRow && tacomaSlider) tacomaSlider.dispatchEvent(new Event('input', { bubbles: true }));
+	if (daySeven) {
+		daySeven.querySelector('.note').textContent = 'Plan about 533 miles / 8 hr 25 min moving, plus 2 hr 10 min for the listed fuel, dog and lunch stops: at least 10 hr 35 min from departure to arrival. A 6:00 AM departure puts arrival around 4:35 PM before additional towing or traffic delays. Setup may continue after the 5:04 PM sunset; confirm gatehouse access and bring safe lighting. Fuel-stop locations are provisional and must be checked against the actual route and 11 MPG range.';
+		Array.from(daySeven.querySelectorAll('table tr')).forEach(function (row) {
+			if (!row.cells[1]) return;
+			var schedule = row.cells[1].textContent;
+			if (schedule.indexOf('Arrive at Dauphin Island') === 0) {
+				row.cells[0].textContent = '4:35-5:35 PM';
+				row.cells[2].textContent = 'Estimated arrival before extra delays; finish hookups and leveling with lights if setup runs past the 5:04 PM sunset.';
+			} else if (schedule.indexOf('Dinner preparation') === 0) row.cells[0].textContent = '5:35-6:30 PM';
+			else if (schedule.indexOf('Quiet New Year') === 0) row.cells[0].textContent = '6:30-8:30 PM';
+			else if (schedule.indexOf('Fuel, restroom, and dog break') === 0) row.cells[1].textContent = 'Fuel, restroom, and dog break along the confirmed route.';
+		});
 	}
+	var dayNine = Array.from(document.querySelectorAll('details.day-detail')).find(function (detail) {
+		return detail.querySelector('summary h2').textContent.indexOf('Day 9:') === 0;
+	});
+	if (dayNine) {
+		dayNine.querySelector('.note').textContent = 'Plan about 639 miles / 9 hr 38 min moving, plus 2 hr 15 min for the listed fuel, dog and lunch stops: at least 11 hr 53 min before towing, traffic and weather buffers. A 6:45 AM departure gives a 6:38 PM earliest estimated arrival; keep the planned 7:30-9:00 PM arrival/unloading window as a buffer. No fort or island detour is scheduled. Confirm fuel-stop locations along the selected northbound route.';
+		Array.from(dayNine.querySelectorAll('table tr')).forEach(function (row) {
+			if (!row.cells[1]) return;
+			if (row.cells[1].textContent.indexOf('Fuel, restroom, and dog break') === 0) row.cells[1].textContent = 'Fuel, restroom, and dog break along the confirmed northbound route.';
+			else if (row.cells[1].textContent.indexOf('Final fuel and restroom') === 0) row.cells[1].textContent = 'Final fuel and restroom break along the confirmed northbound route.';
+		});
+	}
+	var tacomaSlider = document.querySelector('#tacoma-mpg');
+	if (tacomaSlider) tacomaSlider.dispatchEvent(new Event('input', { bubbles: true }));
 });
 </script>
 </body>
