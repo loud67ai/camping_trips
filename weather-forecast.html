@@ -28,7 +28,7 @@ header{padding:30px;background:var(--green);color:#fff}header p{margin:0 0 7px;c
 @media(max-width:600px){.actual-forecast-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 <style>
-.actual-hourly-heading{margin:22px 0 6px;color:var(--green);font:700 1rem Arial,sans-serif}.actual-hourly-meta{margin:0 0 8px;color:var(--muted);font:12px/1.4 Arial,sans-serif}.actual-hourly-chart .curve{stroke:var(--blue)}
+.actual-hourly-heading{margin:22px 0 6px;color:var(--green);font:700 1rem Arial,sans-serif}.actual-hourly-meta{margin:0 0 8px;color:var(--muted);font:12px/1.4 Arial,sans-serif}.actual-hourly-chart .curve{stroke:var(--blue)}.travel-average-chart .curve{stroke:var(--accent)}
 .temperature-chart .temperature-point{cursor:crosshair;stroke:#fff;stroke-width:1.5}.temperature-chart .temperature-point:hover,.temperature-chart .temperature-point:focus{stroke:var(--ink);stroke-width:2;outline:none}.temperature-chart .chart-hover-tooltip rect{fill:#263f39!important;stroke:#fff;stroke-width:1}.temperature-chart .chart-hover-tooltip text{fill:#fff!important;font:700 12px Arial,sans-serif}
 </style>
 <link rel="stylesheet" href="assets/site.css">
@@ -55,7 +55,7 @@ header{padding:30px;background:var(--green);color:#fff}header p{margin:0 0 7px;c
 </section>
 
 <section class="actual-forecast-section" aria-labelledby="actual-forecast-heading">
-<div class="section-head actual-forecast-head"><div><h2 id="actual-forecast-heading">Actual Weather Forecast</h2><p>Forecasts load automatically when you choose a location. Select a start date to see its high and low plus a five-day outlook; dates follow the current forecast data.</p></div></div>
+<div class="section-head actual-forecast-head"><div><h2 id="actual-forecast-heading">Actual Weather Forecast</h2><p>Forecasts load automatically when you choose a location. Select any available date to see its high and low, hourly temperatures, and up to a five-day outlook.</p></div></div>
 <div class="actual-forecast-controls">
 <label for="actual-forecast-location">Location<select id="actual-forecast-location"><option value="hinton">Hinton, Oklahoma</option><option value="palo_duro">Palo Duro Canyon, Texas</option><option value="tyler">Tyler State Park, Texas</option><option value="dauphin_island">Dauphin Island, Alabama</option></select></label>
 <label for="actual-forecast-date">Forecast date<select id="actual-forecast-date" disabled><option value="">Loading available dates…</option></select></label>
@@ -73,8 +73,11 @@ header{padding:30px;background:var(--green);color:#fff}header p{margin:0 0 7px;c
 <h3 id="actual-hourly-heading" class="actual-hourly-heading">Hourly Forecast</h3>
 <p id="actual-hourly-meta" class="actual-hourly-meta">Hourly temperatures for the selected date will appear here.</p>
 <div class="chart-scroll"><svg id="actual-hourly-chart" class="temperature-chart actual-hourly-chart" viewBox="0 0 1000 440" role="img" aria-labelledby="actual-hourly-heading actual-hourly-meta"></svg></div>
+<h3 id="travel-average-heading" class="actual-hourly-heading">Expected Travel-Week Temperature Curve</h3>
+<p id="travel-average-meta" class="actual-hourly-meta">An average hourly curve will appear here when forecast data is available.</p>
+<div class="chart-scroll"><svg id="travel-average-chart" class="temperature-chart travel-average-chart" viewBox="0 0 1000 440" role="img" aria-labelledby="travel-average-heading travel-average-meta"></svg></div>
 </section>
-<p class="disclaimer">Forecasts are model-based guidance, not historical scenarios or observations. The date menu starts today and includes only dates with enough returned data for a complete five-day outlook. Source: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>.</p>
+<p class="disclaimer">Forecasts are model-based guidance, not historical scenarios or observations. The date menu includes every date returned from today onward; the outlook shortens when fewer than five forecast days remain. Source: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>.</p>
 </section>
 
 <footer class="page-footer"><p>Source: NOAA/NCEI Global Hourly. <a href="weather-temperature-curves.md">View calculated data and provenance</a>. Run <code>python update_weather_curves.py</code> to retrieve and recalculate; add <code>--refresh</code> to redownload cached station files.</p><a class="back-link" href="master-plan-2026.html">Back to The Winter Loop</a></footer>
@@ -785,11 +788,10 @@ document.addEventListener('DOMContentLoaded',function(){
     return {icon:'🌡️',label:'Conditions unavailable'};
   }
   function setTemperature(element,value){element.textContent=Number.isFinite(value)?Math.round(value)+'°F':'—';}
-  function drawHourlyChart(date){
-    var svg=document.getElementById('actual-hourly-chart');
+  function drawTemperatureChart(svg,entries,pointLabel,color,emptyText){
     var width=1000,height=440,left=66,right=24,top=24,bottom=82;
     var plotWidth=width-left-right,plotHeight=height-top-bottom;
-    var entries=currentHourly[date]||[];
+    entries=entries.filter(function(point){return Number.isFinite(point.temperature);});
     var values=entries.map(function(point){return point.temperature;});
     var minValue=values.length?Math.min.apply(null,values):20;
     var maxValue=values.length?Math.max.apply(null,values):100;
@@ -814,13 +816,39 @@ document.addEventListener('DOMContentLoaded',function(){
     append('text',{x:left+plotWidth/2,y:height-13,'text-anchor':'middle'},'Local time · midnight to midnight');
     if(entries.length){
       var path=entries.map(function(point,index){return (index?'L':'M')+x(point.hour).toFixed(2)+' '+y(point.temperature).toFixed(2);}).join(' ');
-      append('path',{d:path,class:'curve',stroke:'#28647a'});
-      entries.forEach(function(point){window.addTemperatureChartPoint(svg,{cx:x(point.hour),cy:y(point.temperature),r:4,fill:'#28647a'},'Hourly forecast',point.hour,point.temperature,width,height);});
+      append('path',{d:path,class:'curve',stroke:color});
+      entries.forEach(function(point){window.addTemperatureChartPoint(svg,{cx:x(point.hour),cy:y(point.temperature),r:4,fill:color},pointLabel,point.hour,point.temperature,width,height);});
     }else{
-      append('text',{x:left+plotWidth/2,y:top+plotHeight/2,'text-anchor':'middle',class:'empty-label'},'Hourly forecast data unavailable');
+      append('text',{x:left+plotWidth/2,y:top+plotHeight/2,'text-anchor':'middle',class:'empty-label'},emptyText);
     }
+  }
+  function drawHourlyChart(date){
+    var entries=currentHourly[date]||[];
+    drawTemperatureChart(document.getElementById('actual-hourly-chart'),entries,'Hourly forecast','#28647a','Hourly forecast data unavailable');
     document.getElementById('actual-hourly-heading').textContent='Hourly Forecast · '+formatDate(date);
-    document.getElementById('actual-hourly-meta').textContent=entries.length+' hourly temperature points · Open-Meteo forecast · '+formatDate(date);
+    document.getElementById('actual-hourly-meta').textContent=entries.filter(function(point){return Number.isFinite(point.temperature);}).length+' hourly temperature points · Open-Meteo forecast · '+formatDate(date);
+  }
+  function drawTravelAverageChart(){
+    var tripStart='2026-12-25',tripEnd='2027-01-01';
+    var availableDates=currentDays.map(function(day){return day.date;}).filter(function(date){
+      return (currentHourly[date]||[]).some(function(point){return Number.isFinite(point.temperature);});
+    });
+    var travelDates=availableDates.filter(function(date){return date>=tripStart&&date<=tripEnd;});
+    var sourceDates=travelDates.length?travelDates:availableDates.slice(-7);
+    var averages=[];
+    for(var hour=0;hour<24;hour++){
+      var temperatures=[];
+      sourceDates.forEach(function(date){
+        var point=(currentHourly[date]||[]).find(function(entry){return entry.hour===hour;});
+        if(point&&Number.isFinite(point.temperature))temperatures.push(point.temperature);
+      });
+      if(temperatures.length)averages.push({hour:hour,temperature:temperatures.reduce(function(total,value){return total+value;},0)/temperatures.length});
+    }
+    drawTemperatureChart(document.getElementById('travel-average-chart'),averages,'Average forecast','#a94736','Average hourly forecast data unavailable');
+    var meta=document.getElementById('travel-average-meta');
+    if(!sourceDates.length){meta.textContent='No hourly forecast dates are available to calculate the average.';return;}
+    var range=formatDate(sourceDates[0])+' through '+formatDate(sourceDates[sourceDates.length-1]);
+    meta.textContent=(travelDates.length?'Travel-window forecast':'Nearest available seven-day forecast')+' · '+sourceDates.length+' day'+(sourceDates.length===1?'':'s')+' averaged · '+range;
   }
   function renderFiveDay(startIndex){
     fiveDay.replaceChildren();
@@ -874,14 +902,15 @@ document.addEventListener('DOMContentLoaded',function(){
         currentHourly[date].push({hour:hour,temperature:hourly.temperature_2m[index]});
       });
       currentDays=(daily.time||[]).map(function(date,index){return {date:date,code:daily.weather_code[index],high:daily.temperature_2m_max[index],low:daily.temperature_2m_min[index],precipitation:daily.precipitation_probability_max[index]};}).filter(function(day){return day.date>=getLocalDate(forecastData.timezone||'UTC');});
-      var dates=currentDays.slice(0,Math.max(0,currentDays.length-4)).map(function(day){return day.date;});
+      var dates=currentDays.map(function(day){return day.date;});
       dateSelect.replaceChildren();
       dates.forEach(function(date){dateSelect.add(new Option(formatDate(date),date));});
-      if(!dates.length){dateSelect.add(new Option('No five-day forecast dates',''));dateSelect.disabled=true;setStatus('The forecast service did not return enough current daily data for a five-day outlook.','error');return;}
+      if(!dates.length){dateSelect.add(new Option('No forecast dates',''));dateSelect.disabled=true;setStatus('The forecast service did not return any current daily data.','error');return;}
       dateSelect.disabled=false;
       dateSelect.value=dates[0];
       renderSelectedDate();
-      setStatus('Forecast updated '+new Date().toLocaleString()+'. Dates run from today through '+formatDate(dates[dates.length-1])+', based on available forecast data.','ready');
+      drawTravelAverageChart();
+      setStatus('Forecast updated '+new Date().toLocaleString()+'. All '+dates.length+' available dates are shown through '+formatDate(dates[dates.length-1])+'.','ready');
     }catch(error){
       if(requestId!==requestSequence)return;
       currentDays=[];
